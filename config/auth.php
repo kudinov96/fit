@@ -112,4 +112,5 @@ return [
 
     'password_timeout' => 10800,
 
+    'register_endpoint_token' => env('USER_REGISTER_TOKEN'),
 ];
