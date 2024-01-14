@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Fortify\CreateNewUser;
+use App\Http\Requests\UserRegisterRequest;
 use App\Services\LogService;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function endpoint(Request $request, CreateNewUser $createNewUser, LogService $logService)
+    public function endpoint(UserRegisterRequest $request, CreateNewUser $createNewUser, LogService $logService)
     {
-        $token = config("register_endpoint_token");
+        $token = config("auth.register_endpoint_token");
 
         if (!$token || $token !== $request->input("token")) {
             return;

@@ -4,8 +4,10 @@ namespace App\Actions\Fortify;
 
 use App\Enums\RoleEnum;
 use App\Models\User;
+use App\Notifications\RegisterNotify;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
@@ -20,28 +22,20 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input): User
     {
-        Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
-            'role' => ['nullable', 'string'],
-            'phone' => ['nullable', 'string'],
-            'language' => ['nullable', 'string'],
-            'email' => [
-                'required',
-                'string',
-                'email',
-                'max:255',
-                Rule::unique(User::class),
-            ],
-            'password' => $this->passwordRules(),
-        ])->validate();
+        $password = Str::password();
 
-        return User::create([
+        /** @var User $user */
+        $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
-            'password' => Hash::make($input['password']),
+            'password' => Hash::make($password),
             'role' => $input['role'] ?? RoleEnum::USER->value,
             'phone' => $input['name'] ?? null,
             'language' => $input['language'] ?? 'ru',
         ]);
+
+        $user->notify(new RegisterNotify($user, $password));
+
+        return $user;
     }
 }

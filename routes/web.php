@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("home");
 
 Route::post("user/register/endpoint", [UserController::class, "endpoint"]);
