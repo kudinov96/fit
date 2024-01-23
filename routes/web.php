@@ -26,6 +26,7 @@ Route::post("user/register/endpoint", [UserController::class, "endpoint"]);
 // Обычный пользователь
 Route::group(["middleware" => ['auth', 'can.showMarathon']], function() {
     Route::get("first-quiz", [FirstQuizController::class, "index"])->name("first_quiz.index");
+    Route::get("first-quiz/success", [FirstQuizController::class, "success"])->name("first_quiz.success");
     Route::post("first-quiz", [FirstQuizController::class, "store"])->name("first_quiz.store");
 
     Route::post("result", [ResultController::class, "store"])->name("result.store");

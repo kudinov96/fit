@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Enums\ResultTypeEnum;
+use App\Models\Stream;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -35,5 +36,10 @@ class ResultRequest extends FormRequest
             "photo_2" => ["nullable", "image"],
             "photo_3" => ["nullable", "image"],
         ];
+    }
+
+    public function currentStream(): ?Stream
+    {
+        return $this->input("currentStream");
     }
 }

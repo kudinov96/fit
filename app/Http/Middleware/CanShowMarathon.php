@@ -4,16 +4,32 @@ namespace App\Http\Middleware;
 
 use App\Enums\ResultTypeEnum;
 use App\Models\User;
+use App\Services\StreamService;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class CanShowMarathon
 {
+    private StreamService $streamService;
+
+    public function __construct(StreamService $streamService)
+    {
+        $this->streamService = $streamService;
+    }
+
     public function handle(Request $request, Closure $next): Response
     {
         /** @var User $user */
         $user = $request->user();
+
+        $currentStream = $this->streamService->currentStream();
+        $stream = $user->stream;
+
+        // Если нет ни пройденного потока, ни текущего
+        if (!$stream && !$currentStream) {
+            abort(404);
+        }
 
         $firstQuizExists = $user
             ->firstQuiz()

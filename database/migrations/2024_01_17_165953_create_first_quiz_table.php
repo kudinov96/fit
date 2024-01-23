@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('first_quiz', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id")->constrained("users")->cascadeOnDelete();
+            $table->foreignId("stream_id")->constrained("streams")->cascadeOnDelete();
             $table->integer("age");
             $table->integer("height");
             $table->integer("weight");
-            $table->smallInteger("target");
-            $table->smallInteger("menu");
+            $table->text("target");
+            $table->text("menu");
             $table->text("nutritional_supplements")->nullable();
             $table->text("health_problems")->nullable();
             $table->text("experience")->nullable();

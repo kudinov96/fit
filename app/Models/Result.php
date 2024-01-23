@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property int $user_id
+ * @property int $stream_id
  * @property ResultTypeEnum $type Тип результата
  * @property int $weight Вес
  * @property int $breast Грудь

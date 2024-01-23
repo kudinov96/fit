@@ -82,13 +82,17 @@ let quiz = $('.quiz-slider').slick({
     draggable: false,
     touchMove: false
 }).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-
     if(nextSlide == 3 && !$('.step-4 .form-control').val().length) {
         $('.quiz-next a').addClass('quiz-disabled');
     } else if(nextSlide == 4 && !$('.step-5 .form-control').val().length) {
         $('.quiz-next a').addClass('quiz-disabled');
     } else {
         $('.quiz-next a').removeClass('quiz-disabled');
+    }
+
+    if(nextSlide == 5) {
+        $('.quiz-next a.btn').hide();
+        $('.quiz-next button.btn').show();
     }
 
     if(nextSlide == 6) {
@@ -256,3 +260,31 @@ $('.accordion .accordion-button').on('click', function(){
 
 });
 })(jQuery);
+
+document.addEventListener('DOMContentLoaded', function () {
+    var formQuiz = document.querySelector('.quiz-slider_wrapper');
+    var otherRadio = formQuiz.querySelector('input[type="radio"][value="Другое"]');
+    var textArea = formQuiz.querySelector('.other-message textarea');
+    var experienceResult = formQuiz.querySelector('#experience-result');
+
+    // Функция для обновления значения скрытого поля
+    function updateExperienceValue() {
+        if (otherRadio.checked) {
+            experienceResult.value = textArea.value; // Значение из textarea
+        } else {
+            var selectedRadio = formQuiz.querySelector('input[type="radio"][name="experience_options"]:checked');
+            if (selectedRadio) {
+                experienceResult.value = selectedRadio.value; // Значение из радио-кнопки
+            }
+        }
+    }
+
+    // Обработчики событий для радио-кнопок и textarea
+    formQuiz.querySelectorAll('input[type="radio"][name="experience_options"]').forEach(function(radio) {
+        radio.addEventListener('change', updateExperienceValue);
+    });
+    textArea.addEventListener('input', updateExperienceValue);
+
+    // Начальное обновление значения
+    updateExperienceValue();
+});

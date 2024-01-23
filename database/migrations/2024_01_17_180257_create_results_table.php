@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('results', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id")->constrained("users")->cascadeOnDelete();
+            $table->foreignId("stream_id")->constrained("streams")->cascadeOnDelete();
             $table->string("type");
             $table->integer("weight");
             $table->integer("breast");

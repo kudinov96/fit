@@ -34,6 +34,7 @@ class UserRegisterRequest extends FormRequest
                 'max:255',
                 Rule::unique(User::class),
             ],
+            'stream_id' => ['required', 'exists:App\Models\Stream,id']
         ];
     }
 }

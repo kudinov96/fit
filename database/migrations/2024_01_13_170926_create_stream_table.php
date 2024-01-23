@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stream', function (Blueprint $table) {
+        Schema::create('streams', function (Blueprint $table) {
             $table->id();
             $table->dateTime("start_date");
             $table->string("template_for_start");

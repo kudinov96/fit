@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Stream;
 use Illuminate\Foundation\Http\FormRequest;
 
 class FirstQuizRequest extends FormRequest
@@ -22,15 +23,19 @@ class FirstQuizRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "language"                => ["required", "string"],
             "age"                     => ["required", "numeric"],
             "height"                  => ["required", "numeric"],
             "weight"                  => ["required", "numeric"],
-            "target"                  => ["required", "numeric"],
-            "menu"                    => ["required", "numeric"],
+            "target"                  => ["required", "string"],
+            "menu"                    => ["required", "string"],
             "nutritional_supplements" => ["required", "string"],
             "health_problems"         => ["required", "string"],
             "experience"              => ["required", "string"],
         ];
+    }
+
+    public function currentStream(): ?Stream
+    {
+        return $this->input("currentStream");
     }
 }

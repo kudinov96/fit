@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\FirstQuiz;
+use App\Models\Stream;
 use App\Models\User;
 
 /**
@@ -17,6 +18,7 @@ class FirstQuizService
     {
         $firstQuiz = new FirstQuiz();
         $firstQuiz->user_id = $currentUser->id;
+        $firstQuiz->stream_id = $currentUser->stream_id;
         $firstQuiz->age = $data["age"];
         $firstQuiz->height = $data["height"];
         $firstQuiz->weight = $data["weight"];

@@ -29,7 +29,8 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($password),
             'role' => $input['role'] ?? RoleEnum::USER->value,
             'phone' => $input['name'] ?? null,
-            'language' => $input['language'] ?? 'ru',
+            'language' => $input['language'] ?? 'lv',
+            'stream_id' => $input['stream_id'],
         ]);
 
         $user->notify(new RegisterNotify($user, $password));

@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property int $user_id
+ * @property int $stream_id
  * @property int $age Возраст
  * @property int $height Рост
  * @property int $weight Вес

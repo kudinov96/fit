@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Result;
+use App\Models\Stream;
 use App\Models\User;
 
 /**
@@ -14,6 +15,7 @@ class ResultService
     {
         $result = new Result();
         $result->user_id = $currentUser->id;
+        $result->stream_id = $currentUser->stream_id;
         $result->type = $data["type"];
         $result->weight = $data["weight"];
         $result->breast = $data["breast"];
