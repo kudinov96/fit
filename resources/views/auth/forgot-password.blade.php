@@ -11,22 +11,19 @@
         <div id="inline-form">
             <div class="container">
                 <div class="inline-modal">
-                    <div class="modal-title">Забыли свой пароль?</div>
-                    <form class="needs-validation" method="POST" action="{{ route("password.email") }}" novalidate>
+                    <div class="modal-title">{{ __('Забыли свой пароль?') }}</div>
+                    <form class="needs-validation" method="POST" action="{{ route('password.email') }}" novalidate>
                         @csrf
-                        @method("POST")
+                        @method('POST')
                         <div class="form-item">
-                            <label>Логин (e-mail)</label>
+                            <label>{{ __('Логин (e-mail)') }}</label>
                             <input name="email" type="email" value="" class="form-control" required>
-                            <div class="invalid-feedback">
-                                Адрес почты недействителен
-                            </div>
                         </div>
                         <div class="form-action">
-                            <button type="submit" class="btn">Восстановить</button>
+                            <button type="submit" class="btn">{{ __('Восстановить') }}</button>
                         </div>
                     </form>
-                    <div class="modal-link"><a href="{{ route("login") }}">Вернуться на страницу авторизации</a></div>
+                    <div class="modal-link"><a href="{{ route('login') }}">{{ __('Вернуться на страницу авторизации') }}</a></div>
                 </div>
             </div>
         </div>
@@ -39,9 +36,9 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="modal-title">Мы отправили ссылку на вашу почту:</div>
+                        <div class="modal-title">{{ __('Мы отправили ссылку на вашу почту:') }}</div>
                         <div class="modal-mail">anna.flowe@gmail.com</div>
-                        <div class="modal-noty">Если вы не получили электронное письмо в течение 5 минут, проверьте папку «Спам».</div>
+                        <div class="modal-noty">{{ __('Если вы не получили электронное письмо в течение 5 минут, проверьте папку «Спам».') }}</div>
                     </div>
                 </div>
             </div>
@@ -54,8 +51,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="modal-title">Ошибка</div>
-                        <div class="modal-noty">Вы неправильно указали эл. почту. Попробуйте ещё раз</div>
+                        <div class="modal-title">{{ __('Ошибка') }}</div>
+                        <div class="modal-noty">{{ __('Вы неправильно указали эл. почту. Попробуйте ещё раз') }}</div>
                     </div>
                 </div>
             </div>
@@ -68,9 +65,9 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="modal-title">Мы отправили ссылку на вашу почту:</div>
+                        <div class="modal-title">{{ __('Мы отправили ссылку на вашу почту:') }}</div>
                         <div class="modal-mail">{{ Request::get('email') ?? null }}</div>
-                        <div class="modal-noty">Если вы не получили электронное письмо в течение 5 минут, проверьте папку «Спам».</div>
+                        <div class="modal-noty">{{ __('Если вы не получили электронное письмо в течение 5 минут, проверьте папку «Спам».') }}</div>
                     </div>
                 </div>
             </div>
@@ -83,8 +80,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="modal-title">Ошибка</div>
-                        <div class="modal-noty">Ссылка на сброс пароля устарела. Попробуйте снова</div>
+                        <div class="modal-title">{{ __('Ошибка') }}</div>
+                        <div class="modal-noty">{{ __('Ссылка на сброс пароля устарела. Попробуйте снова') }}</div>
                     </div>
                 </div>
             </div>
