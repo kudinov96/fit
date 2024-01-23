@@ -1,0 +1,884 @@
+@media all and (min-width: 1400px) {
+#first-screen {
+    min-height: calc(100vh - 115px);
+    display: flex;
+    align-items: flex-end;
+}
+
+}
+@media all and (max-width: 1400px) {
+.gallery-noty {
+    padding: 32px 25px;
+    width: 272px;
+    font-size: 15px;
+}
+.gallery-noty p {
+    margin-bottom: 10px;
+}
+.gallery-noty p strong {
+    font-size: 16px
+}
+.params .btn-foto {
+    height: 350px;
+}
+.droparea {
+    width: 320px;
+    height: 350px;
+}
+.result-box {
+    padding: 30px;
+}
+.result-wrapper, .stat-start > div {
+    padding: 20px;
+}
+.result-wrapper p {
+    margin-right: 35px;
+}
+.user-food {
+    font-size: 16px;
+}
+.user-info span {
+    font-size: 28px;
+}
+.user-info {
+    font-size: 18px;
+}
+.quiz-wrapper {
+    margin-bottom: 50px;
+}
+
+}
+
+@media all and (max-width: 1200px) {
+.fs-text h1 {
+    font-size: 70px;
+    padding-top: 15px;
+}
+.fs-text h1 span {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 309px;
+    height: 50px;
+}
+.fs-text p:nth-child(2) {
+    font-size: 25px;
+}
+.fs-text p:nth-child(3) {
+    font-size: 20px;
+}
+.fs-btns .btn {
+    height: 60px;
+}
+#main-content {
+    margin-top: 20px;
+}
+#main-content h1 {
+    font-size: 28px;
+}
+#main-content .container > p {
+    font-size: 16px;
+}
+.row-gallery {
+    margin: 30px auto;
+    flex-wrap: wrap;
+}
+.gallery-list {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+    order: 2;
+}
+.gallery-list a {
+    margin: 0px;
+    width: calc(33.333% - 6px);
+}
+.gallery-noty {
+    width: 100%;
+}
+.params {
+    padding: 30px;
+}
+.droparea {
+    width: calc(33.333% - 6px);
+    height: 300px;
+}
+.params .btn-foto {
+    height: 300px;
+}
+.form-fields {
+    margin: 30px 0px;
+}
+.form-fields .d-flex > div {
+    width: 120px;
+}
+.user-menu > a {
+    margin-right: 15px;
+}
+.materials-link {
+    padding: 0px 15px;
+}
+.result-head {
+    font-size: 20px;
+}
+.stat-start p {
+    width: 50%;
+}
+.quiz-intro p:first-child {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+.quiz-intro p:nth-child(2) {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.quiz-intro ul li a {
+    width: 50px;
+    height: 50px;
+    font-size: 14px;
+}
+.quiz-intro ul {
+    margin-bottom: 60px;
+}
+.quiz-intro .btn {
+    font-size: 13px;
+    padding: 20px 10px;
+    width: 285px;
+}
+.quiz-head {
+    background: #21272C;
+    padding: 20px;
+    justify-content: space-between;
+    height: 80px;
+}
+.quiz-head img {
+    display: none;
+}
+.quiz-prev, .quiz-goback {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+}
+.quiz-goback {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.quiz-slider_wrapper {
+    position: unset;
+}
+.quiz-count {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    left: auto;
+    transform: unset;
+    font-size: 12px;
+    padding: 8px 13px;
+    min-width: unset;
+}
+.quiz-slider_wrapper {
+    width: 100%;
+    margin: 0px;
+    border-radius: 0px;
+    padding: 40px 0px;
+    min-height: unset;
+}
+.quiz-slider {
+    width: 100vw;
+    padding: 0px 20px;
+}
+.quiz-next {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 0px;
+    right: 0px;
+    padding-top: 40px;
+}
+.quiz-wrapper {
+    width: 100%;
+    margin-bottom: 0px;
+}
+.days-nav {
+    padding: 0px 0px 20px 0px;
+}
+.days-nav .nav {
+    flex-wrap: nowrap;
+}
+.plan-wrapper {
+    padding: 0px;
+    box-shadow: unset;
+    background: none;
+}
+.report-text {
+    padding-right: 15px;
+}
+.week-wrapper {
+    padding: 30px 20px;
+}
+#first-screen {
+    min-height: calc(100vh - 115px);
+    display: flex;
+    align-items: flex-end;
+}
+#pills-tabContent {
+    margin-top: 30px;
+}
+.pills_inner {
+    justify-content: center;
+}
+#pills-tab {
+    width: 100%;
+    justify-content: center;
+}
+
+}
+
+@media all and (max-width: 960px) {
+#footer .container,
+#first-screen .container {
+    flex-direction: column;
+}
+#footer p:nth-child(2) {
+    margin: 5px 0px;
+}
+.fs-pic {
+    width: 300px;
+}
+.fs-text {
+    max-width: unset;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.fs-text p:nth-child(2) {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.fs-text p:nth-child(3) {
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+.fs-btns .btn {
+    font-size: 16px;
+}
+.fs-btns .btn:last-child {
+    margin-right: 0px;
+}
+.params {
+    padding: 0px;
+    background: none;
+}
+.form-fields {
+    padding: 0px;
+    background: none;
+    margin: 40px 0px 15px 0px;
+}
+.form-fields .d-flex {
+    flex-wrap: wrap;
+    margin: 0px -6px;
+}
+.form-fields .d-flex > div {
+    width: 33.333%;
+    padding: 0px 6px 15px 6px;
+}
+.dropdown .dropdown-toggle,
+.dropdown .dropdown-item {
+    font-size: 14px;
+}
+.dropdown .dropdown-toggle::after {
+    vertical-align: 0px;
+}
+.form-action {
+    justify-content: center;
+}
+.user-menu {
+    display: none;
+}
+#main-content h1.text-center {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+.stat-start {
+    padding-bottom: 20px;
+}
+.result-wrapper p {
+    margin-right: 0px;
+    width: 33.333%;
+    padding: 5px 10px 5px 0px;
+}
+.result-head {
+    margin-bottom: 20px;
+}
+.settings-head {
+    align-items: flex-start;
+    flex-direction: column;
+}
+.user-food {
+    padding-top: 15px;
+}
+.settings-box {
+    padding: 40px 30px;
+}
+.qs-title {
+    font-size: 26px;
+    margin-bottom: 37px;
+}
+.qs-inputs > div:not(:last-child) {
+    margin-bottom: 20px;
+}
+#pills-tabContent {
+    margin-top: 30px;
+}
+#pills-tab {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    min-width: unset;
+    display: flex;
+    justify-content: center;
+}
+.pills_inner {
+    justify-content: center;
+}
+.report-btn .btn {
+    min-width: 239px;
+}
+.report-text p {
+    font-size: 14px;
+}
+.report-text p:first-child {
+    font-size: 16px;
+}
+.table thead th {
+    white-space: pre;
+    font-size: 13px;
+}
+.table tr td {
+    font-size: 13px;
+}
+.accordion-button {
+    font-size: 14px;
+    padding: 12px 20px;
+}
+.accordion-body {
+    padding: 0px 20px 20px 20px;
+}
+.week-wrapper_flex p {
+    margin: 0px 20px 10px 0px;
+}
+.week-wrapper_flex {
+    flex-wrap: wrap;
+}
+.week-result_title {
+    font-size: 20px;
+}
+.accordion-button::before {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    background-size: contain;
+}
+.check-head .col-2 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre;
+}
+.check-row em {
+    display: none;
+}
+.check-row .row > .col-2:first-child span {
+    width: 43px;
+    font-size: 12px;
+    padding: 8px 0px;
+    text-transform: uppercase;
+    min-width: unset;
+}
+.check-head,
+.check-row {
+    font-size: 12px;
+    padding-right: 40px;
+}
+.check-row .form-item.dropdown, .stream-item .form-item.dropdown {
+    opacity: 1;
+}
+#first-screen {
+    min-height: unset;
+}
+
+}
+
+@media all and (max-width: 767px) {
+body:not(.home) {
+    background-position: center center, right -300px top -400px, -700px bottom;
+}
+.fs-btns {
+    flex-direction: column;
+}
+.fs-btns .btn {
+    margin: 10px 0px;
+}
+.fs-pic {
+    width: 200px;
+}
+#footer {
+    padding: 20px 0px;
+    font-size: 14px;
+}
+.fs-text {
+    padding-bottom: 20px;
+}
+.fs-text h1 {
+    font-size: 40px;
+}
+.fs-text h1 span {
+    width: 200px;
+}
+.fs-text p:nth-child(2) {
+    font-size: 17px;
+}
+.fs-text p:nth-child(3) {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+#header {
+    padding: 30px 0px;
+}
+.navbar-brand {
+    max-width: 104px;
+}
+#main-content {
+    margin-top: 0px;
+}
+.dropdown-center .dropdown-toggle,
+.dropdown-center .dropdown-item {
+    font-size: 16px;
+}
+.dropdown-center .dropdown-toggle:after {
+    vertical-align: 2px;
+}
+#main-content h1 {
+    font-size: 25px;
+    text-align: center;
+}
+#main-content .container > p {
+    font-size: 15px;
+    text-align: center;
+}
+.gallery-noty {
+    padding: 25px 20px;
+}
+.gallery-noty,
+.gallery-noty p:first-child,
+.gallery-noty p strong {
+    font-size: 14px;
+}
+.droparea {
+    height: 143px;
+    font-size: 13px;
+    padding: 5px;
+}
+.params .btn-foto {
+    height: 143px;
+}
+.params .btn-foto svg,
+.droparea svg {
+    margin-bottom: 8px;
+    max-width: 36px;
+    height: auto;
+}
+.form-fields h3 {
+    font-size: 15px;
+    text-align: center;
+}
+.form-fields .d-flex > div {
+    width: 50%;
+}
+body:not(.home) #footer {
+    padding: 20px 0px;
+    background: #1A1E22; 
+}
+#main-content {
+    padding-bottom: 60px;
+}
+.form-action .btn {
+    width: 100%;
+    padding: 16px 20px;
+}
+body:not(.home) #footer {
+    margin-top: 0px;
+}
+.result-box {
+    padding: 0px;
+    background: none;
+}
+.result-wrapper p {
+    width: 50%;
+}
+#main-content h1.text-center {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.result-head a {
+    width: 28px;
+    height: 28px;
+}
+.result-head {
+    font-size: 18px;
+}
+.result-box {
+    margin-bottom: 30px;
+}
+.stat-start p {
+    margin: 5px 0px;
+}
+.result-wrapper, .stat-start > div {
+    padding: 10px 15px;
+}
+.settings-box {
+    padding: 0px;
+    background: none;
+}
+.form-flex .form-item {
+    width: 100%;
+}
+.user-food {
+    font-size: 14px;
+}
+.settings-head {
+    margin-bottom: 40px;
+}
+.user-info span {
+    font-size: 20px;
+}
+.user-info {
+    font-size: 14px;
+}
+.settings-form_title {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+.form-flex .form-item_action {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.settings-box {
+    margin-bottom: 30px;
+}
+.settings-box:last-child {
+    margin-bottom: 0px;
+}
+.form .form-item {
+    max-width: unset;
+}
+.quiz-intro .btn {
+    padding: 17px 10px
+}
+.quiz-slider_wrapper {
+    min-height: calc(100vh - 80px);
+}
+.qs-title {
+    font-size: 20px;
+}
+.qs-description {
+    font-size: 13px;
+}
+.form-radios_flex {
+    display: block;
+}
+.other-message {
+    margin-top: -20px;
+}
+.qs-inputs .other-message textarea.form-control {
+    height: 100px;
+}
+.modal-body {
+    padding: 0px 25px 30px 25px;
+}
+.modal-title {
+    font-size: 20px;
+}
+.plan-noty {
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.plan-noty p {
+    font-size: 13px;
+}
+.plan-wrapper .nav-pills .nav-link {
+    font-size: 12px;
+    padding: 14px 20px;
+}
+#pills-tab {
+    justify-content: space-between;
+}
+.plan-wrapper .nav-pills.pills_inner .nav-link {
+    padding: 10px;
+    margin: 5px 0px;
+}
+.day-name {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.tab-content_inner {
+    padding-top: 30px;
+}
+.video-item {
+    padding-bottom: 15px;
+    display: flex;
+}
+.video-preview {
+    width: 163px;
+    min-width: 163px;
+    margin-right: 15px;
+}
+.video-meta {
+    position: relative;
+    padding-top: 0px;
+    padding-right: 10px;
+}
+.video-meta p:first-child {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+.video-meta p:nth-child(2) {
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+.video-meta p:last-child {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.video-meta p:last-child a {
+    padding: 0px;
+    border: 0px;
+    background: url('data:image/svg+xml,<svg width="4" height="17" viewBox="0 0 4 17" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="white"/><circle cx="2" cy="9" r="2" fill="white"/><circle cx="2" cy="15" r="2" fill="white"/></svg>') center center no-repeat;
+    width: 4px;
+    height: 17px;
+    overflow: hidden;
+    text-indent: -1000px;
+}
+.description-modal .modal-body {
+    padding: 0px 20px 20px 20px;
+}
+.description-modal .modal-body p {
+    font-size: 15px;
+}
+.modal h2 {
+    font-size: 18px;
+}
+.report-wrapper {
+    padding: 25px;
+    flex-direction: column;
+    text-align: center;
+}
+.report-wrapper .btn {
+    margin-top: 20px;
+}
+.video-preview a:after {
+    background-size: 28px;
+}
+.week-title {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.comment-name {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.comment-name span {
+    font-size: 14px;
+}
+.comment-text {
+    font-size: 13px;
+}
+.comment:not(:last-child) {
+    margin-bottom: 25px;
+}
+.week-results p {
+    width: 50%;
+    font-size: 12px;
+    padding: 7px 5px 7px 0px;
+}
+.week-results {
+    padding: 20px;
+}
+.week-wrapper {
+    margin: 20px 0px 0px 0px;
+}
+.report-text .d-flex {
+    justify-content: center;
+}
+.materials-wrapper {
+    padding: 20px;
+}
+.materials h2 {
+    font-size: 16px;
+}
+.materials h2 > svg {
+    width: 30px;
+    height: auto;
+    min-width: 30px;
+}
+.materials-head > div {
+    font-size: 14px;
+    padding-left: 38px;
+    padding-top: 5px;
+}
+.materials p {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+.materials > div {
+    margin-top: 20px;
+}
+.sr-meta > div:last-child {
+    font-size: 16px;
+}
+.stream-row {
+    padding: 20px 40px 20px 20px;
+}
+.sr-meta > div:last-child span {
+    font-size: 14px;
+}
+.stream-item .form-item.dropdown {
+    right: 20px;
+}
+.stream-add {
+    margin-top: 20px;
+}
+.check-head .col-2 {
+    padding: 0px 3px;
+    font-size: 10px;
+}
+[data-label]:before {
+	content: attr(data-label);
+}
+[data-label] span {
+    display: none;
+}
+.check-head .col-2 {
+    overflow: unset;
+}
+.check-row .col-2 {
+    padding: 0px 3px;
+}
+.check-head .row,
+.check-row .row {
+    margin: 0px -3px;
+}
+.accordion-button {
+    padding: 0px 0px 15px 0px;
+}
+.accordion-flush .accordion-item {
+    background: none;
+}
+.accordion-body {
+    padding: 0px 0px 10px 0px;
+}
+.check-row .col-2 {
+    font-size: 11px;
+}
+.check-row .row > .col-2:first-child span {
+    width: 33px;
+    font-size: 11px;
+}
+.check-row .form-item.dropdown {
+    opacity: 1;
+    display: block !important;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    margin: 0px;
+}
+.report-send .check-row .form-item.dropdown {
+    display: none !important;
+}
+.check-row .form-item.dropdown > a {
+    width: 100%;
+    height: 100%;
+}
+.check-row .form-item.dropdown > a svg {
+    display: none;
+}
+.check-row .form-item.dropdown .dropdown-menu {
+    top: 0px !important;
+    transform: unset !important;
+    margin: 0px !important;
+}
+.modal-report .modal-header span {
+    font-size: 18px;
+}
+.modal-report .modal-body {
+    padding: 20px;
+}
+.modal-report .modal-header {
+    padding: 20px;
+}
+.week-result_title {
+    font-size: 17px;
+    margin: 30px 0px 20px 0px;
+}
+.week-wrapper_flex p {
+    width: 50%;
+    margin-right: 0px;
+    padding-right: 15px;
+    font-size: 13px;
+}
+.week-result_title svg {
+    width: 26px;
+    height: auto;
+}
+.check-sagatavot {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+    display: flex;
+}
+.report-form_title {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.modal-text {
+    font-size: 16px;
+}
+.files .file-preview,
+.btn-foto {
+    width: 140px;
+    height: 200px;
+}
+.inline-modal {
+    padding: 20px;
+}
+.stream-item .form-item.dropdown {
+    right: 0px;
+}
+.trainer-head > a {
+    top: 0px;
+    position: relative;
+    margin-bottom: 15px;
+}
+.member-contacts {
+    padding: 10px;
+}
+.member-contacts > div {
+    font-size: 14px;
+}
+.member-contacts > div:not(.dropdown) {
+    padding: 12px;
+}
+.result-row {
+    padding: 15px;
+}
+.result-row p:first-child {
+    font-size: 16px;
+}
+
+}
