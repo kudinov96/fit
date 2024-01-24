@@ -22,6 +22,10 @@ class CreateNewUser implements CreatesNewUsers
     {
         $password = Str::password();
 
+        if (config("app.env") === "local") {
+            dump($password);
+        }
+
         /** @var User $user */
         $user = User::create([
             'name' => $input['name'],

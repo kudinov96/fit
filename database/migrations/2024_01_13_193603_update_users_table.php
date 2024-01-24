@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string("role");
             $table->string("phone")->nullable();
             $table->string("language");
-            $table->foreignId("stream_id")->constrained("streams")->nullOnDelete();
+            $table->foreignId("stream_id")->nullable()->constrained("streams")->nullOnDelete();
         });
     }
 

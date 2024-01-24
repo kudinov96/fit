@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\StreamController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FirstQuizController;
 use App\Http\Controllers\MarathonController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionnaireController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\UserController;
@@ -24,7 +26,7 @@ Route::get('/', fn() => view('home'))->name("home");
 Route::post("user/register/endpoint", [UserController::class, "endpoint"]);
 
 // Обычный пользователь
-Route::group(["middleware" => ['auth', 'can.showMarathon']], function() {
+Route::group(["middleware" => ['auth', 'can.showMarathon', 'role:user']], function() {
     Route::get("first-quiz", [FirstQuizController::class, "index"])->name("first_quiz.index");
     Route::get("first-quiz/success", [FirstQuizController::class, "success"])->name("first_quiz.success");
     Route::post("first-quiz", [FirstQuizController::class, "store"])->name("first_quiz.store");
@@ -33,6 +35,18 @@ Route::group(["middleware" => ['auth', 'can.showMarathon']], function() {
 
     Route::get("marathon", [MarathonController::class, "index"])->name("marathon.index");
     Route::get("marathon/before", [MarathonController::class, "before"])->name("marathon.before");
+});
+
+// Админ
+Route::group(["middleware" => ['auth', 'role:admin']], function() {
+    Route::get("streams", [StreamController::class, "index"])->name("stream.index");
+    Route::post("streams", [StreamController::class, "store"])->name("stream.store");
+    Route::put("streams", [StreamController::class, "update"])->name("stream.update");
+});
+
+// Общие
+Route::group(["middleware" => ['auth']], function() {
+    Route::get("profile", [ProfileController::class, "index"])->name("profile.index");
 });
 
 // Переопределяю методы авторизации

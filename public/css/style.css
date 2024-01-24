@@ -163,7 +163,7 @@ ul.profile-menu li:first-child a span {
 ul.profile-menu li:last-child {
     border-bottom: 0px;
 }
-ul.profile-menu li a {
+ul.profile-menu li a, ul.profile-menu li button {
     display: flex;
     align-items: center;
     width: 100%;
@@ -177,9 +177,13 @@ ul.profile-menu li a {
     text-decoration: none;
     padding: 0px 8px;
     transition: all 0.2s ease;
+    border: none;
+    background: none;
 }
 ul.profile-menu li a.active,
-ul.profile-menu li a:hover {
+ul.profile-menu li a:hover,
+ul.profile-menu li button.active,
+ul.profile-menu li button:hover{
     border-radius: 10px;
     background: #F3F3F3;
 }

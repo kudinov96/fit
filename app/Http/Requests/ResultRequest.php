@@ -32,9 +32,9 @@ class ResultRequest extends FormRequest
             "hips" => ["required", "numeric"],
             "hand" => ["required", "numeric"],
             "leg" => ["required", "numeric"],
-            "photo_1" => ["nullable", "image"],
-            "photo_2" => ["nullable", "image"],
-            "photo_3" => ["nullable", "image"],
+            "photo_1" => ["required", "image"],
+            "photo_2" => ["required", "image"],
+            "photo_3" => ["required", "image"],
         ];
     }
 

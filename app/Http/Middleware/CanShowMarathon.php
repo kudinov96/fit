@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Enums\ResultTypeEnum;
+use App\Enums\RoleEnum;
 use App\Models\User;
 use App\Services\StreamService;
 use Closure;
@@ -26,6 +27,10 @@ class CanShowMarathon
         $currentStream = $this->streamService->currentStream();
         $stream = $user->stream;
 
+        if ($user->hasRole(RoleEnum::ADMIN)) {
+            return redirect(route("stream.index"));
+        }
+
         // Если нет ни пройденного потока, ни текущего
         if (!$stream && !$currentStream) {
             abort(404);
@@ -42,13 +47,13 @@ class CanShowMarathon
 
         if (!$firstQuizExists) {
             if (strpos($request->getRequestUri(), "/first-quiz") === false) {
-                return redirect("first-quiz");
+                return redirect(route("first_quiz.index"));
             }
         }
 
         if (!$startResultExists) {
             if (strpos($request->getRequestUri(), "/marathon/before") === false && strpos($request->getRequestUri(), "/first-quiz")) {
-                return redirect("marathon/before");
+                return redirect(route("marathon.before"));
             }
         }
 

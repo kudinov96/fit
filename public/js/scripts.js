@@ -1,6 +1,7 @@
 (function($) {
 
-(() => {
+
+    (() => {
     'use strict'
     const forms = document.querySelectorAll('.needs-validation:not(.settings-form)');
     const forms_settings = document.querySelectorAll('.settings-form');
@@ -257,34 +258,12 @@ $('.accordion .accordion-button').on('click', function(){
     }
 });*/
 
-
 });
-})(jQuery);
 
-document.addEventListener('DOMContentLoaded', function () {
-    var formQuiz = document.querySelector('.quiz-slider_wrapper');
-    var otherRadio = formQuiz.querySelector('input[type="radio"][value="Другое"]');
-    var textArea = formQuiz.querySelector('.other-message textarea');
-    var experienceResult = formQuiz.querySelector('#experience-result');
-
-    // Функция для обновления значения скрытого поля
-    function updateExperienceValue() {
-        if (otherRadio.checked) {
-            experienceResult.value = textArea.value; // Значение из textarea
-        } else {
-            var selectedRadio = formQuiz.querySelector('input[type="radio"][name="experience_options"]:checked');
-            if (selectedRadio) {
-                experienceResult.value = selectedRadio.value; // Значение из радио-кнопки
-            }
-        }
-    }
-
-    // Обработчики событий для радио-кнопок и textarea
-    formQuiz.querySelectorAll('input[type="radio"][name="experience_options"]').forEach(function(radio) {
-        radio.addEventListener('change', updateExperienceValue);
+    $(".update-stream-modal").on('click', function(){
+        let stream_id = $(this).data("id");
+        $('#editModal input[name="stream_id"]').val(stream_id);
+        $('#editModal .modal-title span').text(stream_id);
     });
-    textArea.addEventListener('input', updateExperienceValue);
 
-    // Начальное обновление значения
-    updateExperienceValue();
-});
+})(jQuery);

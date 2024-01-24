@@ -29,4 +29,25 @@ class StreamService
 
         return $currentStream;
     }
+
+    /**
+     * Создать/обновить поток
+     */
+    public function store(array $data, ?Stream $stream = null): Stream
+    {
+        $stream = $stream ?? new Stream();
+        $stream->start_date = $data["start_date"];
+
+        if (isset($data["template_for_start"])) {
+            $stream->template_for_start = $data["template_for_start"]->store("public/streams");
+        }
+
+        if (isset($data["template_for_finish"])) {
+            $stream->template_for_finish = $data["template_for_finish"]->store("public/streams");
+        }
+
+        $stream->save();
+
+        return $stream;
+    }
 }

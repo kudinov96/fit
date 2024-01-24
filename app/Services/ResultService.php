@@ -23,10 +23,9 @@ class ResultService
         $result->hips = $data["hips"];
         $result->hand = $data["hand"];
         $result->leg = $data["leg"];
-        // Положить в storage
-        //$result->photo_1 = $data["photo_1"] ?? null;
-        //$result->photo_2 = $data["photo_2"] ?? null;
-        //$result->photo_3 = $data["photo_3"] ?? null;
+        $result->photo_1 = $data["photo_1"]->store("users/results");
+        $result->photo_2 = $data["photo_2"]->store("users/results");
+        $result->photo_3 = $data["photo_3"]->store("users/results");
 
         $result->save();
 
