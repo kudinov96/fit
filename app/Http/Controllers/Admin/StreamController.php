@@ -29,7 +29,7 @@ class StreamController extends Controller
         $currentStream = $streamService->currentStream();
 
         // Нельзя чтобы было одновременно 2 активных потока
-        if ($currentStream->start_date->addWeeks(6) > Carbon::make($request->input("start_date"))) {
+        if ($currentStream && $currentStream->start_date->addWeeks(6) > Carbon::make($request->input("start_date"))) {
             return response()->redirectToRoute("stream.index")->with("error", "Нельзя активировать сразу 2 потока. Измените дату");
         }
 

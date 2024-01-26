@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\StreamController;
+use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FirstQuizController;
 use App\Http\Controllers\MarathonController;
@@ -42,6 +43,14 @@ Route::group(["middleware" => ['auth', 'role:admin']], function() {
     Route::get("streams", [StreamController::class, "index"])->name("stream.index");
     Route::post("streams", [StreamController::class, "store"])->name("stream.store");
     Route::put("streams", [StreamController::class, "update"])->name("stream.update");
+
+    Route::get("trainings", [TrainingController::class, "index"])->name("training.index");
+    Route::get("trainings/{week}", [TrainingController::class, "indexWeek"])->name("training.index.week");
+    Route::get("trainings/{week}/create", [TrainingController::class, "create"])->name("training.index.create");
+    Route::get("trainings/{training}/edit", [TrainingController::class, "edit"])->name("training.index.edit");
+    Route::post("trainings", [TrainingController::class, "store"])->name("training.store");
+    Route::put("trainings/{training}", [TrainingController::class, "update"])->name("training.update");
+    Route::delete("trainings/{training}", [TrainingController::class, "delete"])->name("training.delete");
 });
 
 // Общие

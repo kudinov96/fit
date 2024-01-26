@@ -1,4 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+.hiddenArea{
+    display: none;
+}
+.editor, .ql-toolbar{
+    background: #fff;
+    color: #000;
+}
+.btn_red{
+    background: red !important;
+    &:hover{
+        background: #fff !important;
+    }
+}
 body {
     font-family: 'Montserrat', sans-serif;
     color: #fff;
@@ -1126,6 +1139,9 @@ body:not(.home) #footer {
 .modal-dialog {
     max-width: 465px;
 }
+.modal-dialog_content{
+    max-width: 768px;
+}
 .modal-header {
     border: 0px;
 }
@@ -1738,6 +1754,12 @@ body:not(.home) #footer {
 }
 .stream-row_completed:before {
     background: url('data:image/svg+xml,<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10.5" cy="10.5" r="10.5" fill="%23EC2383"/><path d="M14.5428 6.37891L8.93819 12.0527L6.56794 9.29249L5 10.8958L8.82925 15.355L16 8.10251L14.5428 6.37891Z" fill="white"/></svg>') center center no-repeat;
+}
+.stream-rows.stream-rows_week .stream-row:before{
+    display: none;
+}
+.stream-rows.stream-rows_training .stream-row:before{
+    display: none;
 }
 .sr-meta {
     margin-right: auto;

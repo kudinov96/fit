@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
     <link href="{{ asset("css/style.css") }}" rel="stylesheet">
     <link href="{{ asset("css/responsive.css") }}" rel="stylesheet">
+    @yield("styles")
 </head>
 
 <body>
@@ -104,5 +105,6 @@
         });
     });
 </script>
+@yield("scripts")
 </body>
 </html>

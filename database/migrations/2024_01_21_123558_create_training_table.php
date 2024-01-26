@@ -26,6 +26,7 @@ return new class extends Migration
             $table->smallInteger("week");
             $table->smallInteger("day");
             $table->string("where");
+            $table->integer("position");
             $table->timestamps();
         });
     }

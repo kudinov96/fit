@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use App\Enums\TrainingWhereEnum;
+use App\Models\Traits\Position;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -23,12 +25,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property int    $week Неделя тренировки (1-6)
  * @property int    $day День тренировки (1-5)
  * @property TrainingWhereEnum $where Где проходит тренировка
+ * @property int    $position Позиция при выдаче
  *
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
 class Training extends Model
 {
+    use Position;
+
     protected $table = "training";
 
     protected $guarded = ["id"];
@@ -36,4 +41,15 @@ class Training extends Model
     protected $casts = [
         "where" => TrainingWhereEnum::class,
     ];
+
+    protected $appends = [
+        "title",
+    ];
+
+    protected function title(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->{"title_" . app()->currentLocale()},
+        );
+    }
 }

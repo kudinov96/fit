@@ -9,12 +9,14 @@
                 <h1>{{ __('потоки марафона') }}</h1>
                 <p>{{ __('У вас пока нет ни одного потока. Вы можете его создать.') }}</p>
                 <p><a data-bs-toggle="modal" data-bs-target="#newModal" class="btn">{{ __('+ Создать поток') }}</a></p>
+                <p><a href="{{ route("training.index") }}" class="btn">{{ __('Тренировки') }}</a></p>
             </div>
         @else
             <div class="container">
                 <h1 class="stream-title">{{ __('потоки марафона') }}</h1>
                 <p style="color: red;">{{ session("error") }}</p>
-                <div class="stream-add"><a data-bs-toggle="modal" data-bs-target="#newModal" class="btn">{{ __('+ Создать поток') }}</a></div>
+                <div class="stream-add"><a href="{{ route("training.index") }}" class="btn">{{ __('Тренировки') }}</a></div>
+                <div class="stream-add" style="margin-top: 0;"><a data-bs-toggle="modal" data-bs-target="#newModal" class="btn">{{ __('+ Создать поток') }}</a></div>
                 <div class="stream-rows">
                     @foreach($streams as $stream)
                         <div class="stream-item">
