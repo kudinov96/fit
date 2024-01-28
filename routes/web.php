@@ -40,6 +40,8 @@ Route::group(["middleware" => ['auth', 'can.showMarathon', 'role:user']], functi
     Route::get("marathon/{week}", [MarathonController::class, "indexWeek"])->where('id', '[0-9]+')->name("marathon.index.week");
 
     Route::get("check-in", [CheckInController::class, "index"])->name("check-in.index");
+    Route::post("check-in", [CheckInController::class, "store"])->name("check-in.store");
+    Route::put("check-in", [CheckInController::class, "update"])->name("check-in.update");
 });
 
 // Админ

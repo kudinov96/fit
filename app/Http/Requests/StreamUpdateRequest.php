@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Stream;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StreamUpdateRequest extends FormRequest
@@ -22,7 +23,7 @@ class StreamUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "stream_id" => ['required', "exists:App\Models\Stream,id"],
+            "stream_id" => ['required', "exists:" . Stream::class . ",id"],
             "start_date" => ["required", "date"],
             "template_for_start" => ["nullable", "file"],
             "template_for_finish" => ["nullable", "file"],

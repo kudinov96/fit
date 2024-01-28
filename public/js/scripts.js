@@ -261,9 +261,37 @@ $('.accordion .accordion-button').on('click', function(){
 });
 
     $(".update-stream-modal").on('click', function(){
-        let stream_id = $(this).data("id");
-        $('#editModal input[name="stream_id"]').val(stream_id);
-        $('#editModal .modal-title span').text(stream_id);
+        let id = $(this).data("id");
+        $('#editModal input[name="stream_id"]').val(id);
+        $('#editModal .modal-title span').text(id);
+    });
+
+    $(".store-check-in-modal-btn").on('click', function(){
+        let week = $(this).data("week");
+        let day = $(this).data("day");
+        $('#storeCheckInModal input[name="week"]').val(week);
+        $('#storeCheckInModal input[name="day"]').val(day);
+    });
+
+    $(".update-check-in-modal-btn").on('click', function(){
+        console.log(333);
+        let id = $(this).data("id");
+        let week = $(this).data("week");
+        let day = $(this).data("day");
+        let training = $(this).data("training");
+        let water = $(this).data("water");
+        let sleep = $(this).data("sleep");
+        let alcohol = $(this).data("alcohol");
+        let nutrition = $(this).data("nutrition");
+
+        $('#editCheckInModal input[name="check_in_id"]').val(id);
+        $('#editCheckInModal input[name="week"]').val(week);
+        $('#editCheckInModal input[name="day"]').val(day);
+        $('#editCheckInModal select[name="training"]').val(training).change();
+        $('#editCheckInModal input[name="water"]').val(water);
+        $('#editCheckInModal input[name="sleep"]').val(sleep);
+        $('#editCheckInModal select[name="alcohol"]').val(alcohol).change();
+        $('#editCheckInModal select[name="nutrition"]').val(nutrition).change();
     });
 
 })(jQuery);

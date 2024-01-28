@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Stream;
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -34,7 +35,7 @@ class UserRegisterRequest extends FormRequest
                 'max:255',
                 Rule::unique(User::class),
             ],
-            'stream_id' => ['required', 'exists:App\Models\Stream,id']
+            'stream_id' => ['required', 'exists:' . Stream::class . ',id']
         ];
     }
 }

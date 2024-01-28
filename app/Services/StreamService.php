@@ -69,9 +69,10 @@ class StreamService
         for ($i = 1; $i <= 7; $i++) {
             $date = $stream->start_date->addWeeks($week - 1)->addDays($i - 1);
             $result[$i]["date"]  = __($date->format("D")) . ", " . $date->format("d.m.y");
-            $result[$i]["items"] = $user->checkIn()
+            $result[$i]["item"] = $user->checkIn()
                 ->where("week", $week)
-                ->get();
+                ->where("day", $i)
+                ->first();
         }
 
         return $result;

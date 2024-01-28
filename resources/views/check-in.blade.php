@@ -8,6 +8,7 @@
             <h1 class="text-center">Check in</h1>
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <x-accordion-week-item :id="1" :title="'Первая неделя'" :week="$weeks['week1']"></x-accordion-week-item>
+                <x-accordion-week-item :id="2" :title="'Вторая неделя'" :week="$weeks['week2']"></x-accordion-week-item>
                 {{--<div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
@@ -186,7 +187,7 @@
                         </div>
                     </div>
                 </div>--}}
-                <div class="accordion-item">
+                {{--<div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                             Вторая неделя
@@ -757,6 +758,121 @@
                             </div>
                         </div>
                     </div>
+                </div>--}}
+            </div>
+        </div>
+    </div>
+
+    <!-- storeCheckInModal  -->
+    <div class="modal modal-report fade" id="storeCheckInModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>Отчёт за день</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="need-validation settings-form" method="POST" action="{{ route("check-in.store") }}" novalidate>
+                        @csrf
+                        @method("POST")
+
+                        <input type="hidden" name="week">
+                        <input type="hidden" name="day">
+
+                        <div class="qs-inputs row">
+                            <div class="col-lg-3">
+                                <label>Тренировка <span>(да/нет)</span></label>
+                                <select name="training" class="form-control form-select">
+                                    <option value="1">Да</option>
+                                    <option value="0">Нет</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <label>Вода <span>(л)</span></label>
+                                <input name="water" type="number" step="0.01" value="" class="form-control" tabindex="0" required>
+                            </div>
+                            <div class="col-lg-3">
+                                <label>Сон <span>(часов)</span></label>
+                                <input name="sleep" type="number" step="0.01" value="" class="form-control" tabindex="0" required>
+                            </div>
+                            <div class="col-lg-3">
+                                <label>Алкоголь <span>(да/нет)</span></label>
+                                <select name="alcohol" class="form-control form-select">
+                                    <option value="0">Нет</option>
+                                    <option value="1">Да</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-5">
+                                <label>Питание <span>(избыточное/норма/недостаточное)</span></label>
+                                <select name="nutrition" class="form-control form-select">
+                                    <option value="Норма">Норма</option>
+                                    <option value="Избыточное">Избыточное</option>
+                                    <option value="Недостаточное">Недостаточное</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="report-action">
+                            <button type="submit" class="btn">Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- editCheckInModal  -->
+    <div class="modal modal-report fade" id="editCheckInModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>Отчёт за день</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="need-validation settings-form" method="POST" action="{{ route("check-in.update") }}" novalidate>
+                        @csrf
+                        @method("PUT")
+
+                        <input type="hidden" name="check_in_id">
+                        <input type="hidden" name="week">
+                        <input type="hidden" name="day">
+
+                        <div class="qs-inputs row">
+                            <div class="col-lg-3">
+                                <label>Тренировка <span>(да/нет)</span></label>
+                                <select name="training" class="form-control form-select">
+                                    <option value="1">Да</option>
+                                    <option value="0">Нет</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <label>Вода <span>(л)</span></label>
+                                <input name="water" type="number" step="0.01" value="" class="form-control" tabindex="0" required>
+                            </div>
+                            <div class="col-lg-3">
+                                <label>Сон <span>(часов)</span></label>
+                                <input name="sleep" type="number" step="0.01" value="" class="form-control" tabindex="0" required>
+                            </div>
+                            <div class="col-lg-3">
+                                <label>Алкоголь <span>(да/нет)</span></label>
+                                <select name="alcohol" class="form-control form-select">
+                                    <option value="0">Нет</option>
+                                    <option value="1">Да</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-5">
+                                <label>Питание <span>(избыточное/норма/недостаточное)</span></label>
+                                <select name="nutrition" class="form-control form-select">
+                                    <option value="Норма">Норма</option>
+                                    <option value="Избыточное">Избыточное</option>
+                                    <option value="Недостаточное">Недостаточное</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="report-action">
+                            <button type="submit" class="btn">Сохранить</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
