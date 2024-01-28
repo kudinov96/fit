@@ -21,6 +21,10 @@ class CanShowMarathon
 
     public function handle(Request $request, Closure $next): Response
     {
+        if ($request->getMethod() !== "GET") {
+            return $next($request);
+        }
+
         /** @var User $user */
         $user = $request->user();
 
@@ -52,8 +56,8 @@ class CanShowMarathon
         }
 
         if (!$startResultExists) {
-            if (strpos($request->getRequestUri(), "/marathon/before") === false && strpos($request->getRequestUri(), "/first-quiz")) {
-                return redirect(route("marathon.before"));
+            if (strpos($request->getRequestUri(), "/results/before") === false && strpos($request->getRequestUri(), "/first-quiz") === false) {
+                return redirect(route("result.before"));
             }
         }
 

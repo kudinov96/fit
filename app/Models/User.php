@@ -86,6 +86,14 @@ class User extends Authenticatable
     }
 
     /**
+     * Check-in опросник
+     */
+    public function checkIn(): HasMany
+    {
+        return $this->hasMany(CheckIn::class, "user_id");
+    }
+
+    /**
      * Имеет ли пользователь указанную роль
      */
     public function hasRole($role): bool

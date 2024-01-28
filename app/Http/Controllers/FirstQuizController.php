@@ -6,7 +6,6 @@ use App\Http\Requests\FirstQuizRequest;
 use App\Models\User;
 use App\Services\FirstQuizService;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class FirstQuizController extends Controller

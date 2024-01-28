@@ -125,3 +125,23 @@
         </div>
     </div>
 @endsection
+
+@section("scripts")
+    <script>
+        $(document).ready(function() {
+            $('#file-1, #file-2').fileinput({
+                showCaption: false,
+                hideThumbnailContent: false,
+                dropZoneEnabled: false,
+                showPreview: true,
+                showUploadedThumbs: true,
+                showUpload: false,
+                showZoom: false,
+                browseLabel: '{{ __("Загрузить") }}',
+                browseClass: 'btn btn-green',
+                removeLabel: '{{ __("Удалить") }}',
+                removeClass: 'd-none'
+            });
+        });
+    </script>
+@endsection

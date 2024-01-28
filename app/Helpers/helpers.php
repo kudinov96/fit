@@ -13,3 +13,10 @@ if (!function_exists("otherLangs")) {
         return $langs;
     }
 }
+
+if (!function_exists("existsWeek")) {
+    function existsWeek() {
+
+    }
+}
+

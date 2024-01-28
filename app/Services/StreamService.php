@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Stream;
+use App\Models\User;
 
 class StreamService
 {
@@ -31,6 +32,14 @@ class StreamService
     }
 
     /**
+     * Получить номер текущей недели потока
+     */
+    public function currentWeekStream(Stream $stream): int
+    {
+        return $stream->start_date->diffInWeeks(now()) + 1;
+    }
+
+    /**
      * Создать/обновить поток
      */
     public function store(array $data, ?Stream $stream = null): Stream
@@ -49,5 +58,22 @@ class StreamService
         $stream->save();
 
         return $stream;
+    }
+
+    /**
+     * Получить дни с датами по неделям
+     */
+    public function daysWithDateByWeek(Stream $stream, int $week, User $user): array
+    {
+        $result = [];
+        for ($i = 1; $i <= 7; $i++) {
+            $date = $stream->start_date->addWeeks($week - 1)->addDays($i - 1);
+            $result[$i]["date"]  = __($date->format("D")) . ", " . $date->format("d.m.y");
+            $result[$i]["items"] = $user->checkIn()
+                ->where("week", $week)
+                ->get();
+        }
+
+        return $result;
     }
 }

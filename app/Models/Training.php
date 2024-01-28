@@ -44,12 +44,28 @@ class Training extends Model
 
     protected $appends = [
         "title",
+        "description",
+        "content",
     ];
 
     protected function title(): Attribute
     {
         return Attribute::make(
             get: fn () => $this->{"title_" . app()->currentLocale()},
+        );
+    }
+
+    protected function description(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->{"description_" . app()->currentLocale()},
+        );
+    }
+
+    protected function content(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->{"content_" . app()->currentLocale()},
         );
     }
 }
