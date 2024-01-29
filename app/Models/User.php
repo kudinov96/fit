@@ -104,4 +104,15 @@ class User extends Authenticatable
 
         return false;
     }
+
+    /**
+     * Получить модель админа
+     */
+    public static function admin(): self
+    {
+        /** @var User $admin */
+        $admin = self::where("role", RoleEnum::ADMIN)->first();
+
+        return $admin;
+    }
 }

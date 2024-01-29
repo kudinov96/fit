@@ -18,16 +18,18 @@ class CheckInController extends Controller
     {
         /** @var User $user */
         $user = auth()->user();
+        $currentWeek = $streamService->currentWeekStream($user->stream);
 
         $weeks = new Collection();
         for ($week = 1; $week <= 6; $week++) {
             $weekItem = new Collection();
 
             $weekItem->put("number", $week);
-            $weekItem->put("reportHasBeenSent", $user->results()
+            $weekItem->put("isCurrent", $week === $currentWeek);
+            $weekItem->put("result", $user->results()
                 ->where("stream_id", $user->stream_id)
                 ->where("type", constant(ResultTypeEnum::class . "::" . "WEEK_" . $week))
-                ->exists());
+                ->first());
             $weekItem->put("nowMoreFriday", now() >= $user->stream->start_date->addWeeks($week - 1)->addDays(5));
 
             $weekItem->put("days", $streamService->daysWithDateByWeek($user->stream, $week, $user));
@@ -36,6 +38,7 @@ class CheckInController extends Controller
         }
 
         return response()->view("check-in", [
+            "stream" => $user->stream,
             "weeks" => $weeks,
         ]);
     }
@@ -47,7 +50,7 @@ class CheckInController extends Controller
 
         $checkInService->store($request->all(), $user);
 
-        return response()->redirectToRoute("check-in.index");
+        return redirect()->to('/check-in?modal=reportThanks');
     }
 
     public function update(CheckInRequest $request, CheckInService $checkInService): RedirectResponse
@@ -58,6 +61,6 @@ class CheckInController extends Controller
 
         $checkInService->store($request->all(), $user, $checkIn);
 
-        return response()->redirectToRoute("check-in.index");
+        return redirect()->to('/check-in?modal=reportThanks');
     }
 }

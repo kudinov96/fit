@@ -23,9 +23,36 @@ class ResultService
         $result->hips = $data["hips"];
         $result->hand = $data["hand"];
         $result->leg = $data["leg"];
-        $result->photo_1 = $data["photo_1"]->store("users/results");
-        $result->photo_2 = $data["photo_2"]->store("users/results");
-        $result->photo_3 = $data["photo_3"]->store("users/results");
+
+        if (isset($data["photo_1"])) {
+            $result->photo_1 = $data["photo_1"]->store("public/results");
+        }
+
+        if (isset($data["photo_2"])) {
+            $result->photo_2 = $data["photo_2"]->store("public/results");
+        }
+
+        if (isset($data["photo_3"])) {
+            $result->photo_3 = $data["photo_3"]->store("public/results");
+        }
+
+        if (isset($data["message_user"])) {
+            $result->message_user = $data["message_user"];
+            $result->message_user_date = now();
+        }
+
+        $result->save();
+
+        return $result;
+    }
+
+    /**
+     * Ответ администратора на результат
+     */
+    public function answerAdmin(Result $result, string $message): Result
+    {
+        $result->message_admin = $message;
+        $result->message_admin_date = now();
 
         $result->save();
 

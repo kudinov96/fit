@@ -1,13 +1,13 @@
-@props(["title", "id", "week"])
+@props(["title", "id", "week", "resultTitle"])
 
 <div class="accordion-item">
     <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-{{ $id }}" aria-expanded="false" aria-controls="flush-collapseOne">
+        <button @class(["accordion-button", "collapsed" => !$week["isCurrent"]]) type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-{{ $id }}" aria-expanded="false" aria-controls="flush-collapseOne">
             {{ $title }}
         </button>
     </h2>
-    <div id="flush-collapse-{{ $id }}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-        <div @class(["accordion-body", "report-send" => $week["reportHasBeenSent"]])>
+    <div id="flush-collapse-{{ $id }}" @class(["accordion-collapse", "collapse", "show" => $week["isCurrent"]]) data-bs-parent="#accordionFlushExample">
+        <div @class(["accordion-body", "report-send" => $week["result"]])>
             <div class="check-head">
                 <div class="row">
                     <div class="col-2"></div>
@@ -64,35 +64,41 @@
                 </div>
             @endforeach
 
-            @if($week["reportHasBeenSent"])
+            @if($week["result"])
                 <div class="week-result_title"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="16" cy="16" r="16" fill="#41BC22"/>
                         <path d="M22.1606 9.7207L13.6202 18.3665L10.0084 14.1604L7.61914 16.6035L13.4542 23.3986L24.381 12.3472L22.1606 9.7207Z" fill="white"/>
-                    </svg> Результаты первой недели</div>
+                    </svg> {{ $resultTitle }}</div>
 
                 <div class="week-wrapper week-wrapper_flex">
-                    <p>Вес: <span>57 кг</span></p>
-                    <p>Грудь: <span>80 см</span></p>
-                    <p>Талия: <span>68 см</span></p>
-                    <p>Бедра: <span>90 см</span></p>
-                    <p>Правая рука: <span>50 см</span></p>
-                    <p>Правая нога: <span>65 см</span></p>
+                    <p>Вес: <span>{{ $week["result"]->weight }} кг</span></p>
+                    <p>Грудь: <span>{{ $week["result"]->breast }} см</span></p>
+                    <p>Талия: <span>{{ $week["result"]->waistline }} см</span></p>
+                    <p>Бедра: <span>{{ $week["result"]->hips }} см</span></p>
+                    <p>Правая рука: <span>{{ $week["result"]->hand }} см</span></p>
+                    <p>Правая нога: <span>{{ $week["result"]->leg }} см</span></p>
                 </div>
 
-                <div class="week-wrapper">
-                    <div class="week-title">Комментарии</div>
-                    <div class="comment">
-                        <div class="comment-name"><span>Виктория Пропоба</span> 23 декабря 13:30</div>
-                        <div class="comment-text">Как часто нужно менять упражнения и тренировки, чтобы организм не привыкал и был результат? Что нельзя делать до и после тренировок? Какой частоты тренировок в неделю нужно придерживаться в идеале? И каков необходимый минимум, чтобы, несмотря ни на что, все-таки увидеть положительный эффект от занятий?</div>
+                @if($week["result"]->message_user || $week["result"]->message_admin)
+                    <div class="week-wrapper">
+                        <div class="week-title">Комментарии</div>
+                        @if($week["result"]->message_user)
+                            <div class="comment">
+                                <div class="comment-name"><span>{{ auth()->user()->name }}</span> <em style="text-transform: lowercase; font-style: normal;">{{ $week["result"]->message_user_date->translatedFormat("d F H:i") }}</em></div>
+                                <div class="comment-text">{{ $week["result"]->message_user }}</div>
+                            </div>
+                        @endif
+                        @if($week["result"]->message_admin)
+                            <div class="comment comment-answer">
+                                <div class="comment-name"><span>{{ \App\Models\User::admin()->name }}</span> <em style="text-transform: lowercase; font-style: normal;">{{ $week["result"]->message_admin_date->translatedFormat("d F H:i") }}</em></div>
+                                <div class="comment-text">{{ $week["result"]->message_admin }}</div>
+                            </div>
+                        @endif
                     </div>
-                    <div class="comment comment-answer">
-                        <div class="comment-name"><span>Патриция FitQoeen</span> 23 декабря 13:30</div>
-                        <div class="comment-text">Как часто нужно менять упражнения и тренировки, чтобы организм не привыкал и был результат? Что нельзя делать до и после тренировок? Какой частоты тренировок в неделю нужно придерживаться в идеале? И каков необходимый минимум, чтобы, несмотря ни на что, все-таки увидеть положительный эффект от занятий?</div>
-                    </div>
-                </div>
+                @endif
             @else
                 <div class="check-sagatavot">
-                    <a @class(["btn", "btn-disabled" => !$week["nowMoreFriday"]]) data-bs-toggle="modal" data-bs-target="#weekModal" data-week="{{ $week["number"] }}">Sagatavot Check In</a>
+                    <a @class(["btn", "btn-disabled" => !$week["nowMoreFriday"]]) @if($week["nowMoreFriday"]) data-bs-toggle="modal" data-bs-target="#{{ $week["number"] === 6 ? "weekModal_six" : "weekModal" }}" data-week="{{ $week["number"] }}" @endif>{{ __("Sagatavot Check In") }}</a>
                 </div>
             @endif
         </div>

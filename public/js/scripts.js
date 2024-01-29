@@ -232,14 +232,14 @@ $('.week-nav_prev_six').on('click', function(){
 });
 
 /* отключаем кнопку */
-$('.check-sagatavot .btn-disabled').removeAttr('data-bs-toggle');
+/*$('.check-sagatavot .btn-disabled').removeAttr('data-bs-toggle');*/
 
 /* оставляем открытым текущий accodion после перезагрузки страницы */
-let selectedCollapse = sessionStorage.getItem('selectedCollapse');
+/*let selectedCollapse = sessionStorage.getItem('selectedCollapse');
   if(selectedCollapse != null) {
     $('.accordion .collapse').removeClass('show');
     $(selectedCollapse).addClass('show');
-}
+}*/
 $('.accordion .accordion-button').on('click', function(){
     let target = $(this).data('bs-target');
     sessionStorage.setItem('selectedCollapse', target);
@@ -274,7 +274,6 @@ $('.accordion .accordion-button').on('click', function(){
     });
 
     $(".update-check-in-modal-btn").on('click', function(){
-        console.log(333);
         let id = $(this).data("id");
         let week = $(this).data("week");
         let day = $(this).data("day");
@@ -292,6 +291,12 @@ $('.accordion .accordion-button').on('click', function(){
         $('#editCheckInModal input[name="sleep"]').val(sleep);
         $('#editCheckInModal select[name="alcohol"]').val(alcohol).change();
         $('#editCheckInModal select[name="nutrition"]').val(nutrition).change();
+    });
+
+    $(".check-sagatavot .btn").on('click', function(){
+        let week = $(this).data("week");
+
+        $('#weekForm input[name="type"]').val("week_" + week);
     });
 
 })(jQuery);

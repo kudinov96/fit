@@ -34,6 +34,7 @@ Route::group(["middleware" => ['auth', 'can.showMarathon', 'role:user']], functi
     Route::post("first-quiz", [FirstQuizController::class, "store"])->name("first_quiz.store");
 
     Route::get("results/before", [ResultController::class, "before"])->name("result.before");
+    Route::get("results", [ResultController::class, "index"])->name("result.index");
     Route::post("results", [ResultController::class, "store"])->name("result.store");
 
     Route::get("marathon", [MarathonController::class, "index"])->name("marathon.index");

@@ -22,6 +22,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $photo_1
  * @property string $photo_2
  * @property string $photo_3
+ * @property string $message_user
+ * @property string $message_admin
+ * @property Carbon $message_user_date
+ * @property Carbon $message_admin_date
  *
  * @property Carbon $created_at
  * @property Carbon $updated_at
@@ -34,5 +38,7 @@ class Result extends Model
 
     protected $casts = [
         "type" => ResultTypeEnum::class,
+        "message_user_date" => "datetime",
+        "message_admin_date" => "datetime",
     ];
 }
