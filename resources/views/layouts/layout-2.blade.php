@@ -20,7 +20,7 @@
 <div id="page">
     <header id="header">
         <div class="container">
-            <a class="navbar-brand">
+            <a href="{{ route("stream.index") }}" class="navbar-brand">
                 <img src="{{ asset("images/logo.svg") }}" width="164" height="27" alt="">
             </a>
             <div class="user-menu">

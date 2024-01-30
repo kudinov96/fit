@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CheckInController;
 use App\Http\Controllers\FirstQuizController;
 use App\Http\Controllers\MarathonController;
+use App\Http\Controllers\MaterialsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\UserController;
@@ -43,6 +44,8 @@ Route::group(["middleware" => ['auth', 'can.showMarathon', 'role:user']], functi
     Route::get("check-in", [CheckInController::class, "index"])->name("check-in.index");
     Route::post("check-in", [CheckInController::class, "store"])->name("check-in.store");
     Route::put("check-in", [CheckInController::class, "update"])->name("check-in.update");
+
+    Route::get("materials", [MaterialsController::class, "index"])->name("materials.index");
 });
 
 // Админ
@@ -63,6 +66,9 @@ Route::group(["middleware" => ['auth', 'role:admin']], function() {
 // Общие
 Route::group(["middleware" => ['auth']], function() {
     Route::get("profile", [ProfileController::class, "index"])->name("profile.index");
+    Route::put("profile", [ProfileController::class, "storeCredentials"])->name("profile.storeCredentials");
+    Route::put("profile/password", [ProfileController::class, "changePassword"])->name("profile.changePassword");
+    Route::put("profile/lang", [ProfileController::class, "changeLang"])->name("profile.changeLang");
 });
 
 // Переопределяю методы авторизации

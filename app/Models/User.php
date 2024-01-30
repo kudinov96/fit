@@ -23,6 +23,8 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $phone
  * @property string $language
  * @property int $stream_id
+ * @property string $menu_file
+ * @property string $menu_name
  *
  * @property Carbon $created_at
  * @property Carbon $updated_at
@@ -96,7 +98,7 @@ class User extends Authenticatable
     /**
      * Имеет ли пользователь указанную роль
      */
-    public function hasRole($role): bool
+    public function hasRole(RoleEnum $role): bool
     {
         if ($this->role === $role) {
             return true;

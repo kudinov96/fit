@@ -14,9 +14,3 @@ if (!function_exists("otherLangs")) {
     }
 }
 
-if (!function_exists("existsWeek")) {
-    function existsWeek() {
-
-    }
-}
-
