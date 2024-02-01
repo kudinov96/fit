@@ -3,8 +3,11 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\DTO\MenuDTO;
+use App\Enums\ResultTypeEnum;
 use App\Enums\RoleEnum;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -25,6 +28,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property int $stream_id
  * @property string $menu_file
  * @property string $menu_name
+ * @property bool $is_custom_menu
  *
  * @property Carbon $created_at
  * @property Carbon $updated_at
@@ -62,6 +66,27 @@ class User extends Authenticatable
         'password' => 'hashed',
         'role' => RoleEnum::class,
     ];
+
+    protected $appends = [
+        "menu",
+    ];
+
+    protected function menu(): Attribute
+    {
+        return Attribute::make(
+            get: function () {
+                $name = null;
+
+                if ($this->is_custom_menu) {
+                    $name = $this->menu_name;
+                }
+
+                $fileSrc = $this->menu_file;
+
+                return new MenuDTO($this->is_custom_menu, $fileSrc, $name);
+            },
+        );
+    }
 
     /**
      * Поток пользователя
@@ -116,5 +141,10 @@ class User extends Authenticatable
         $admin = self::where("role", RoleEnum::ADMIN)->first();
 
         return $admin;
+    }
+
+    public function hasResultsByType(ResultTypeEnum $type): bool
+    {
+        return $this->results()->where("type", $type)->exists();
     }
 }

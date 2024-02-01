@@ -2,15 +2,23 @@
 
 namespace App\Services;
 
+use App\Enums\ResultTypeEnum;
 use App\Models\Result;
-use App\Models\Stream;
 use App\Models\User;
+use Illuminate\Support\Collection;
 
 /**
  * Сервис обработки результатов пользователей
  */
 class ResultService
 {
+    private StreamService $streamService;
+
+    public function __construct(StreamService $streamService)
+    {
+        $this->streamService = $streamService;
+    }
+
     public function store(array $data, User $currentUser): Result
     {
         $result = new Result();
@@ -57,5 +65,29 @@ class ResultService
         $result->save();
 
         return $result;
+    }
+
+    public function weeksWithResults(User $user): Collection
+    {
+        $currentWeek = $this->streamService->currentWeekStream($user->stream);
+
+        $weeks = new Collection();
+        for ($week = 1; $week <= 6; $week++) {
+            $weekItem = new Collection();
+
+            $weekItem->put("number", $week);
+            $weekItem->put("isCurrent", $week === $currentWeek);
+            $weekItem->put("result", $user->results()
+                ->where("stream_id", $user->stream_id)
+                ->where("type", constant(ResultTypeEnum::class . "::" . "WEEK_" . $week))
+                ->first());
+            $weekItem->put("nowMoreFriday", now() >= $user->stream->start_date->addWeeks($week - 1)->addDays(5));
+
+            $weekItem->put("days", $this->streamService->daysWithDateByWeek($user->stream, $week, $user));
+
+            $weeks->put("week" . $week, $weekItem);
+        }
+
+        return $weeks;
     }
 }

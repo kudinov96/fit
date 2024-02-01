@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string("menu_name")->nullable();
             $table->string("menu_file")->nullable();
+            $table->boolean("is_custom_menu")->default(false);
         });
     }
 
@@ -25,6 +26,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn("menu_name");
             $table->dropColumn("menu_file");
+            $table->dropColumn("is_custom_menu");
         });
     }
 };

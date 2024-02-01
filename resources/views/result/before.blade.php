@@ -48,27 +48,27 @@
                         <div class="d-flex">
                             <div>
                                 <label>{{ __("Вес (кг):") }}</label>
-                                <input name="weight" type="number" step="0.01" class="form-control" required>
+                                <input name="weight" type="number" step="1" min="1" class="form-control" required>
                             </div>
                             <div>
                                 <label>{{ __("Грудь (см):") }}</label>
-                                <input name="breast" type="number" step="0.01" class="form-control" required>
+                                <input name="breast" type="number" step="1" min="1" class="form-control" required>
                             </div>
                             <div>
                                 <label>{{ __("Талия (см):") }}</label>
-                                <input name="waistline" type="number" step="0.01" class="form-control" required>
+                                <input name="waistline" type="number" step="1" min="1" class="form-control" required>
                             </div>
                             <div>
                                 <label>{{ __("Бедро (см):") }}</label>
-                                <input name="hips" type="number" step="0.01" class="form-control" required>
+                                <input name="hips" type="number" step="1" min="1" class="form-control" required>
                             </div>
                             <div>
                                 <label>{{ __("Правая рука (см):") }}</label>
-                                <input name="hand" type="number" step="0.01" class="form-control" required>
+                                <input name="hand" type="number" step="1" min="1" class="form-control" required>
                             </div>
                             <div>
                                 <label>{{ __("Правая нога (см):") }}</label>
-                                <input name="leg" type="text" class="form-control" required>
+                                <input name="leg" type="number" step="1" min="1" class="form-control" required>
                             </div>
                         </div>
                     </div>

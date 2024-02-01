@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\StreamController;
 use App\Http\Controllers\Admin\TrainingController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CheckInController;
 use App\Http\Controllers\FirstQuizController;
@@ -9,7 +10,6 @@ use App\Http\Controllers\MarathonController;
 use App\Http\Controllers\MaterialsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResultController;
-use App\Http\Controllers\UserController;
 use App\Services\StreamService;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +51,7 @@ Route::group(["middleware" => ['auth', 'can.showMarathon', 'role:user']], functi
 // Админ
 Route::group(["middleware" => ['auth', 'role:admin']], function() {
     Route::get("streams", [StreamController::class, "index"])->name("stream.index");
+    Route::get("streams/{item}", [StreamController::class, "view"])->name("stream.view");
     Route::post("streams", [StreamController::class, "store"])->name("stream.store");
     Route::put("streams", [StreamController::class, "update"])->name("stream.update");
 
@@ -61,6 +62,12 @@ Route::group(["middleware" => ['auth', 'role:admin']], function() {
     Route::post("trainings", [TrainingController::class, "store"])->name("training.store");
     Route::put("trainings/{training}", [TrainingController::class, "update"])->name("training.update");
     Route::delete("trainings/{training}", [TrainingController::class, "delete"])->name("training.delete");
+
+    Route::get("user/{user}/view", [UserController::class, "view"])->name("user.view");
+    Route::post("user", [UserController::class, "store"])->name("user.store");
+    Route::delete("user", [UserController::class, "delete"])->name("user.delete");
+    Route::put("user/answer-admin", [UserController::class, "answerAdmin"])->name("user.answerAdmin");
+    Route::put("user/{user}", [UserController::class, "updateMenu"])->name("user.update.menu");
 });
 
 // Общие

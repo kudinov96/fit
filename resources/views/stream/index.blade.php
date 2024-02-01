@@ -20,7 +20,7 @@
                 <div class="stream-rows">
                     @foreach($streams as $stream)
                         <div class="stream-item">
-                            <a href="#" @class([
+                            <a href="{{ route("stream.view", ["item" => $stream]) }}" @class([
                                 "stream-row",
                                 "stream-row_wait" => $stream->status === __("ждет старта"),
                                 "stream-row_started" => $stream->status === __("активный"),

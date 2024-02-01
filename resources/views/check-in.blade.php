@@ -43,11 +43,11 @@
                             </div>
                             <div class="col-lg-3">
                                 <label>Вода <span>(л)</span></label>
-                                <input name="water" type="number" step="0.01" value="" class="form-control" tabindex="0" required>
+                                <input name="water" type="number" step="0.5" min="0" value="" class="form-control" tabindex="0" required>
                             </div>
                             <div class="col-lg-3">
                                 <label>Сон <span>(часов)</span></label>
-                                <input name="sleep" type="number" step="0.01" value="" class="form-control" tabindex="0" required>
+                                <input name="sleep" type="number" step="0.5" min="0" value="" class="form-control" tabindex="0" required>
                             </div>
                             <div class="col-lg-3">
                                 <label>Алкоголь <span>(да/нет)</span></label>
@@ -101,11 +101,11 @@
                             </div>
                             <div class="col-lg-3">
                                 <label>Вода <span>(л)</span></label>
-                                <input name="water" type="number" step="0.01" value="" class="form-control" tabindex="0" required>
+                                <input name="water" type="number" step="0.5" min="0" value="" class="form-control" tabindex="0" required>
                             </div>
                             <div class="col-lg-3">
                                 <label>Сон <span>(часов)</span></label>
-                                <input name="sleep" type="number" step="0.01" value="" class="form-control" tabindex="0" required>
+                                <input name="sleep" type="number" step="0.5" min="0" value="" class="form-control" tabindex="0" required>
                             </div>
                             <div class="col-lg-3">
                                 <label>Алкоголь <span>(да/нет)</span></label>

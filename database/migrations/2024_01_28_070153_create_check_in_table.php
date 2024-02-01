@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId("user_id")->constrained("users")->cascadeOnDelete();
             $table->foreignId("stream_id")->constrained("streams")->cascadeOnDelete();
             $table->boolean("training");
-            $table->smallInteger("water");
-            $table->smallInteger("sleep");
+            $table->float("water");
+            $table->float("sleep");
             $table->string("nutrition");
             $table->boolean("alcohol");
             $table->smallInteger("week");

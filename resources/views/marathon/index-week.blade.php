@@ -110,7 +110,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-type1_day2" role="tabpanel" aria-labelledby="pills-type1_day2-tab" tabindex="0">
-                                <div class="day-name">2. ДЕНЬ</div>
+                                <div class="day-name">2. ДЕНЬ - Leg day</div>
                                 <div class="video-list row">
                                     @foreach($trainingsHome["day2"] as $item)
                                         <x-video-item :item="$item"></x-video-item>
@@ -124,7 +124,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-type1_day4" role="tabpanel" aria-labelledby="pills-type1_day4-tab" tabindex="0">
-                                <div class="day-name">4. ДЕНЬ</div>
+                                <div class="day-name">4. ДЕНЬ - Upper body</div>
                                 <div class="video-list row">
                                     @foreach($trainingsHome["day4"] as $item)
                                         <x-video-item :item="$item"></x-video-item>
@@ -132,7 +132,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-type1_day5" role="tabpanel" aria-labelledby="pills-type1_day5-tab" tabindex="0">
-                                <div class="day-name">5. ДЕНЬ</div>
+                                <div class="day-name">5. ДЕНЬ - Booty day</div>
                                 <div class="video-list row">
                                     @foreach($trainingsHome["day5"] as $item)
                                         <x-video-item :item="$item"></x-video-item>
@@ -169,7 +169,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-type2_day2" role="tabpanel" aria-labelledby="pills-type2_day2-tab" tabindex="0">
-                                <div class="day-name">2. ДЕНЬ</div>
+                                <div class="day-name">2. ДЕНЬ - Leg day</div>
                                 <div class="video-list row">
                                     @foreach($trainingsGym["day2"] as $item)
                                         <x-video-item :item="$item"></x-video-item>
@@ -183,7 +183,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-type2_day4" role="tabpanel" aria-labelledby="pills-type2_day4-tab" tabindex="0">
-                                <div class="day-name">4. ДЕНЬ</div>
+                                <div class="day-name">4. ДЕНЬ - Upper body</div>
                                 <div class="video-list row">
                                     @foreach($trainingsGym["day4"] as $item)
                                         <x-video-item :item="$item"></x-video-item>
@@ -191,7 +191,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-type2_day5" role="tabpanel" aria-labelledby="pills-type2_day5-tab" tabindex="0">
-                                <div class="day-name">5. ДЕНЬ</div>
+                                <div class="day-name">5. ДЕНЬ - Booty day</div>
                                 <div class="video-list row">
                                     @foreach($trainingsGym["day5"] as $item)
                                         <x-video-item :item="$item"></x-video-item>
@@ -204,15 +204,6 @@
                 <div class="check-in_link">
                     <a href="{{ route("check-in.index") }}" class="btn">отправить Check In</a>
                 </div>
-                <!--<div class="report-wrapper">
-                    <div class="report-text">
-                        <p>Отчет по 1-й неделе</p>
-                        <p>Отчет будет доступен для заполнения с пятницы по воскресенье</p>
-                    </div>
-                    <div class="report-btn">
-                        <a class="btn btn-disabled">Заполнить отчет</a>
-                    </div>
-                </div>-->
             </div>
         </div>
     </div>

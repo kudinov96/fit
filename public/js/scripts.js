@@ -299,4 +299,10 @@ $('.accordion .accordion-button').on('click', function(){
         $('#weekForm input[name="type"]').val("week_" + week);
     });
 
+    $(".remove-user").on('click', function(){
+        let userId = $(this).data("user-id");
+
+        $('#delete-user-form input[name="user_id"]').val(userId);
+    });
+
 })(jQuery);
