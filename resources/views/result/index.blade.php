@@ -9,12 +9,12 @@
                 <div class="result-box">
                     <div class="result-head">
                         <a class="edit-link"></a>
-                        <span>Стартовые данные <em>(до)</em></span>
+                        <span>{{ __('Стартовые данные') }} <em>({{ __('до') }})</em></span>
                     </div>
                     <div class="row">
                         <div class="col-lg-6 stat-start">
                             <div>
-                                <p>Вес: <span>{{ $resultStart->weight }} кг</span></p>
+                                <p>{{ __('Вес') }}: <span>{{ $resultStart->weight }} кг</span></p>
                                 <p>Грудь: <span>{{ $resultStart->breast }} см</span></p>
                                 <p>Талия: <span>{{ $resultStart->waistline }} см</span></p>
                                 <p>Бедра: <span>{{ $resultStart->hips }} см</span></p>
