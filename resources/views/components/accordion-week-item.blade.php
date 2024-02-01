@@ -17,17 +17,17 @@
                     </svg> {{ $resultTitle }}</div>
 
                 <div class="week-wrapper week-wrapper_flex">
-                    <p>Вес: <span>{{ $week["result"]->weight }} кг</span></p>
-                    <p>Грудь: <span>{{ $week["result"]->breast }} см</span></p>
-                    <p>Талия: <span>{{ $week["result"]->waistline }} см</span></p>
-                    <p>Бедра: <span>{{ $week["result"]->hips }} см</span></p>
-                    <p>Правая рука: <span>{{ $week["result"]->hand }} см</span></p>
-                    <p>Правая нога: <span>{{ $week["result"]->leg }} см</span></p>
+                    <p>Вес: <span>{{ $week["result"]->weight }} {{ __("кг") }}</span></p>
+                    <p>Грудь: <span>{{ $week["result"]->breast }} {{ __("см") }}</span></p>
+                    <p>Талия: <span>{{ $week["result"]->waistline }} {{ __("см") }}</span></p>
+                    <p>Бедра: <span>{{ $week["result"]->hips }} {{ __("см") }}</span></p>
+                    <p>Правая рука: <span>{{ $week["result"]->hand }} {{ __("см") }}</span></p>
+                    <p>Правая нога: <span>{{ $week["result"]->leg }} {{ __("см") }}</span></p>
                 </div>
 
                 @if($week["result"]->message_user || $week["result"]->message_admin)
                     <div class="week-wrapper">
-                        <div class="week-title">Комментарии</div>
+                        <div class="week-title">{{ __("Комментарии") }}</div>
                         @if($week["result"] && $week["result"]->message_user)
                             <div class="comment">
                                 <div class="comment-name"><span>{{ auth()->user()->name }}</span> <em style="text-transform: lowercase; font-style: normal;">{{ $week["result"]->message_user_date->translatedFormat("d F H:i") }}</em></div>

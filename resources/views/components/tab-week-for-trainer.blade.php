@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-6 stat-start">
                     <div>
-                        <p>Вес: <span>{{ $week['result']->weight }} кг</span></p>
+                        <p>{{ __('Вес') }}: <span>{{ $week['result']->weight }} кг</span></p>
                         <p>Грудь: <span>{{ $week['result']->breast }} см</span></p>
                         <p>Талия: <span>{{ $week['result']->waistline }} см</span></p>
                         <p>Бедра: <span>{{ $week['result']->hips }} см</span></p>

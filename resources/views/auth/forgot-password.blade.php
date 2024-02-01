@@ -37,7 +37,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="modal-title">{{ __('Мы отправили ссылку на вашу почту:') }}</div>
-                        <div class="modal-mail">anna.flowe@gmail.com</div>
+                        <div class="modal-mail">{{ request()->email }}</div>
                         <div class="modal-noty">{{ __('Если вы не получили электронное письмо в течение 5 минут, проверьте папку «Спам».') }}</div>
                     </div>
                 </div>
