@@ -43,7 +43,7 @@
                             <p>Согласно данным из анкеты мы подготовили план питания, рассчитанный на снижение веса. Создаем дефицит калорий 10% и рекомендуем отказаться от алкоголя полностью на время проекта.</p>
                             <p>Корректировать свой план питания ты можешь с помощью блюд из "Книги рецептов".</p>
                         </div>
-                        <div class="d-flex"><a href="{{ $user->menu->isCustom ? \Storage::url($user->menu_file) : asset("menus/" . $user->menu_file . "_" . app()->currentLocale() . ".pdf") }}" download class="btn btn-green">Скачать</a></div>
+                        <div class="d-flex"><a href="{{ $user->menu->isCustom ? \Storage::url($user->menu_file) : asset("menus/" . app()->currentLocale() . "/" . $user->menu_file . ".pdf") }}" download class="btn btn-green">Скачать</a></div>
                     </div>
                 </div>
             </div>

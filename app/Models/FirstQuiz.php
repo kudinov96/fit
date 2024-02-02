@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $height Рост
  * @property int $weight Вес
  * @property int $target Цель похудения
- * @property int $menu Вариант меню
+ * @property string $menu Вариант меню
  * @property string $nutritional_supplements Добавки и лекарства
  * @property string $health_problems Проблемы со здоровьем
  * @property string $experience Опыт тренировок
