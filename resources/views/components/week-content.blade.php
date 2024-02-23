@@ -18,10 +18,10 @@
                     <span><em>{{ $day["date"] }}</em></span>
                 </div>
                 @if($day["item"])
-                    <div class="col-2">{{ $day["item"]->training ? "Да" : "Нет" }}</div>
+                    <div class="col-2">{{ $day["item"]->training ? __('Да') : __('Нет') }}</div>
                     <div class="col-2">{{ $day["item"]->water }}</div>
                     <div class="col-2">{{ $day["item"]->sleep }}</div>
-                    <div class="col-2">{{ $day["item"]->alcohol ? "Да" : "Нет" }}</div>
+                    <div class="col-2">{{ $day["item"]->alcohol ? __('Да') : __('Нет') }}</div>
                     <div class="col-2">{{ $day["item"]->nutrition }}</div>
                 @elseif(!$isTrainerPage)
                     <div class="col-10">
