@@ -11,12 +11,12 @@
             <div class="row">
                 <div class="col-lg-6 stat-start">
                     <div>
-                        <p>{{ __('Вес') }}: <span>{{ $week['result']->weight }} кг</span></p>
-                        <p>Грудь: <span>{{ $week['result']->breast }} см</span></p>
-                        <p>Талия: <span>{{ $week['result']->waistline }} см</span></p>
-                        <p>Бедра: <span>{{ $week['result']->hips }} см</span></p>
-                        <p>Правая рука: <span>{{ $week['result']->hand }} см</span></p>
-                        <p>Правая нога: <span>{{ $week['result']->leg }} см</span></p>
+                        <p>{{ __('Вес') }}: <span>{{ $week['result']->weight }} {{ __('кг') }}</span></p>
+                        <p>{{ __('Грудь') }}: <span>{{ $week['result']->breast }} {{ __('см') }}</span></p>
+                        <p>{{ __('Талия') }}: <span>{{ $week['result']->waistline }} {{ __('см') }}</span></p>
+                        <p>{{ __('Бедра') }}: <span>{{ $week['result']->hips }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая рука') }}: <span>{{ $week['result']->hand }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая нога') }}: <span>{{ $week['result']->leg }} {{ __('см') }}</span></p>
                     </div>
                 </div>
                 @if($week['number'] === 6)
@@ -32,7 +32,7 @@
 
     @if($week["result"])
         <div class="week-wrapper">
-            <div class="week-title">Комментарии</div>
+            <div class="week-title">{{ __('Комментарии') }}</div>
             @if($week["result"] && $week["result"]->message_user)
                 <div class="comment">
                     <div class="comment-name"><span>{{ $user->name }}</span> <em style="text-transform: lowercase; font-style: normal;">{{ $week["result"]->message_user_date->translatedFormat("d F H:i") }}</em></div>
@@ -56,11 +56,11 @@
                         <div class="form-item">
                             <textarea name="message" value="" class="form-control" required></textarea>
                             <div class="invalid-feedback">
-                                Введите комментарий
+                                {{ __('Введите комментарий') }}
                             </div>
                         </div>
                         <div class="form-action d-flex justify-content-end">
-                            <button type="submit" class="btn">Отправить</button>
+                            <button type="submit" class="btn">{{ __('Отправить') }}</button>
                         </div>
                     </form>
                 </div>

@@ -14,12 +14,12 @@
                     <div class="row">
                         <div class="col-lg-6 stat-start">
                             <div>
-                                <p>{{ __('Вес') }}: <span>{{ $resultStart->weight }} кг</span></p>
-                                <p>Грудь: <span>{{ $resultStart->breast }} см</span></p>
-                                <p>Талия: <span>{{ $resultStart->waistline }} см</span></p>
-                                <p>Бедра: <span>{{ $resultStart->hips }} см</span></p>
-                                <p>Правая рука: <span>{{ $resultStart->hand }} см</span></p>
-                                <p>Правая нога: <span>{{ $resultStart->leg }} см</span></p>
+                                <p>{{ __('Вес') }}: <span>{{ $resultStart->weight }} {{ __('кг') }}</span></p>
+                                <p>{{ __('Грудь') }}: <span>{{ $resultStart->breast }} {{ __('см') }}</span></p>
+                                <p>{{ __('Талия') }}: <span>{{ $resultStart->waistline }} {{ __('см') }}</span></p>
+                                <p>{{ __('Бедра') }}: <span>{{ $resultStart->hips }} {{ __('см') }}</span></p>
+                                <p>{{ __('Правая рука') }}: <span>{{ $resultStart->hand }} {{ __('см') }}</span></p>
+                                <p>{{ __('Правая нога') }}: <span>{{ $resultStart->leg }} {{ __('см') }}</span></p>
                             </div>
                         </div>
                         <div class="col-lg-6 stat-pics">
@@ -35,15 +35,15 @@
                 <div class="result-box">
                     <div class="result-head">
                         <a class="edit-link"></a>
-                        <span>Результаты первой недели</span>
+                        <span>{{ __('Результаты первой недели') }}</span>
                     </div>
                     <div class="result-wrapper">
-                        <p>Вес: <span>{{ $resultWeek1->weight }} кг</span></p>
-                        <p>Грудь: <span>{{ $resultWeek1->breast }} см</span></p>
-                        <p>Талия: <span>{{ $resultWeek1->waistline }} см</span></p>
-                        <p>Бедра: <span>{{ $resultWeek1->hips }} см</span></p>
-                        <p>Правая рука: <span>{{ $resultWeek1->hand }} см</span></p>
-                        <p>Правая нога: <span>{{ $resultWeek1->leg }} см</span></p>
+                        <p>{{ __('Вес') }}: <span>{{ $resultWeek1->weight }} {{ __('кг') }}</span></p>
+                        <p>{{ __('Грудь') }}: <span>{{ $resultWeek1->breast }} {{ __('см') }}</span></p>
+                        <p>{{ __('Талия') }}: <span>{{ $resultWeek1->waistline }} {{ __('см') }}</span></p>
+                        <p>{{ __('Бедра') }}: <span>{{ $resultWeek1->hips }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая рука') }}: <span>{{ $resultWeek1->hand }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая нога') }}: <span>{{ $resultWeek1->leg }} {{ __('см') }}</span></p>
                     </div>
                 </div>
             @endif
@@ -52,15 +52,15 @@
                 <div class="result-box">
                     <div class="result-head">
                         <a class="edit-link"></a>
-                        <span>Результаты второй недели</span>
+                        <span>{{ __('Результаты второй недели') }}</span>
                     </div>
                     <div class="result-wrapper">
-                        <p>Вес: <span>{{ $resultWeek2->weight }} кг</span></p>
-                        <p>Грудь: <span>{{ $resultWeek2->breast }} см</span></p>
-                        <p>Талия: <span>{{ $resultWeek2->waistline }} см</span></p>
-                        <p>Бедра: <span>{{ $resultWeek2->hips }} см</span></p>
-                        <p>Правая рука: <span>{{ $resultWeek2->hand }} см</span></p>
-                        <p>Правая нога: <span>{{ $resultWeek2->leg }} см</span></p>
+                        <p>{{ __('Вес') }}: <span>{{ $resultWeek2->weight }} {{ __('кг') }}</span></p>
+                        <p>{{ __('Грудь') }}: <span>{{ $resultWeek2->breast }} {{ __('см') }}</span></p>
+                        <p>{{ __('Талия') }}: <span>{{ $resultWeek2->waistline }} {{ __('см') }}</span></p>
+                        <p>{{ __('Бедра') }}: <span>{{ $resultWeek2->hips }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая рука') }}: <span>{{ $resultWeek2->hand }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая нога') }}: <span>{{ $resultWeek2->leg }} {{ __('см') }}</span></p>
                     </div>
                 </div>
             @endif
@@ -69,15 +69,15 @@
                 <div class="result-box">
                     <div class="result-head">
                         <a class="edit-link"></a>
-                        <span>Результаты третей недели</span>
+                        <span>{{ __('Результаты третей недели') }}</span>
                     </div>
                     <div class="result-wrapper">
-                        <p>Вес: <span>{{ $resultWeek3->weight }} кг</span></p>
-                        <p>Грудь: <span>{{ $resultWeek3->breast }} см</span></p>
-                        <p>Талия: <span>{{ $resultWeek3->waistline }} см</span></p>
-                        <p>Бедра: <span>{{ $resultWeek3->hips }} см</span></p>
-                        <p>Правая рука: <span>{{ $resultWeek3->hand }} см</span></p>
-                        <p>Правая нога: <span>{{ $resultWeek3->leg }} см</span></p>
+                        <p>{{ __('Вес') }}: <span>{{ $resultWeek3->weight }} {{ __('кг') }}</span></p>
+                        <p>{{ __('Грудь') }}: <span>{{ $resultWeek3->breast }} {{ __('см') }}</span></p>
+                        <p>{{ __('Талия') }}: <span>{{ $resultWeek3->waistline }} {{ __('см') }}</span></p>
+                        <p>{{ __('Бедра') }}: <span>{{ $resultWeek3->hips }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая рука') }}: <span>{{ $resultWeek3->hand }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая нога') }}: <span>{{ $resultWeek3->leg }} {{ __('см') }}</span></p>
                     </div>
                 </div>
             @endif
@@ -86,15 +86,15 @@
                 <div class="result-box">
                     <div class="result-head">
                         <a class="edit-link"></a>
-                        <span>Результаты четвертой недели</span>
+                        <span>{{ __('Результаты четвертой недели') }}</span>
                     </div>
                     <div class="result-wrapper">
-                        <p>Вес: <span>{{ $resultWeek4->weight }} кг</span></p>
-                        <p>Грудь: <span>{{ $resultWeek4->breast }} см</span></p>
-                        <p>Талия: <span>{{ $resultWeek4->waistline }} см</span></p>
-                        <p>Бедра: <span>{{ $resultWeek4->hips }} см</span></p>
-                        <p>Правая рука: <span>{{ $resultWeek4->hand }} см</span></p>
-                        <p>Правая нога: <span>{{ $resultWeek4->leg }} см</span></p>
+                        <p>{{ __('Вес') }}: <span>{{ $resultWeek4->weight }} {{ __('кг') }}</span></p>
+                        <p>{{ __('Грудь') }}: <span>{{ $resultWeek4->breast }} {{ __('см') }}</span></p>
+                        <p>{{ __('Талия') }}: <span>{{ $resultWeek4->waistline }} {{ __('см') }}</span></p>
+                        <p>{{ __('Бедра') }}: <span>{{ $resultWeek4->hips }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая рука') }}: <span>{{ $resultWeek4->hand }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая нога') }}: <span>{{ $resultWeek4->leg }} {{ __('см') }}</span></p>
                     </div>
                 </div>
             @endif
@@ -103,15 +103,15 @@
                 <div class="result-box">
                     <div class="result-head">
                         <a class="edit-link"></a>
-                        <span>Результаты пятой недели</span>
+                        <span>{{ __('Результаты пятой недели') }}</span>
                     </div>
                     <div class="result-wrapper">
-                        <p>Вес: <span>{{ $resultWeek5->weight }} кг</span></p>
-                        <p>Грудь: <span>{{ $resultWeek5->breast }} см</span></p>
-                        <p>Талия: <span>{{ $resultWeek5->waistline }} см</span></p>
-                        <p>Бедра: <span>{{ $resultWeek5->hips }} см</span></p>
-                        <p>Правая рука: <span>{{ $resultWeek5->hand }} см</span></p>
-                        <p>Правая нога: <span>{{ $resultWeek5->leg }} см</span></p>
+                        <p>{{ __('Вес') }}: <span>{{ $resultWeek5->weight }} {{ __('кг') }}</span></p>
+                        <p>{{ __('Грудь') }}: <span>{{ $resultWeek5->breast }} {{ __('см') }}</span></p>
+                        <p>{{ __('Талия') }}: <span>{{ $resultWeek5->waistline }} {{ __('см') }}</span></p>
+                        <p>{{ __('Бедра') }}: <span>{{ $resultWeek5->hips }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая рука') }}: <span>{{ $resultWeek5->hand }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая нога') }}: <span>{{ $resultWeek5->leg }} {{ __('см') }}</span></p>
                     </div>
                 </div>
             @endif
@@ -120,15 +120,15 @@
                 <div class="result-box">
                     <div class="result-head">
                         <a class="edit-link"></a>
-                        <span>Результаты шестой недели</span>
+                        <span>{{ __('Результаты шестой недели') }}</span>
                     </div>
                     <div class="result-wrapper">
-                        <p>Вес: <span>{{ $resultWeek6->weight }} кг</span></p>
-                        <p>Грудь: <span>{{ $resultWeek6->breast }} см</span></p>
-                        <p>Талия: <span>{{ $resultWeek6->waistline }} см</span></p>
-                        <p>Бедра: <span>{{ $resultWeek6->hips }} см</span></p>
-                        <p>Правая рука: <span>{{ $resultWeek6->hand }} см</span></p>
-                        <p>Правая нога: <span>{{ $resultWeek6->leg }} см</span></p>
+                        <p>{{ __('Вес') }}: <span>{{ $resultWeek6->weight }} {{ __('кг') }}</span></p>
+                        <p>{{ __('Грудь') }}: <span>{{ $resultWeek6->breast }} {{ __('см') }}</span></p>
+                        <p>{{ __('Талия') }}: <span>{{ $resultWeek6->waistline }} {{ __('см') }}</span></p>
+                        <p>{{ __('Бедра') }}: <span>{{ $resultWeek6->hips }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая рука') }}: <span>{{ $resultWeek6->hand }} {{ __('см') }}</span></p>
+                        <p>{{ __('Правая нога') }}: <span>{{ $resultWeek6->leg }} {{ __('см') }}</span></p>
                     </div>
                 </div>
             @endif
@@ -137,17 +137,17 @@
                 <div class="result-box">
                     <div class="result-head">
                         <a class="edit-link"></a>
-                        <span>Финишные данные <em>(после)</em></span>
+                        <span>{{ __('Финишные данные') }} <em>{{ __('(после)') }}</em></span>
                     </div>
                     <div class="row">
                         <div class="col-lg-6 stat-start">
                             <div>
-                                <p>Вес: <span>{{ $resultWeek6->weight }} кг</span></p>
-                                <p>Грудь: <span>{{ $resultWeek6->breast }} см</span></p>
-                                <p>Талия: <span>{{ $resultWeek6->waistline }} см</span></p>
-                                <p>Бедра: <span>{{ $resultWeek6->hips }} см</span></p>
-                                <p>Правая рука: <span>{{ $resultWeek6->hand }} см</span></p>
-                                <p>Правая нога: <span>{{ $resultWeek6->leg }} см</span></p>
+                                <p>{{ __('Вес') }}: <span>{{ $resultWeek6->weight }} {{ __('кг') }}</span></p>
+                                <p>{{ __('Грудь') }}: <span>{{ $resultWeek6->breast }} {{ __('см') }}</span></p>
+                                <p>{{ __('Талия') }}: <span>{{ $resultWeek6->waistline }} {{ __('см') }}</span></p>
+                                <p>{{ __('Бедра') }}: <span>{{ $resultWeek6->hips }} {{ __('см') }}</span></p>
+                                <p>{{ __('Правая рука') }}: <span>{{ $resultWeek6->hand }} {{ __('см') }}</span></p>
+                                <p>{{ __('Правая нога') }}: <span>{{ $resultWeek6->leg }} {{ __('см') }}</span></p>
                             </div>
                         </div>
                         <div class="col-lg-6 stat-pics">

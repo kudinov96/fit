@@ -18,7 +18,7 @@
                         @if($currentStream)
                             <a href="#" class="btn">{{ __('К оплате') }}</a>
                         @else
-                            <a data-bs-toggle="modal" data-bs-target="#payModal" class="btn btn-disabled">К оплате</a>
+                            <a data-bs-toggle="modal" data-bs-target="#payModal" class="btn btn-disabled">{{ __('К оплате') }}</a>
                         @endif
                         <a href="{{ route('login') }}" class="btn btn-white">{{ __('Войти') }}</a>
                     </div>

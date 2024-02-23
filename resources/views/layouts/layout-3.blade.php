@@ -40,7 +40,7 @@
                                 <img src="{{ asset("images/user-pic.svg") }}" alt="">
                                 <div>{{ auth()->user()->name }} <span>{{ auth()->user()->email }}</span></div>
                             </a></li>
-                        <li><a href="{{ route("profile.index") }}" class="link-icon link-settings">{{ __("Настройки профайла") }}</a></li>
+                        <li><a href="{{ route("profile.index") }}" class="link-icon link-settings">{{ __("Настройки профиля") }}</a></li>
                         <li>
                             <form action="{{ route("logout") }}" method="POST">
                                 @csrf
@@ -68,7 +68,7 @@
                                 <img src="{{ asset("images/user-pic.svg") }}" alt="">
                                 <div>{{ auth()->user()->name }} <span>{{ auth()->user()->email }}</span></div>
                             </a></li>
-                        <li><a href="{{ route("profile.index") }}" class="link-icon link-settings">{{ __("Настройки профайла") }}</a></li>
+                        <li><a href="{{ route("profile.index") }}" class="link-icon link-settings">{{ __("Настройки профиля") }}</a></li>
                         <li><a href="{{ route("materials.index") }}" class="link-icon link-video">{{ __("Материалы для марафона") }}</a></li>
                         <li><a href="{{ route("result.index") }}">{{ __("Мои результаты") }}</a></li>
                         <li>

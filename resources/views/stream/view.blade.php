@@ -5,21 +5,21 @@
 @section("content")
     <div id="main-content">
         <div class="container">
-            <h1 class="stream-title">Поток от {{ $stream->start_date->format("d.m.y") }} <span>({{ $stream->status }})</span></h1>
-            <div class="stream-add"><a data-bs-toggle="modal" data-bs-target="#memberModal" class="btn">+ Добавить участника</a></div>
+            <h1 class="stream-title">{{ __('Поток от') }} {{ $stream->start_date->format("d.m.y") }} <span>({{ $stream->status }})</span></h1>
+            <div class="stream-add"><a data-bs-toggle="modal" data-bs-target="#memberModal" class="btn">{{ __('+ Добавить участника') }}</a></div>
             <div class="stream-table">
                 <div class="table-responsive">
                     <table class="table table-dark">
                         <thead>
                         <tr>
-                            <th scope="col">Имя, фамилия</th>
-                            <th scope="col">Возраст</th>
-                            <th scope="col">1 - ая неделя<br> чекин</th>
-                            <th scope="col">2 - ая неделя<br> чекин</th>
-                            <th scope="col">3 - ая неделя<br> чекин</th>
-                            <th scope="col">4 - ая неделя<br> чекин</th>
-                            <th scope="col">5 - ая неделя<br> чекин</th>
-                            <th scope="col">6 - ая неделя<br> чекин</th>
+                            <th scope="col">{{ __('Имя, фамилия') }}</th>
+                            <th scope="col">{{ __('Возраст') }}</th>
+                            <th scope="col">{{ __('1-ая неделя') }}<br> {{ __('чекин') }}</th>
+                            <th scope="col">{{ __('2-ая неделя') }}<br> {{ __('чекин') }}</th>
+                            <th scope="col">{{ __('3-яя неделя') }}<br> {{ __('чекин') }}</th>
+                            <th scope="col">{{ __('4-ая неделя') }}<br> {{ __('чекин') }}</th>
+                            <th scope="col">{{ __('5-ая неделя') }}<br> {{ __('чекин') }}</th>
+                            <th scope="col">{{ __('6-ая неделя') }}<br> {{ __('чекин') }}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -41,14 +41,14 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th scope="col">Итого: {{ $users->count() }}</th>
+                                <th scope="col">{{ __('Итого') }}: {{ $users->count() }}</th>
                                 <th scope="col"></th>
-                                <th scope="col">Итого: {{ $countWeek1 }}</th>
-                                <th scope="col">Итого: {{ $countWeek2 }}</th>
-                                <th scope="col">Итого: {{ $countWeek3 }}</th>
-                                <th scope="col">Итого: {{ $countWeek4 }}</th>
-                                <th scope="col">Итого: {{ $countWeek5 }}</th>
-                                <th scope="col">Итого: {{ $countWeek6 }}</th>
+                                <th scope="col">{{ __('Итого') }}: {{ $countWeek1 }}</th>
+                                <th scope="col">{{ __('Итого') }}: {{ $countWeek2 }}</th>
+                                <th scope="col">{{ __('Итого') }}: {{ $countWeek3 }}</th>
+                                <th scope="col">{{ __('Итого') }}: {{ $countWeek4 }}</th>
+                                <th scope="col">{{ __('Итого') }}: {{ $countWeek5 }}</th>
+                                <th scope="col">{{ __('Итого') }}: {{ $countWeek6 }}</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -65,26 +65,26 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="modal-title">Добавить участника</div>
+                    <div class="modal-title">{{ __('Добавить участника') }}</div>
                     <form class="needs-validation" method="POST" action="{{ route("user.store") }}" novalidate>
                         @csrf
                         @method("POST")
 
                         <input type="hidden" name="stream_id" value="{{ $stream->id }}">
                         <div class="form-item">
-                            <label>Имя, Фамилия</label>
+                            <label>{{ __('Имя, Фамилия') }}</label>
                             <input name="name" type="text" value="" class="form-control" required>
                         </div>
                         <div class="form-item">
-                            <label>Email</label>
+                            <label>{{ __('Email') }}</label>
                             <input name="email" type="email" value="" class="form-control" required>
                         </div>
                         <div class="form-item">
-                            <label>Номер телефона</label>
+                            <label>{{ __('Номер телефона') }}</label>
                             <input name="phone" type="tel" value="" class="form-control" required>
                         </div>
                         <div class="form-action">
-                            <button type="submit" class="btn">Добавить</button>
+                            <button type="submit" class="btn">{{ __('Добавить') }}</button>
                         </div>
                     </form>
                 </div>
@@ -100,7 +100,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="modal-title">Участник добавлен</div>
+                    <div class="modal-title">{{ __('Участник добавлен') }}</div>
                 </div>
             </div>
         </div>
@@ -114,7 +114,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="modal-title">Вы действительно хотите удалить участника?</div>
+                    <div class="modal-title">{{ __('Вы действительно хотите удалить участника?') }}</div>
                 </div>
                 <form id="delete-user-form" method="POST" action="{{ route("user.delete") }}">
                     @csrf
@@ -124,8 +124,8 @@
                     <input type="hidden" name="stream_id" value="{{ $stream->id }}">
 
                     <div class="modal-footer">
-                        <button type="submit" class="btn">Да</button>
-                        <button type="button" class="btn btn-white" data-bs-dismiss="modal">Нет</button>
+                        <button type="submit" class="btn">{{ __('Да') }}</button>
+                        <button type="button" class="btn btn-white" data-bs-dismiss="modal">{{ __('Нет') }}</button>
                     </div>
                 </form>
             </div>
@@ -139,7 +139,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="modal-title">Участник удален</div>
+                    <div class="modal-title">{{ __('Участник удален') }}</div>
                 </div>
             </div>
         </div>

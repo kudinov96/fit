@@ -13,7 +13,7 @@
             <p style="color: red;">{{ session("error") }}</p>
             <div class="stream-add"><a href="{{ route("stream.index") }}" class="btn">{{ __('Потоки') }}</a></div>
             <div class="stream-add" style="margin-top: 0;"><a href="{{ route("training.index") }}" class="btn">{{ __('К неделям') }}</a></div>
-            <div class="stream-add" style="margin-top: 0;"><a href="{{ route("training.index.create", ["week" => $week]) }}" class="btn">+ Создать тренировку</a></div>
+            <div class="stream-add" style="margin-top: 0;"><a href="{{ route("training.index.create", ["week" => $week]) }}" class="btn">{{ __('+ Создать тренировку') }}</a></div>
             <div class="stream-rows stream-rows_training">
                 @foreach($trainings as $training)
                     <div class="stream-item">
