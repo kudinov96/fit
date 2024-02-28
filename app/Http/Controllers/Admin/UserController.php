@@ -56,6 +56,9 @@ class UserController extends Controller
         try {
             $createNewUser->create($request->all());
         } catch (\Throwable $e) {
+            if (config("app.env") === "local") {
+                dd($e);
+            }
             $logService->error("User not registered", $e);
             return;
         }

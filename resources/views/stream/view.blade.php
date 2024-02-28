@@ -81,7 +81,7 @@
                         </div>
                         <div class="form-item">
                             <label>{{ __('Номер телефона') }}</label>
-                            <input name="phone" type="tel" value="" class="form-control" required>
+                            <input name="phone" type="tel" value="" class="form-control">
                         </div>
                         <div class="form-action">
                             <button type="submit" class="btn">{{ __('Добавить') }}</button>
