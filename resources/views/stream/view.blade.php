@@ -5,6 +5,15 @@
 @section("content")
     <div id="main-content">
         <div class="container">
+            @if($errors)
+                <div class="mb-4">
+                    @foreach($errors->all() as $error)
+                        <div class="validation-error">
+                            {{ __($error) }}
+                        </div>
+                    @endforeach
+                </div>
+            @endif
             <h1 class="stream-title">{{ __('Поток от') }} {{ $stream->start_date->format("d.m.y") }} <span>({{ $stream->status }})</span></h1>
             <div class="stream-add"><a data-bs-toggle="modal" data-bs-target="#memberModal" class="btn">{{ __('+ Добавить участника') }}</a></div>
             <div class="stream-table">
@@ -101,20 +110,6 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-title">{{ __('Участник добавлен') }}</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- success modal -->
-    <div class="modal fade" id="alreadyModal" tabindex="-1" aria-labelledby="thanksModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-title">{{ __('Пользователь с таким email уже существует') }}</div>
                 </div>
             </div>
         </div>
