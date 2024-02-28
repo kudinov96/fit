@@ -41,10 +41,9 @@ class RegisterNotify extends Notification
     {
         return (new MailMessage)
             ->subject(__("Вы успешно зарегистрировались"))
-            ->line(__("Данные для входа ")
-                . "<br>" . __("Email: ") . $this->user->email
-                . "<br>" . __("Пароль: ") . $this->password
-            )
+            ->line(__("Данные для входа:"))
+            ->line(__("Email: ") . $this->user->email)
+            ->line(__("Пароль: ") . $this->password)
             ->action(__('Авторизоваться'), route("login"));
     }
 
