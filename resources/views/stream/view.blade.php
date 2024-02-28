@@ -106,6 +106,20 @@
         </div>
     </div>
 
+    <!-- success modal -->
+    <div class="modal fade" id="alreadyModal" tabindex="-1" aria-labelledby="thanksModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-title">{{ __('Пользователь с таким email уже существует') }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- remove modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">

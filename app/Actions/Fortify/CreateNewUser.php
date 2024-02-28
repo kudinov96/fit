@@ -37,7 +37,7 @@ class CreateNewUser implements CreatesNewUsers
             'stream_id' => $input['stream_id'],
         ]);
 
-        $user->notify(new RegisterNotify($user, $password));
+        $user->notify((new RegisterNotify($user, $password))->locale($user->language));
 
         return $user;
     }

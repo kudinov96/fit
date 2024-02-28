@@ -60,7 +60,8 @@ class UserController extends Controller
                 dd($e);
             }
             $logService->error("User not registered", $e);
-            return;
+
+            return redirect()->to("/streams/{$request->stream_id}?modal=alreadyModal");
         }
 
         return redirect()->to("/streams/{$request->stream_id}?modal=thanksModal");
