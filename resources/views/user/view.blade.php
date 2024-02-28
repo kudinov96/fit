@@ -78,51 +78,54 @@
                 </div>
             @endif
 
-            <div class="result-box">
-                <div class="result-head">
-                    <a class="edit-link"></a>
-                    <span>{{ __('Стартовые данные') }}</span>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 stat-start stat-start_member">
-                        <div>
-                            <p>{{ __('Вес') }}: <span>{{ $resultStart->weight }} кг</span></p>
-                            <p>{{ __('Грудь') }}: <span>{{ $resultStart->breast }} см</span></p>
-                            <p>{{ __('Талия') }}: <span>{{ $resultStart->waistline }} см</span></p>
-                            <p>{{ __('Бедра') }}: <span>{{ $resultStart->hips }} см</span></p>
-                            <p>{{ __('Правая рука') }}: <span>{{ $resultStart->hand }} см</span></p>
-                            <p>{{ __('Правая нога') }}: <span>{{ $resultStart->leg }} см</span></p>
-                            <p>{{ __('Рост') }}: <span>{{ $user->firstQuiz->height }} см</span></p>
-                            <p>{{ __('Возраст') }}: <span>{{ $user->firstQuiz->age }} лет</span></p>
+            @if($resultStart)
+                <div class="result-box">
+                    <div class="result-head">
+                        <a class="edit-link"></a>
+                        <span>{{ __('Стартовые данные') }}</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 stat-start stat-start_member">
+                            <div>
+                                <p>{{ __('Вес') }}: <span>{{ $resultStart->weight }} кг</span></p>
+                                <p>{{ __('Грудь') }}: <span>{{ $resultStart->breast }} см</span></p>
+                                <p>{{ __('Талия') }}: <span>{{ $resultStart->waistline }} см</span></p>
+                                <p>{{ __('Бедра') }}: <span>{{ $resultStart->hips }} см</span></p>
+                                <p>{{ __('Правая рука') }}: <span>{{ $resultStart->hand }} см</span></p>
+                                <p>{{ __('Правая нога') }}: <span>{{ $resultStart->leg }} см</span></p>
+                                <p>{{ __('Рост') }}: <span>{{ $user->firstQuiz->height }} см</span></p>
+                                <p>{{ __('Возраст') }}: <span>{{ $user->firstQuiz->age }} лет</span></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 stat-pics">
+                            @if($resultStart->photo_1)
+                                <a data-fancybox="user-gallery" href="{{ \Storage::url($resultStart->photo_1) }}"><img src="{{ \Storage::url($resultStart->photo_1) }}" alt=""></a>
+                            @else
+                                <a class="stat-pic_empty">
+                                    <span>{{ __('Фото еще') }}<br> {{ __('не загружено') }}</span>
+                                </a>
+                            @endif
+
+                            @if($resultStart->photo_2)
+                                <a data-fancybox="user-gallery" href="{{ \Storage::url($resultStart->photo_2) }}"><img src="{{ \Storage::url($resultStart->photo_2) }}" alt=""></a>
+                            @else
+                                <a class="stat-pic_empty">
+                                    <span>{{ __('Фото еще') }}<br> {{ __('не загружено') }}</span>
+                                </a>
+                            @endif
+
+                            @if($resultStart->photo_3)
+                                <a data-fancybox="user-gallery" href="{{ \Storage::url($resultStart->photo_3) }}"><img src="{{ \Storage::url($resultStart->photo_3) }}" alt=""></a>
+                            @else
+                                <a class="stat-pic_empty">
+                                    <span>{{ __('Фото еще') }}<br> {{ __('не загружено') }}</span>
+                                </a>
+                            @endif
                         </div>
                     </div>
-                    <div class="col-lg-6 stat-pics">
-                        @if($resultStart->photo_1)
-                            <a data-fancybox="user-gallery" href="{{ \Storage::url($resultStart->photo_1) }}"><img src="{{ \Storage::url($resultStart->photo_1) }}" alt=""></a>
-                        @else
-                            <a class="stat-pic_empty">
-                                <span>{{ __('Фото еще') }}<br> {{ __('не загружено') }}</span>
-                            </a>
-                        @endif
-
-                        @if($resultStart->photo_2)
-                            <a data-fancybox="user-gallery" href="{{ \Storage::url($resultStart->photo_2) }}"><img src="{{ \Storage::url($resultStart->photo_2) }}" alt=""></a>
-                        @else
-                            <a class="stat-pic_empty">
-                                <span>{{ __('Фото еще') }}<br> {{ __('не загружено') }}</span>
-                            </a>
-                        @endif
-
-                        @if($resultStart->photo_3)
-                            <a data-fancybox="user-gallery" href="{{ \Storage::url($resultStart->photo_3) }}"><img src="{{ \Storage::url($resultStart->photo_3) }}" alt=""></a>
-                        @else
-                            <a class="stat-pic_empty">
-                                <span>{{ __('Фото еще') }}<br> {{ __('не загружено') }}</span>
-                            </a>
-                        @endif
-                    </div>
                 </div>
-            </div>
+            @endif
+
 
             <div class="member-reports">
                 <h2>Отчеты</h2>
@@ -155,7 +158,6 @@
                     <x-tab-week-for-trainer :week="$weeks['week6']" :user="$user" :title1="__('Результаты за шестую неделю')" :title2="__('Параметры за шестую неделю')"></x-tab-week-for-trainer>
                 </div>
             </div>
-
         </div>
     </div>
 
