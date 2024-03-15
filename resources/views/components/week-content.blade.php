@@ -15,7 +15,10 @@
         <div class="check-row" data-row="15.03.24">
             <div class="row">
                 <div class="col-2">
-                    <span><em>{{ $day["date"] }}</em></span>
+                    <span>
+                        <strong>{{ explode(",", $day["date"])[0] }}</strong>
+                        <em>{{ $day["date"] }}</em>
+                    </span>
                 </div>
                 @if($day["item"])
                     <div class="col-2">{{ $day["item"]->training ? __('Да') : __('Нет') }}</div>

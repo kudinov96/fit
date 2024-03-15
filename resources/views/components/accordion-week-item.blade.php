@@ -2,11 +2,11 @@
 
 <div class="accordion-item">
     <h2 class="accordion-header">
-        <button @class(["accordion-button", "collapsed" => !$week["isCurrent"]]) type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-{{ $id }}" aria-expanded="false" aria-controls="flush-collapseOne">
+        <button @class(["accordion-button"/*, "collapsed" => !$week["isCurrent"]*/]) type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-{{ $id }}" aria-expanded="false" aria-controls="flush-collapseOne">
             {{ $title }}
         </button>
     </h2>
-    <div id="flush-collapse-{{ $id }}" @class(["accordion-collapse", "collapse", "show" => $week["isCurrent"]]) data-bs-parent="#accordionFlushExample">
+    <div id="flush-collapse-{{ $id }}" @class(["accordion-collapse", "collapse"/*, "show" => $week["isCurrent"]*/]) data-bs-parent="#accordionFlushExample">
         <div @class(["accordion-body", "report-send" => $week["result"]])>
             <x-week-content :week="$week"></x-week-content>
 

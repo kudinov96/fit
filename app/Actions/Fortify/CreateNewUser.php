@@ -32,7 +32,7 @@ class CreateNewUser implements CreatesNewUsers
             'email' => $input['email'],
             'password' => Hash::make($password),
             'role' => $input['role'] ?? RoleEnum::USER->value,
-            'phone' => $input['name'] ?? null,
+            'phone' => $input['phone'] ?? null,
             'language' => $input['language'] ?? 'lv',
             'stream_id' => $input['stream_id'],
         ]);

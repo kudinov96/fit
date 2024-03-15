@@ -392,6 +392,9 @@
 .check-row em {
     display: none;
 }
+.check-row strong {
+    display: block !important;
+}
 .check-row .row > .col-2:first-child span {
     width: 43px;
     font-size: 12px;
@@ -501,7 +504,7 @@ body:not(.home) {
 }
 body:not(.home) #footer {
     padding: 20px 0px;
-    background: #1A1E22; 
+    background: #1A1E22;
 }
 #main-content {
     padding-bottom: 60px;

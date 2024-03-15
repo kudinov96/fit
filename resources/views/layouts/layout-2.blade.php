@@ -10,8 +10,8 @@
         href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
     />
     <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
-    <link href="{{ asset("css/style.css") }}" rel="stylesheet">
-    <link href="{{ asset("css/responsive.css") }}" rel="stylesheet">
+    <link href="{{ asset("css/style.css?ver=") . date("YmdHis") }}" rel="stylesheet">
+    <link href="{{ asset("css/responsive.css?ver=") . date("YmdHis") }}" rel="stylesheet">
     @yield("styles")
 </head>
 

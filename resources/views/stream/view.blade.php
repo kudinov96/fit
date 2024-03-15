@@ -38,7 +38,7 @@
                                         <a href="{{ route("user.view", ["user" => $user]) }}">{{ $user->name }}</a>
                                         <a data-bs-toggle="modal" data-bs-target="#deleteModal" data-user-id="{{ $user->id }}" class="remove remove-user"></a>
                                     </td>
-                                    <td>{{ $user->age }}</td>
+                                    <td>{{ $user->firstQuiz ? $user->firstQuiz->age : "" }}</td>
                                     <td><span @class(["s-plus" => $user->has_result_week_1, "s-minus" => !$user->has_result_week_1])></span></td>
                                     <td><span @class(["s-plus" => $user->has_result_week_2, "s-minus" => !$user->has_result_week_2])></span></td>
                                     <td><span @class(["s-plus" => $user->has_result_week_3, "s-minus" => !$user->has_result_week_3])></span></td>
