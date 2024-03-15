@@ -92,10 +92,12 @@ class UserController extends Controller
         /** @var Result $result */
         $result = Result::query()->find($request->input("result_id"));
         $userId = $request->input("user_id");
+        $user   = User::query()->find($userId);
 
         $resultService->answerAdmin(
             $result,
-            $request->input("message")
+            $user,
+            $request->input("message"),
         );
 
         return redirect()->to("/user/{$userId}/view/?modal=commentModal");
