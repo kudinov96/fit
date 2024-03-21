@@ -11,8 +11,8 @@
         href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
     />
     <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
-    <link href="{{ asset("css/style.css") }}" rel="stylesheet">
-    <link href="{{ asset("css/responsive.css") }}" rel="stylesheet">
+    <link href="{{ asset("css/style.css?ver=") . date("YmdHis") }}" rel="stylesheet">
+    <link href="{{ asset("css/responsive.css?ver=") . date("YmdHis") }}" rel="stylesheet">
     @yield("styles")
 </head>
 <body>
@@ -40,7 +40,7 @@
                                 <img src="{{ asset("images/user-pic.svg") }}" alt="">
                                 <div>{{ auth()->user()->name }} <span>{{ auth()->user()->email }}</span></div>
                             </a></li>
-                        <li><a href="{{ route("profile.index") }}" class="link-icon link-settings">{{ __("Настройки профайла") }}</a></li>
+                        <li><a href="{{ route("profile.index") }}" class="link-icon link-settings">{{ __("Настройки профиля") }}</a></li>
                         <li>
                             <form action="{{ route("logout") }}" method="POST">
                                 @csrf
@@ -68,9 +68,11 @@
                                 <img src="{{ asset("images/user-pic.svg") }}" alt="">
                                 <div>{{ auth()->user()->name }} <span>{{ auth()->user()->email }}</span></div>
                             </a></li>
-                        <li><a href="{{ route("profile.index") }}" class="link-icon link-settings">{{ __("Настройки профайла") }}</a></li>
-                        <li><a href="{{ route("materials.index") }}" class="link-icon link-video">{{ __("Материалы для марафона") }}</a></li>
+                        <li><a href="{{ route("marathon.index") }}">{{ __("Главная") }}</a></li>
+                        <li><a href="{{ route("check-in.index") }}">Check in</a></li>
                         <li><a href="{{ route("result.index") }}">{{ __("Мои результаты") }}</a></li>
+                        <li><a href="{{ route("materials.index") }}" class="link-icon link-video">{{ __("Материалы для марафона") }}</a></li>
+                        <li><a href="{{ route("profile.index") }}" class="link-icon link-settings">{{ __("Настройки профиля") }}</a></li>
                         <li>
                             <form action="{{ route("logout") }}" method="POST">
                                 @csrf
@@ -92,7 +94,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-<script src="{{ asset("js/scripts.js") }}"></script>
+<script src="{{ asset("js/scripts.js?ver=") . date("YmdHis") }}"></script>
 <script>
     Fancybox.bind("[data-fancybox]", {
     });

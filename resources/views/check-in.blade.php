@@ -22,7 +22,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span>Отчёт за день</span>
+                    <span>{{ __('Отчёт за день') }}</span>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -35,38 +35,38 @@
 
                         <div class="qs-inputs row">
                             <div class="col-lg-3">
-                                <label>Тренировка <span>(да/нет)</span></label>
+                                <label>{{ __('Тренировка') }} <span>{{ __('(да/нет)') }}</span></label>
                                 <select name="training" class="form-control form-select">
-                                    <option value="1">Да</option>
-                                    <option value="0">Нет</option>
+                                    <option value="1">{{ __('Да') }}</option>
+                                    <option value="0">{{ __('Нет') }}</option>
                                 </select>
                             </div>
                             <div class="col-lg-3">
-                                <label>Вода <span>(л)</span></label>
+                                <label>{{ __('Вода') }} <span>{{ __('(л)') }}</span></label>
                                 <input name="water" type="number" step="0.5" min="0" value="" class="form-control" tabindex="0" required>
                             </div>
                             <div class="col-lg-3">
-                                <label>Сон <span>(часов)</span></label>
+                                <label>{{ __('Сон') }} <span>{{ __('(часов)') }}</span></label>
                                 <input name="sleep" type="number" step="0.5" min="0" value="" class="form-control" tabindex="0" required>
                             </div>
                             <div class="col-lg-3">
-                                <label>Алкоголь <span>(да/нет)</span></label>
+                                <label>{{ __('Алкоголь') }} <span>{{ __('(да/нет)') }}</span></label>
                                 <select name="alcohol" class="form-control form-select">
-                                    <option value="0">Нет</option>
-                                    <option value="1">Да</option>
+                                    <option value="0">{{ __('Нет') }}</option>
+                                    <option value="1">{{ __('Да') }}</option>
                                 </select>
                             </div>
                             <div class="col-lg-5">
-                                <label>Питание <span>(избыточное/норма/недостаточное)</span></label>
+                                <label>{{ __('Питание') }} <span>{{ __('(избыточное/норма/недостаточное)') }}</span></label>
                                 <select name="nutrition" class="form-control form-select">
-                                    <option value="Норма">Норма</option>
-                                    <option value="Избыточное">Избыточное</option>
-                                    <option value="Недостаточное">Недостаточное</option>
+                                    <option value="Норма">{{ __('Норма') }}</option>
+                                    <option value="Избыточное">{{ __('Избыточное') }}</option>
+                                    <option value="Недостаточное">{{ __('Недостаточное') }}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="report-action">
-                            <button type="submit" class="btn">Сохранить</button>
+                            <button type="submit" class="btn">{{ __('Сохранить') }}</button>
                         </div>
                     </form>
                 </div>
@@ -79,7 +79,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span>Отчёт за день</span>
+                    <span>{{ __('Отчёт за день') }}</span>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -93,38 +93,38 @@
 
                         <div class="qs-inputs row">
                             <div class="col-lg-3">
-                                <label>Тренировка <span>(да/нет)</span></label>
+                                <label>{{ __('Тренировка') }} <span>{{ __('(да/нет)') }}</span></label>
                                 <select name="training" class="form-control form-select">
-                                    <option value="1">Да</option>
-                                    <option value="0">Нет</option>
+                                    <option value="1">{{ __('Да') }}</option>
+                                    <option value="0">{{ __('Нет') }}</option>
                                 </select>
                             </div>
                             <div class="col-lg-3">
-                                <label>Вода <span>(л)</span></label>
+                                <label>{{ __('Вода') }} <span>{{ __('(л)') }}</span></label>
                                 <input name="water" type="number" step="0.5" min="0" value="" class="form-control" tabindex="0" required>
                             </div>
                             <div class="col-lg-3">
-                                <label>Сон <span>(часов)</span></label>
+                                <label>{{ __('Сон') }} <span>{{ __('(часов)') }}</span></label>
                                 <input name="sleep" type="number" step="0.5" min="0" value="" class="form-control" tabindex="0" required>
                             </div>
                             <div class="col-lg-3">
-                                <label>Алкоголь <span>(да/нет)</span></label>
+                                <label>{{ __('Алкоголь') }} <span>{{ __('(да/нет)') }}</span></label>
                                 <select name="alcohol" class="form-control form-select">
                                     <option value="0">Нет</option>
                                     <option value="1">Да</option>
                                 </select>
                             </div>
                             <div class="col-lg-5">
-                                <label>Питание <span>(избыточное/норма/недостаточное)</span></label>
+                                <label>{{ __('Питание') }} <span>{{ __('(избыточное/норма/недостаточное)') }}</span></label>
                                 <select name="nutrition" class="form-control form-select">
-                                    <option value="Норма">Норма</option>
-                                    <option value="Избыточное">Избыточное</option>
-                                    <option value="Недостаточное">Недостаточное</option>
+                                    <option value="Норма">{{ __('Норма') }}</option>
+                                    <option value="Избыточное">{{ __('Избыточное') }}</option>
+                                    <option value="Недостаточное">{{ __('Недостаточное') }}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="report-action">
-                            <button type="submit" class="btn">Сохранить</button>
+                            <button type="submit" class="btn">{{ __('Сохранить') }}</button>
                         </div>
                     </form>
                 </div>
@@ -137,7 +137,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span>Недельный Check in</span>
+                    <span>{{ __('Недельный Check in') }}</span>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -149,52 +149,52 @@
 
                         <div class="week-slider">
                             <div>
-                                <div class="report-form_title">Заполни свои параметры в конце недели:</div>
+                                <div class="report-form_title">{{ __('Заполни свои параметры в конце недели') }}:</div>
                                 <div class="qs-inputs row mb-4">
                                     <div class="col-xl-2">
-                                        <label>Вес <span>(кг)</span></label>
+                                        <label>{{ __('Вес') }} <span>({{ __('кг') }})</span></label>
                                         <input name="weight" type="number" step="0.01" value="" class="form-control" required>
                                     </div>
                                     <div class="col-xl-2">
-                                        <label>Грудь <span>(см)</span></label>
+                                        <label>{{ __('Грудь') }} <span>({{ __('см') }})</span></label>
                                         <input name="breast" type="number" step="0.01" value="" class="form-control" required>
                                     </div>
                                     <div class="col-xl-2">
-                                        <label>Талия <span>(см)</span></label>
+                                        <label>{{ __('Талия') }} <span>({{ __('см') }})</span></label>
                                         <input name="waistline" type="number" step="0.01" value="" class="form-control" required>
                                     </div>
                                     <div class="col-xl-2">
-                                        <label>Бедра <span>(см)</span></label>
+                                        <label>{{ __('Бедра') }} <span>({{ __('см') }})</span></label>
                                         <input name="hips" type="number" step="0.01" value="" class="form-control" required>
                                     </div>
                                     <div class="col-xl-2">
-                                        <label>Правая рука <span>(см)</span></label>
+                                        <label>{{ __('Правая рука') }} <span>({{ __('см') }})</span></label>
                                         <input name="hand" type="number" step="0.01" value="" class="form-control" required>
                                     </div>
                                     <div class="col-xl-2">
-                                        <label>Правая нога <span>(см)</span></label>
+                                        <label>{{ __('Правая нога') }} <span>({{ __('см') }})</span></label>
                                         <input name="leg" type="number" step="0.01" value="" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="week-nav">
                                     <div></div>
-                                    <div><a class="week-nav_next week-nav_next_1 btn">Далее</a></div>
+                                    <div><a class="week-nav_next week-nav_next_1 btn">{{ __('Далее') }}</a></div>
                                 </div>
                             </div>
                             <div>
-                                <div class="report-form_title">Ты можешь написать комментарий или задать мне вопрос <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Это не обязательное поле" data-bs-custom-class="white-tooltip"
+                                <div class="report-form_title">{{ __('Ты можешь написать комментарий или задать мне вопрос') }} <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ __('Это не обязательное поле') }}" data-bs-custom-class="white-tooltip"
                                     ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11 17H13V11H11V17ZM12 9C12.2833 9 12.521 8.904 12.713 8.712C12.905 8.52 13.0007 8.28267 13 8C13 7.71667 12.904 7.47933 12.712 7.288C12.52 7.09667 12.2827 7.00067 12 7C11.7167 7 11.4793 7.096 11.288 7.288C11.0967 7.48 11.0007 7.71733 11 8C11 8.28333 11.096 8.521 11.288 8.713C11.48 8.905 11.7173 9.00067 12 9ZM12 22C10.6167 22 9.31667 21.7373 8.1 21.212C6.88333 20.6867 5.825 19.9743 4.925 19.075C4.025 18.175 3.31267 17.1167 2.788 15.9C2.26333 14.6833 2.00067 13.3833 2 12C2 10.6167 2.26267 9.31667 2.788 8.1C3.31333 6.88333 4.02567 5.825 4.925 4.925C5.825 4.025 6.88333 3.31267 8.1 2.788C9.31667 2.26333 10.6167 2.00067 12 2C13.3833 2 14.6833 2.26267 15.9 2.788C17.1167 3.31333 18.175 4.02567 19.075 4.925C19.975 5.825 20.6877 6.88333 21.213 8.1C21.7383 9.31667 22.0007 10.6167 22 12C22 13.3833 21.7373 14.6833 21.212 15.9C20.6867 17.1167 19.9743 18.175 19.075 19.075C18.175 19.975 17.1167 20.6877 15.9 21.213C14.6833 21.7383 13.3833 22.0007 12 22ZM12 20C14.2333 20 16.125 19.225 17.675 17.675C19.225 16.125 20 14.2333 20 12C20 9.76667 19.225 7.875 17.675 6.325C16.125 4.775 14.2333 4 12 4C9.76667 4 7.875 4.775 6.325 6.325C4.775 7.875 4 9.76667 4 12C4 14.2333 4.775 16.125 6.325 17.675C7.875 19.225 9.76667 20 12 20Z" fill="#EC2383"/>
                                         </svg></a></div>
                                 <div class="qs-inputs row">
                                     <div class="col-12">
-                                        <label>Напиши тут</label>
+                                        <label>{{ __('Напиши тут') }}</label>
                                         <textarea name="message_user" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="week-nav">
-                                    <div><a class="week-nav_prev btn btn-back">Назад</a></div>
-                                    <button type="submit" class="btn">Iesniegt Check In</button>
+                                    <div><a class="week-nav_prev btn btn-back">{{ __('Назад') }}</a></div>
+                                    <button type="submit" class="btn">{{ __('Отправить Check In') }}</button>
                                 </div>
                             </div>
                         </div>
@@ -209,7 +209,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span>Недельный Check in</span>
+                    <span>{{ __('Недельный Check in') }}</span>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -221,57 +221,57 @@
 
                         <div class="week-slider_six">
                             <div>
-                                <div class="report-form_title">Заполни свои параметры в конце недели:</div>
+                                <div class="report-form_title">{{ __('Заполни свои параметры в конце недели') }}:</div>
                                 <div class="qs-inputs row mb-4">
                                     <div class="col-xl-2">
-                                        <label>Вес <span>(кг)</span></label>
+                                        <label>{{ __('Вес') }} <span>({{ __('кг') }})</span></label>
                                         <input name="weight" type="number" step="0.01" value="" class="form-control" required>
                                     </div>
                                     <div class="col-xl-2">
-                                        <label>Грудь <span>(см)</span></label>
+                                        <label>{{ __('Грудь') }} <span>({{ __('см') }})</span></label>
                                         <input name="breast" type="number" step="0.01" value="" class="form-control" required>
                                     </div>
                                     <div class="col-xl-2">
-                                        <label>Талия <span>(см)</span></label>
+                                        <label>{{ __('Талия') }} <span>({{ __('см') }})</span></label>
                                         <input name="waistline" type="number" step="0.01" value="" class="form-control" required>
                                     </div>
                                     <div class="col-xl-2">
-                                        <label>Бедра <span>(см)</span></label>
+                                        <label>{{ __('Бедра') }} <span>({{ __('см') }})</span></label>
                                         <input name="hips" type="number" step="0.01" value="" class="form-control" required>
                                     </div>
                                     <div class="col-xl-2">
-                                        <label>Правая рука <span>(см)</span></label>
+                                        <label>{{ __('Правая рука') }} <span>({{ __('см') }})</span></label>
                                         <input name="hand" type="number" step="0.01" value="" class="form-control" required>
                                     </div>
                                     <div class="col-xl-2">
-                                        <label>Правая нога <span>(см)</span></label>
+                                        <label>{{ __('Правая нога') }} <span>({{ __('см') }})</span></label>
                                         <input name="leg" type="number" step="0.01" value="" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="week-nav">
                                     <div></div>
-                                    <div><a class="week-nav_next week-nav_next_six btn">Далее</a></div>
+                                    <div><a class="week-nav_next week-nav_next_six btn">{{ __('Далее') }}</a></div>
                                 </div>
                             </div>
                             <div>
-                                <div class="report-form_title">Ты можешь написать комментарий или задать мне вопрос <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Это не обязательное поле" data-bs-custom-class="white-tooltip"
+                                <div class="report-form_title">{{ __('Ты можешь написать комментарий или задать мне вопрос') }} <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Это не обязательное поле" data-bs-custom-class="white-tooltip"
                                     ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11 17H13V11H11V17ZM12 9C12.2833 9 12.521 8.904 12.713 8.712C12.905 8.52 13.0007 8.28267 13 8C13 7.71667 12.904 7.47933 12.712 7.288C12.52 7.09667 12.2827 7.00067 12 7C11.7167 7 11.4793 7.096 11.288 7.288C11.0967 7.48 11.0007 7.71733 11 8C11 8.28333 11.096 8.521 11.288 8.713C11.48 8.905 11.7173 9.00067 12 9ZM12 22C10.6167 22 9.31667 21.7373 8.1 21.212C6.88333 20.6867 5.825 19.9743 4.925 19.075C4.025 18.175 3.31267 17.1167 2.788 15.9C2.26333 14.6833 2.00067 13.3833 2 12C2 10.6167 2.26267 9.31667 2.788 8.1C3.31333 6.88333 4.02567 5.825 4.925 4.925C5.825 4.025 6.88333 3.31267 8.1 2.788C9.31667 2.26333 10.6167 2.00067 12 2C13.3833 2 14.6833 2.26267 15.9 2.788C17.1167 3.31333 18.175 4.02567 19.075 4.925C19.975 5.825 20.6877 6.88333 21.213 8.1C21.7383 9.31667 22.0007 10.6167 22 12C22 13.3833 21.7373 14.6833 21.212 15.9C20.6867 17.1167 19.9743 18.175 19.075 19.075C18.175 19.975 17.1167 20.6877 15.9 21.213C14.6833 21.7383 13.3833 22.0007 12 22ZM12 20C14.2333 20 16.125 19.225 17.675 17.675C19.225 16.125 20 14.2333 20 12C20 9.76667 19.225 7.875 17.675 6.325C16.125 4.775 14.2333 4 12 4C9.76667 4 7.875 4.775 6.325 6.325C4.775 7.875 4 9.76667 4 12C4 14.2333 4.775 16.125 6.325 17.675C7.875 19.225 9.76667 20 12 20Z" fill="#EC2383"/>
                                         </svg></a></div>
                                 <div class="qs-inputs row">
                                     <div class="col-12">
-                                        <label>Напиши тут</label>
+                                        <label>{{ __('Напиши тут') }}</label>
                                         <textarea name="message_user" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="week-nav">
-                                    <div><a class="week-nav_prev_six btn btn-back">Назад</a></div>
-                                    <div><a class="week-nav_next week-nav_next_six btn">Далее</a></div>
+                                    <div><a class="week-nav_prev_six btn btn-back">{{ __('Назад') }}</a></div>
+                                    <div><a class="week-nav_next week-nav_next_six btn">{{ __('Далее') }}</a></div>
                                 </div>
                             </div>
                             <div>
-                                <div class="report-form_title report-form_title_2 text-center">Загрузи свои финальные фото с нашим шаблоном для участия в розыгрыше</div>
-                                <div class="report-form_subtitle"><a href="{{ \Storage::url($stream->template_for_finish) }}" download>Скачать шаблон <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <div class="report-form_title report-form_title_2 text-center">{{ __('Загрузи свои финальные фото с нашим шаблоном для участия в розыгрыше') }}</div>
+                                <div class="report-form_subtitle"><a href="{{ \Storage::url($stream->template_for_finish) }}" download>{{ __('Скачать шаблон') }} <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M10.0007 13.334L5.83399 9.16732L7.00065 7.95898L9.16732 10.1257V3.33398H10.834V10.1257L13.0007 7.95898L14.1673 9.16732L10.0007 13.334ZM5.00065 16.6673C4.54232 16.6673 4.14982 16.504 3.82315 16.1773C3.49649 15.8507 3.33343 15.4584 3.33399 15.0007V12.5007H5.00065V15.0007H15.0007V12.5007H16.6673V15.0007C16.6673 15.459 16.504 15.8515 16.1773 16.1782C15.8507 16.5048 15.4584 16.6679 15.0007 16.6673H5.00065Z" fill="#41BC22"/>
                                         </svg></a></div>
                                 <div class="qs-inputs files row">
@@ -286,8 +286,8 @@
                                     </div>
                                 </div>
                                 <div class="week-nav">
-                                    <div><a class="week-nav_prev_six btn btn-back">Назад</a></div>
-                                    <button type="submit" class="btn">Iesniegt Check In</button>
+                                    <div><a class="week-nav_prev_six btn btn-back">{{ __('Назад') }}</a></div>
+                                    <button type="submit" class="btn">{{ __('Отправить Check In') }}</button>
                                 </div>
                             </div>
                         </div>
@@ -304,7 +304,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="modal-title mb-0">Спасибо, твои данные сохранены!</div>
+                    <div class="modal-title mb-0">{{ __('Спасибо, твои данные сохранены!') }}</div>
                 </div>
             </div>
         </div>
@@ -318,8 +318,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="modal-title">Спасибо, твои данные отправлены!</div>
-                    <div class="modal-text"> Теперь ты можешь приступать<br> к занятиям из следующей недели.<br> Удачи!</div>
+                    <div class="modal-title">{{ __('Спасибо, твои данные отправлены!') }}</div>
+                    <div class="modal-text"> {{ __('Теперь ты можешь приступать') }}<br> {{ __('к занятиям из следующей недели.') }}<br> {{ __('Удачи!') }}</div>
                 </div>
             </div>
         </div>
@@ -336,11 +336,11 @@
                     <div class="modal-title"><svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="14.5" cy="14.5" r="14.5" fill="#EC2383"/>
                             <path d="M20.0825 11.3525L12.3427 19.6438L9.06955 15.6102L6.9043 17.9531L12.1923 24.4696L22.0948 13.8713L20.0825 11.3525Z" fill="white"/>
-                        </svg> Поздравляем с завершением проекта!</div>
+                        </svg> {{ __('Поздравляем с завершением проекта!') }}</div>
                     <div class="modal-paragraph">
-                        <p>Ты достойно прошла этот путь и результаты говорят сами за себя!</p>
-                        <p>В течение 3-х дней мы обработаем все кейсы и выберем финалисток. Отчет придет тебе на почту и будет опубликован в группе Facebook.</p>
-                        <p>Желаем удачи и победы!</p>
+                        <p>{{ __('Ты достойно прошла этот путь и результаты говорят сами за себя!') }}</p>
+                        <p>{{ __('В течение 3-х дней мы обработаем все кейсы и выберем финалисток. Отчет придет тебе на почту и будет опубликован в группе Facebook.') }}</p>
+                        <p>{{ __('Желаем удачи и победы!') }}</p>
                     </div>
                 </div>
             </div>

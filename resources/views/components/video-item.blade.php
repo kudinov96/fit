@@ -7,7 +7,7 @@
     <div class="video-meta">
         <p>{{ $item->title }}</p>
         <p>{{ $item->description }}</p>
-        <p><a data-text="{{ $item->id }}" data-bs-toggle="modal" data-bs-target="#descriptionModal">Читать описание</a></p>
+        <p><a data-text="{{ $item->id }}" data-bs-toggle="modal" data-bs-target="#descriptionModal">{{ __('Читать описание') }}</a></p>
     </div>
     <div id="desc-block_{{ $item->id }}" class="desc-block">
         <h2>{{ $item->title }}</h2>

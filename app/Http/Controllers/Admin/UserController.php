@@ -56,6 +56,9 @@ class UserController extends Controller
         try {
             $createNewUser->create($request->all());
         } catch (\Throwable $e) {
+            if (config("app.env") === "local") {
+                dd($e);
+            }
             $logService->error("User not registered", $e);
             return;
         }
@@ -89,10 +92,12 @@ class UserController extends Controller
         /** @var Result $result */
         $result = Result::query()->find($request->input("result_id"));
         $userId = $request->input("user_id");
+        $user   = User::query()->find($userId);
 
         $resultService->answerAdmin(
             $result,
-            $request->input("message")
+            $user,
+            $request->input("message"),
         );
 
         return redirect()->to("/user/{$userId}/view/?modal=commentModal");

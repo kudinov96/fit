@@ -2145,8 +2145,15 @@ body:not(.home) #footer {
 .modal-paragraph p:last-child {
     font-weight: 600;
 }
+.check-row span > span {
+    display: none;
+}
 .check-row em {
     font-style: normal;
+}
+.check-row strong{
+    font-weight: 600 !important;
+    display: none !important;
 }
 .stream-table {
     border-radius: 10px;

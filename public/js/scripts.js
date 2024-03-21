@@ -258,6 +258,17 @@ $('.accordion .accordion-button').on('click', function(){
     }
 });*/
 
+    /* оставляем открытым текущий accodion после перезагрузки страницы */
+    let selectedCollapse = sessionStorage.getItem('selectedCollapse');
+    if(selectedCollapse != null) {
+        $('.accordion .collapse').removeClass('show');
+        $(selectedCollapse).addClass('show');
+    }
+    $('.accordion .accordion-button').on('click', function(){
+        let target = $(this).data('bs-target');
+        sessionStorage.setItem('selectedCollapse', target);
+    });
+
 });
 
     $(".update-stream-modal").on('click', function(){

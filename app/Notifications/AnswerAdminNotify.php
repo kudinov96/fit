@@ -8,20 +8,20 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class RegisterNotify extends Notification
+class AnswerAdminNotify extends Notification
 {
     use Queueable;
 
     private User $user;
-    private string $password;
+    private string $answer;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct(User $user, string $password)
+    public function __construct(User $user, string $answer)
     {
         $this->user = $user;
-        $this->password = $password;
+        $this->answer = $answer;
     }
 
     /**
@@ -40,11 +40,10 @@ class RegisterNotify extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject(__("Вы успешно зарегистрировались"))
-            ->line(__("Данные для входа:"))
-            ->line(__("Email: ") . $this->user->email)
-            ->line(__("Пароль: ") . $this->password)
-            ->action(__('Авторизоваться'), route("login"));
+            ->subject(__("Вам новый комментарий от тренера"))
+            ->line(__("Вам новый комментарий от тренера"))
+            ->line(__("Комментарий: ") . $this->answer)
+            ->action(__('Перейти в Check in'), route("check-in.index"));
     }
 
     /**

@@ -4,28 +4,31 @@
     <div class="check-head">
         <div class="row">
             <div class="col-2"></div>
-            <div class="col-2" data-label="Трен."><span>Тренировка</span></div>
-            <div class="col-2" data-label="Вода (л)"><span>Вода (л)</span></div>
-            <div class="col-2" data-label="Сон (ч)"><span>Сон (часов)</span></div>
-            <div class="col-2" data-label="Алк."><span>Алкоголь</span></div>
-            <div class="col-2" data-label="Питан."><span>Питание</span></div>
+            <div class="col-2" data-label="{{ __('Трен.') }}"><span>{{ __('Тренировка') }}</span></div>
+            <div class="col-2" data-label="{{ __('Вода (л)') }}"><span>{{ __('Вода (л)') }}</span></div>
+            <div class="col-2" data-label="{{ __('Сон (ч)') }}"><span>{{ __('Сон (часов)') }}</span></div>
+            <div class="col-2" data-label="{{ __('Алк.') }}"><span>{{ __('Алкоголь') }}</span></div>
+            <div class="col-2" data-label="{{ __('Питан.') }}"><span>{{ __('Питание') }}</span></div>
         </div>
     </div>
     @foreach($week["days"] as $key => $day)
         <div class="check-row" data-row="15.03.24">
             <div class="row">
                 <div class="col-2">
-                    <span><em>{{ $day["date"] }}</em></span>
+                    <span>
+                        <strong>{{ explode(",", $day["date"])[0] }}</strong>
+                        <em>{{ $day["date"] }}</em>
+                    </span>
                 </div>
                 @if($day["item"])
-                    <div class="col-2">{{ $day["item"]->training ? "Да" : "Нет" }}</div>
+                    <div class="col-2">{{ $day["item"]->training ? __('Да') : __('Нет') }}</div>
                     <div class="col-2">{{ $day["item"]->water }}</div>
                     <div class="col-2">{{ $day["item"]->sleep }}</div>
-                    <div class="col-2">{{ $day["item"]->alcohol ? "Да" : "Нет" }}</div>
+                    <div class="col-2">{{ $day["item"]->alcohol ? __('Да') : __('Нет') }}</div>
                     <div class="col-2">{{ $day["item"]->nutrition }}</div>
                 @elseif(!$isTrainerPage)
                     <div class="col-10">
-                        <a class="btn store-check-in-modal-btn" data-week="{{ $week["number"] }}"  data-day="{{ $key }}" data-bs-toggle="modal" data-bs-target="#storeCheckInModal">Заполнить данные</a>
+                        <a class="btn store-check-in-modal-btn" data-week="{{ $week["number"] }}"  data-day="{{ $key }}" data-bs-toggle="modal" data-bs-target="#storeCheckInModal">{{ __('Заполнить данные') }}</a>
                     </div>
                 @endif
             </div>
@@ -49,7 +52,7 @@
                                data-sleep="{{ $day["item"]->sleep }}"
                                data-alcohol="{{ $day["item"]->alcohol ? "1" : "0" }}"
                                data-nutrition="{{ $day["item"]->nutrition}}"
-                            >Редактировать данные</a>
+                            >{{ __('Редактировать данные') }}</a>
                         </li>
                     </ul>
                 </div>

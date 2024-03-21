@@ -2,11 +2,11 @@
 
 <div class="accordion-item">
     <h2 class="accordion-header">
-        <button @class(["accordion-button", "collapsed" => !$week["isCurrent"]]) type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-{{ $id }}" aria-expanded="false" aria-controls="flush-collapseOne">
+        <button @class(["accordion-button"/*, "collapsed" => !$week["isCurrent"]*/]) type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-{{ $id }}" aria-expanded="false" aria-controls="flush-collapseOne">
             {{ $title }}
         </button>
     </h2>
-    <div id="flush-collapse-{{ $id }}" @class(["accordion-collapse", "collapse", "show" => $week["isCurrent"]]) data-bs-parent="#accordionFlushExample">
+    <div id="flush-collapse-{{ $id }}" @class(["accordion-collapse", "collapse"/*, "show" => $week["isCurrent"]*/]) data-bs-parent="#accordionFlushExample">
         <div @class(["accordion-body", "report-send" => $week["result"]])>
             <x-week-content :week="$week"></x-week-content>
 
@@ -17,12 +17,12 @@
                     </svg> {{ $resultTitle }}</div>
 
                 <div class="week-wrapper week-wrapper_flex">
-                    <p>Вес: <span>{{ $week["result"]->weight }} {{ __("кг") }}</span></p>
-                    <p>Грудь: <span>{{ $week["result"]->breast }} {{ __("см") }}</span></p>
-                    <p>Талия: <span>{{ $week["result"]->waistline }} {{ __("см") }}</span></p>
-                    <p>Бедра: <span>{{ $week["result"]->hips }} {{ __("см") }}</span></p>
-                    <p>Правая рука: <span>{{ $week["result"]->hand }} {{ __("см") }}</span></p>
-                    <p>Правая нога: <span>{{ $week["result"]->leg }} {{ __("см") }}</span></p>
+                    <p>{{ __('Вес') }}: <span>{{ $week["result"]->weight }} {{ __("кг") }}</span></p>
+                    <p>{{ __('Грудь') }}: <span>{{ $week["result"]->breast }} {{ __("см") }}</span></p>
+                    <p>{{ __('Талия') }}: <span>{{ $week["result"]->waistline }} {{ __("см") }}</span></p>
+                    <p>{{ __('Бедра') }}: <span>{{ $week["result"]->hips }} {{ __("см") }}</span></p>
+                    <p>{{ __('Правая рука') }}: <span>{{ $week["result"]->hand }} {{ __("см") }}</span></p>
+                    <p>{{ __('Правая нога') }}: <span>{{ $week["result"]->leg }} {{ __("см") }}</span></p>
                 </div>
 
                 @if($week["result"]->message_user || $week["result"]->message_admin)
@@ -44,7 +44,7 @@
                 @endif
             @else
                 <div class="check-sagatavot">
-                    <a @class(["btn", "btn-disabled" => !$week["nowMoreFriday"]]) @if($week["nowMoreFriday"]) data-bs-toggle="modal" data-bs-target="#{{ $week["number"] === 6 ? "weekModal_six" : "weekModal" }}" data-week="{{ $week["number"] }}" @endif>{{ __("Sagatavot Check In") }}</a>
+                    <a @class(["btn", "btn-disabled" => !$week["nowMoreFriday"]]) @if($week["nowMoreFriday"]) data-bs-toggle="modal" data-bs-target="#{{ $week["number"] === 6 ? "weekModal_six" : "weekModal" }}" data-week="{{ $week["number"] }}" @endif>{{ __("Сдать Check In") }}</a>
                 </div>
             @endif
         </div>

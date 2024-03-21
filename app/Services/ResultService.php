@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Enums\ResultTypeEnum;
 use App\Models\Result;
 use App\Models\User;
+use App\Notifications\AnswerAdminNotify;
 use Illuminate\Support\Collection;
 
 /**
@@ -57,12 +58,14 @@ class ResultService
     /**
      * Ответ администратора на результат
      */
-    public function answerAdmin(Result $result, string $message): Result
+    public function answerAdmin(Result $result, User $user, string $message): Result
     {
         $result->message_admin = $message;
         $result->message_admin_date = now();
 
         $result->save();
+
+        $user->notify((new AnswerAdminNotify($user, $message))->locale($user->language));
 
         return $result;
     }

@@ -20,27 +20,27 @@
             <div class="settings-box settings-form">
                 <div class="settings-form_title"><span><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.9987 10.0002C9.11464 10.0002 8.2668 9.64897 7.64168 9.02385C7.01655 8.39873 6.66536 7.55088 6.66536 6.66683C6.66536 5.78277 7.01655 4.93493 7.64168 4.30981C8.2668 3.68469 9.11464 3.3335 9.9987 3.3335C10.8828 3.3335 11.7306 3.68469 12.3557 4.30981C12.9808 4.93493 13.332 5.78277 13.332 6.66683C13.332 7.55088 12.9808 8.39873 12.3557 9.02385C11.7306 9.64897 10.8828 10.0002 9.9987 10.0002ZM9.9987 12.5002C12.6537 12.5002 15.0362 12.976 16.6654 15.0527V16.6668H3.33203V15.0527C4.9612 12.9752 7.3437 12.5002 9.9987 12.5002Z" fill="#EC2383"/>
-                  </svg> </span>Учетные данные</div>
+                  </svg> </span>{{ __('Учетные данные') }}</div>
                 <form class="form-flex needs-validation settings-form" method="POST" action="{{ route("profile.storeCredentials") }}" novalidate>
                     @csrf
                     @method("PUT")
 
                     <div class="form-item">
-                        <label>Имя, Фамилия</label>
+                        <label>{{ __('Имя, Фамилия') }}</label>
                         <input name="name" type="text" class="form-control" value="{{ $user->name }}" required>
                         <div class="invalid-feedback">
-                            Введите имя
+                            {{ __('Введите имя') }}
                         </div>
                     </div>
                     <div class="form-item">
-                        <label>Телефон</label>
+                        <label>{{ __('Телефон') }}</label>
                         <input name="phone" type="tel" class="form-control" value="{{ $user->phone }}" required>
                         <div class="invalid-feedback">
-                            Введите корректный номер телефона
+                            {{ __('Введите корректный номер телефона') }}
                         </div>
                     </div>
                     <div class="form-item form-item_action">
-                        <button type="submit" class="btn">Сохранить изменения</button>
+                        <button type="submit" class="btn">{{ __('Сохранить изменения') }}</button>
                     </div>
                 </form>
             </div>
@@ -55,34 +55,34 @@
                                 <rect width="32" height="32" fill="white"/>
                             </clipPath>
                         </defs>
-                    </svg> Пароль</div>
+                    </svg> {{ __('Пароль') }}</div>
                 <form class="form needs-validation settings-form" method="POST" action="{{ route("profile.changePassword") }}" novalidate>
                     @csrf
                     @method("PUT")
 
                     <div class="form-item">
-                        <label>Текущий пароль</label>
+                        <label>{{ __('Текущий пароль') }}</label>
                         <input name="current_password" type="password" class="form-control" required>
                         <div class="invalid-feedback">
-                            Введите текущий пароль
+                            {{ __('Введите текущий пароль') }}
                         </div>
                     </div>
                     <div class="form-item">
-                        <label>Новый пароль</label>
+                        <label>{{ __('xxxxxxxxxxx') }}Новый пароль</label>
                         <input name="password" type="password" class="form-control" required>
                         <div class="invalid-feedback">
-                            Введите новый пароль
+                            {{ __('Введите новый пароль') }}
                         </div>
                     </div>
                     <div class="form-item">
-                        <label>Повторите пароль</label>
+                        <label>{{ __('Повторите пароль') }}</label>
                         <input name="password_confirmation" type="password" class="form-control" required>
                         <div class="invalid-feedback">
-                            Повторите новый пароль
+                            {{ __('Повторите новый пароль') }}
                         </div>
                     </div>
                     <div class="form-item form-item_action">
-                        <button type="submit" class="btn">Сохранить изменения</button>
+                        <button type="submit" class="btn">{{ __('Сохранить изменения') }}</button>
                     </div>
                 </form>
             </div>
@@ -97,7 +97,7 @@
                                 <rect width="32" height="32" fill="white"/>
                             </clipPath>
                         </defs>
-                    </svg> Язык</div>
+                    </svg> {{ __('Язык') }}</div>
                 <form class="form needs-validation settings-form" method="POST" action="{{ route("profile.changeLang") }}" novalidate>
                     @csrf
                     @method("PUT")
@@ -110,7 +110,7 @@
                         </select>
                     </div>
                     <div class="form-item form-item_action">
-                        <button type="submit" class="btn">Сохранить изменения</button>
+                        <button type="submit" class="btn">{{ __('Сохранить изменения') }}</button>
                     </div>
                 </form>
             </div>
@@ -126,7 +126,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="modal-title">Изменения сохранены</div>
+                    <div class="modal-title">{{ __('Изменения сохранены') }}</div>
                 </div>
             </div>
         </div>
