@@ -360,9 +360,9 @@
                 showUploadedThumbs: true,
                 showUpload: false,
                 showZoom: false,
-                browseLabel: 'Загрузить фото',
+                browseLabel: '{{ __("Загрузить фото") }}',
                 browseClass: 'btn-foto',
-                removeLabel: 'Удалить',
+                removeLabel: '{{ __("Удалить") }}',
                 removeClass: 'd-none'
             }).on('fileuploaded', function(event, previewId, index, fileId) {
 
