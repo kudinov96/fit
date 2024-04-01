@@ -33,6 +33,11 @@ class MarathonController extends Controller
         $user = auth()->user();
         $currentWeek = $streamService->currentWeekStream($user->stream);
 
+        // Если марафон в будущем
+        if ($user->stream->start_date > now()) {
+            $currentWeek = 0;
+        }
+
         $trainingsHome = collect();
         for ($day = 1; $day <= 5; $day++) {
             $trainingsDay = Training::query()

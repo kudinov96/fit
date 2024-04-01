@@ -19,7 +19,7 @@
                     <div class="stream-item">
                         <a href="{{ route("training.index.edit", ["training" => $training]) }}" @class(["stream-row"])>
                             <div class="sr-meta">
-                                <div>{{ $training->title }} <span>(День {{ $training->day }}, {{ $training->where }})</span></div>
+                                <div>{{ $training->title }} <span>({{ __('День') }} {{ $training->day }}, {{ $training->where }})</span></div>
                             </div>
                         </a>
                     </div>

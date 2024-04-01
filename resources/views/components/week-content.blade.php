@@ -25,7 +25,7 @@
                     <div class="col-2">{{ $day["item"]->water }}</div>
                     <div class="col-2">{{ $day["item"]->sleep }}</div>
                     <div class="col-2">{{ $day["item"]->alcohol ? __('Да') : __('Нет') }}</div>
-                    <div class="col-2">{{ $day["item"]->nutrition }}</div>
+                    <div class="col-2">{{ __($day["item"]->nutrition) }}</div>
                 @elseif(!$isTrainerPage)
                     <div class="col-10">
                         <a class="btn store-check-in-modal-btn" data-week="{{ $week["number"] }}"  data-day="{{ $key }}" data-bs-toggle="modal" data-bs-target="#storeCheckInModal">{{ __('Заполнить данные') }}</a>

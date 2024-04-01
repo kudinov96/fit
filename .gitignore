@@ -18,3 +18,7 @@ yarn-error.log
 /.idea
 /.vscode
 /docker/postgres/data
+
+/public/files/recepie-book-en.pdf
+/public/files/recepie-book-lv.pdf
+/public/files/recepie-book-ru.pdf

@@ -1,11 +1,11 @@
 @extends("layouts.layout-3")
 
-@section("title", "Check in")
+@section("title", __("Check in"))
 
 @section("content")
     <div id="main-content">
         <div class="container">
-            <h1 class="text-center">Check in</h1>
+            <h1 class="text-center">{{ __("Check in") }}</h1>
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <x-accordion-week-item :id="1" :title="__('Первая неделя')" :resultTitle="__('Результаты первой недели')" :week="$weeks['week1']"></x-accordion-week-item>
                 <x-accordion-week-item :id="2" :title="__('Вторая неделя')" :resultTitle="__('Результаты второй недели')" :week="$weeks['week2']"></x-accordion-week-item>

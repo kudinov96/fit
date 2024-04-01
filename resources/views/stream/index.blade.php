@@ -74,11 +74,11 @@
                         </div>
                         <div class="form-file form-item">
                             <label class="control-label">{{ __('Загрузить шаблон листа для старта') }}</label>
-                            <input id="file-1" name="template_for_start" type="file" required>
+                            <input class="file-upload" name="template_for_start" type="file" required>
                         </div>
                         <div class="form-file form-item">
                             <label class="control-label">{{ __('Загрузить шаблон листа для финиша') }}</label>
-                            <input id="file-2" name="template_for_finish" type="file" required>
+                            <input class="file-upload" name="template_for_finish" type="file" required>
                         </div>
                         <div class="form-action">
                             <button type="submit" class="btn">{{ __('Создать') }}</button>
@@ -110,11 +110,11 @@
                         </div>
                         <div class="form-file form-item">
                             <label class="control-label">{{ __('Загрузить шаблон листа для старта') }}</label>
-                            <input id="file-1" name="template_for_start" type="file" required>
+                            <input class="file-upload" name="template_for_start" type="file" required>
                         </div>
                         <div class="form-file form-item">
                             <label class="control-label">{{ __('Загрузить шаблон листа для финиша') }}</label>
-                            <input id="file-2" name="template_for_finish" type="file" required>
+                            <input class="file-upload" name="template_for_finish" type="file" required>
                         </div>
                         <div class="form-action">
                             <button type="submit" class="btn">{{ __('Редактировать') }}</button>
@@ -129,7 +129,7 @@
 @section("scripts")
     <script>
         $(document).ready(function() {
-            $('#file-1, #file-2').fileinput({
+            $('.file-upload').fileinput({
                 showCaption: false,
                 hideThumbnailContent: false,
                 dropZoneEnabled: false,
