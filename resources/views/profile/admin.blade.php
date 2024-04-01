@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <div class="form-item">
-                        <label>{{ __('xxxxxxxxxxx') }}Новый пароль</label>
+                        <label>{{ __('Новый пароль') }}</label>
                         <input name="password" type="password" class="form-control" required>
                         <div class="invalid-feedback">
                             {{ __('Введите новый пароль') }}

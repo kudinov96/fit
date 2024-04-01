@@ -69,7 +69,7 @@
                 <div class="result-box">
                     <div class="result-head">
                         <a class="edit-link"></a>
-                        <span>{{ __('Результаты третей недели') }}</span>
+                        <span>{{ __('Результаты третьей недели') }}</span>
                     </div>
                     <div class="result-wrapper">
                         <p>{{ __('Вес') }}: <span>{{ $resultWeek3->weight }} {{ __('кг') }}</span></p>

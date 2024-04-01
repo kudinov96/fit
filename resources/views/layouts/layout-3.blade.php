@@ -25,7 +25,7 @@
             </a>
             <div class="user-menu">
                 <a href="{{ route("marathon.index") }}">{{ __("Главная") }}</a>
-                <a href="{{ route("check-in.index") }}">Check in</a>
+                <a href="{{ route("check-in.index") }}">{{ __("Check in") }}</a>
                 <a href="{{ route("result.index") }}">{{ __("Мои результаты") }}</a>
                 <a href="{{ route("materials.index") }}" class="materials-link">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +69,7 @@
                                 <div>{{ auth()->user()->name }} <span>{{ auth()->user()->email }}</span></div>
                             </a></li>
                         <li><a href="{{ route("marathon.index") }}">{{ __("Главная") }}</a></li>
-                        <li><a href="{{ route("check-in.index") }}">Check in</a></li>
+                        <li><a href="{{ route("check-in.index") }}">{{ __("Check in") }}</a></li>
                         <li><a href="{{ route("result.index") }}">{{ __("Мои результаты") }}</a></li>
                         <li><a href="{{ route("materials.index") }}" class="link-icon link-video">{{ __("Материалы для марафона") }}</a></li>
                         <li><a href="{{ route("profile.index") }}" class="link-icon link-settings">{{ __("Настройки профиля") }}</a></li>
