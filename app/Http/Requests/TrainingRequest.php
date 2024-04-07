@@ -26,7 +26,7 @@ class TrainingRequest extends FormRequest
             "content_lv" => ["required", "string"],
             "content_en" => ["required", "string"],
             "yt_video_id" => ["required", "string"],
-            "week" => ["required", "numeric", "min:1", "max:6"],
+            "weeks.*" => ["required", "numeric", "min:1", "max:6"],
             "day" => ["required", "numeric", "min:1", "max:5"],
             "where" => ["required", Rule::enum(TrainingWhereEnum::class)],
             "position" => ["nullable", "numeric"],

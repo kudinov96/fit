@@ -15,14 +15,26 @@
             <div class="stream-add" style="margin-top: 0;"><a href="{{ route("training.index") }}" class="btn">{{ __('К неделям') }}</a></div>
             <div class="stream-add" style="margin-top: 0;"><a href="{{ route("training.index.create", ["week" => $week]) }}" class="btn">{{ __('+ Создать тренировку') }}</a></div>
             <div class="stream-rows stream-rows_training">
-                @foreach($trainings as $training)
-                    <div class="stream-item">
-                        <a href="{{ route("training.index.edit", ["training" => $training]) }}" @class(["stream-row"])>
-                            <div class="sr-meta">
-                                <div>{{ $training->title }} <span>({{ __('День') }} {{ $training->day }}, {{ $training->where }})</span></div>
+                @foreach($trainingsPerDays as $key => $day)
+                    <div style="margin-bottom: 15px; font-size: 22px; font-weight: 700;">Day {{ $key }}</div>
+
+                    @foreach($day as $training)
+                        <div class="stream-item">
+                            <div @class(["stream-row"])>
+                                <a href="{{ route("training.index.edit", ["training" => $training]) }}" class="sr-meta">
+                                    <div>{{ $training->title }} <span>({{ __('День') }} {{ $training->day }}, {{ $training->where }})</span></div>
+                                </a>
+
+                                <form method="POST" action="{{ route("training.duplicate", ["training" => $training]) }}">
+                                    @csrf
+                                    @method("POST")
+
+                                    <input type="hidden" name="week" value="{{ $week }}">
+                                    <button class="btn" type="submit" style="padding: 14px 16px; font-size: 12px;">copy</button>
+                                </form>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    @endforeach
                 @endforeach
             </div>
         </div>

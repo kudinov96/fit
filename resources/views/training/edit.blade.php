@@ -54,13 +54,13 @@
 
                 <div class="form-item">
                     <label>{{ __('Неделя тренировки') }}</label>
-                    <select name="week" class="form-control" required>
-                        <option value="1" @if($training->week === 1) selected @endif>1</option>
-                        <option value="2" @if($training->week === 2) selected @endif>2</option>
-                        <option value="3" @if($training->week === 3) selected @endif>3</option>
-                        <option value="4" @if($training->week === 4) selected @endif>4</option>
-                        <option value="5" @if($training->week === 5) selected @endif>5</option>
-                        <option value="6" @if($training->week === 6) selected @endif>6</option>
+                    <select name="weeks[]" class="form-control select2" multiple required>
+                        <option value="1" @if(in_array(1, $training->weeks)) selected @endif>1</option>
+                        <option value="2" @if(in_array(2, $training->weeks)) selected @endif>2</option>
+                        <option value="3" @if(in_array(3, $training->weeks)) selected @endif>3</option>
+                        <option value="4" @if(in_array(4, $training->weeks)) selected @endif>4</option>
+                        <option value="5" @if(in_array(5, $training->weeks)) selected @endif>5</option>
+                        <option value="6" @if(in_array(6, $training->weeks)) selected @endif>6</option>
                     </select>
                 </div>
 

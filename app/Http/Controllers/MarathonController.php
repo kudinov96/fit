@@ -41,7 +41,7 @@ class MarathonController extends Controller
         $trainingsHome = collect();
         for ($day = 1; $day <= 5; $day++) {
             $trainingsDay = Training::query()
-                ->where("week", $week)
+                ->whereJsonContains("weeks", (string) $week)
                 ->where("day", $day)
                 ->where("where", TrainingWhereEnum::HOME)
                 ->get();
@@ -52,7 +52,7 @@ class MarathonController extends Controller
         $trainingsGym = collect();
         for ($day = 1; $day <= 5; $day++) {
             $trainingsDay = Training::query()
-                ->where("week", $week)
+                ->whereJsonContains("weeks", (string) $week)
                 ->where("day", $day)
                 ->where("where", TrainingWhereEnum::GYM)
                 ->get();

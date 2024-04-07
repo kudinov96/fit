@@ -54,7 +54,7 @@
 
                 <div class="form-item">
                     <label>{{ __('Неделя тренировки') }}</label>
-                    <select name="week" class="form-control" required>
+                    <select name="weeks[]" class="form-control select2" multiple required>
                         <option value="1" @if($week === 1) selected @endif>1</option>
                         <option value="2" @if($week === 2) selected @endif>2</option>
                         <option value="3" @if($week === 3) selected @endif>3</option>

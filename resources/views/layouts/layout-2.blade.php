@@ -10,6 +10,7 @@
         href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
     />
     <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("css/select2.min.css") }}" rel="stylesheet" />
     <link href="{{ asset("css/style.css?ver=") . date("YmdHis") }}" rel="stylesheet">
     <link href="{{ asset("css/responsive.css?ver=") . date("YmdHis") }}" rel="stylesheet">
     @yield("styles")
@@ -85,9 +86,14 @@
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/fileinput.min.js"></script>
+<script src="{{ asset("js/select2.min.js") }}" defer></script>
 <script src="{{ asset("js/scripts.js") }}"></script>
 <script>
     Fancybox.bind("[data-fancybox]", {
+    });
+
+    $(document).ready(function () {
+        $('.select2').select2();
     });
 </script>
 @yield("scripts")

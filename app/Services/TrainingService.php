@@ -24,7 +24,7 @@ class TrainingService
         $training->content_lv = $data["content_lv"];
         $training->content_en = $data["content_en"];
         $training->yt_video_id = $data["yt_video_id"];
-        $training->week = $data["week"];
+        $training->weeks = $data["weeks"];
         $training->day = $data["day"];
         $training->where = $data["where"];
         $training->position = $data["position"] ?? $positionMax;

@@ -20,7 +20,7 @@
                         @else
                             <a data-bs-toggle="modal" data-bs-target="#payModal" class="btn btn-disabled">{{ __('К оплате') }}</a>
                         @endif
-                        <a href="{{ route('login') }}" class="btn btn-white">{{ __('Войти') }}</a>
+                        <a href="{{ route('login', ["lang" => app()->currentLocale()]) }}" class="btn btn-white">{{ __('Войти') }}</a>
                     </div>
                 </div>
                 <div class="fs-pic">

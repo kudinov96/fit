@@ -33,5 +33,11 @@ class Handler extends ExceptionHandler
                 return (new CustomLoginExceptionHandler)->handle($request, $e);
             }
         });
+
+        $this->renderable(function (MarathonStartException $e, $request) {
+            if ($request->is('login') || $request->is('login/*')) {
+                return (new CustomLoginExceptionHandler)->handleMarathonStart($request, $e);
+            }
+        });
     }
 }

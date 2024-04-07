@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $content_en
  * @property string $content_lv
  * @property string $yt_video_id ID видео на YouTube
- * @property int    $week Неделя тренировки (1-6)
+ * @property string $weeks Недели тренировки (1-6)
  * @property int    $day День тренировки (1-5)
  * @property TrainingWhereEnum $where Где проходит тренировка
  * @property int    $position Позиция при выдаче
@@ -40,6 +40,7 @@ class Training extends Model
 
     protected $casts = [
         "where" => TrainingWhereEnum::class,
+        "weeks" => "array",
     ];
 
     protected $appends = [

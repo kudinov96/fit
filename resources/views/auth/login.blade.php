@@ -47,6 +47,20 @@
             </div>
         </div>
 
+        <div class="modal fade" id="marathonStartFailed" tabindex="-1" aria-labelledby="marathonStartFailedModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-title">{{ __("Привет! Доступ к материалам марафона будет активен с") . " " . request()->marathonStart ?? null }}</div>
+                        <div class="modal-noty">{{ __('Используя этот электронный адрес и пароль, в своем личном кабинете ты сможешь зарегистрироваться за 3 дня до начала марафона. После регистрации у тебя будет возможность предоставить данные о себе, получить план питания и увидеть программы тренировок.') }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="resetPasswordSuccess" tabindex="-1" aria-labelledby="resetPasswordSuccessModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">

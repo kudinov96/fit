@@ -62,6 +62,7 @@ Route::group(["middleware" => ['auth', 'role:admin']], function() {
     Route::post("trainings", [TrainingController::class, "store"])->name("training.store");
     Route::put("trainings/{training}", [TrainingController::class, "update"])->name("training.update");
     Route::delete("trainings/{training}", [TrainingController::class, "delete"])->name("training.delete");
+    Route::post("trainings/{training}", [TrainingController::class, "duplicate"])->name("training.duplicate");
 
     Route::get("user/{user}/view", [UserController::class, "view"])->name("user.view");
     Route::post("user", [UserController::class, "store"])->name("user.store");
