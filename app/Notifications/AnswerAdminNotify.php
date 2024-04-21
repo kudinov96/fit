@@ -39,11 +39,18 @@ class AnswerAdminNotify extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        return (new MailMessage)
+        /*return (new MailMessage)
             ->subject(__("Вам новый комментарий от тренера"))
             ->line(__("Вам новый комментарий от тренера"))
             ->line(__("Комментарий: ") . $this->answer)
-            ->action(__('Перейти в Check in'), route("check-in.index"));
+            ->action(__('Перейти в Check in'), route("check-in.index"));*/
+
+        return (new MailMessage)
+            ->subject(__("Вам новый комментарий от тренера"))
+            ->view('emails.answer-admin', [
+                'user' => $this->user,
+                'answer' => $this->answer,
+            ]);
     }
 
     /**

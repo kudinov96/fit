@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Enums\ResultTypeEnum;
 use App\Models\Result;
+use App\Models\Stream;
 use App\Models\User;
 use App\Notifications\AnswerAdminNotify;
 use Illuminate\Support\Collection;
@@ -49,6 +50,26 @@ class ResultService
             $result->message_user = $data["message_user"];
             $result->message_user_date = now();
         }
+
+        $result->save();
+
+        return $result;
+    }
+
+    public function updatePhoto(array $data, User $currentUser): Result
+    {
+        $type   = $data["type"];
+        $number = $data["number"];
+        $photo  = $data["photo"]->store("public/results");
+
+        /** @var Result $result */
+        $result = Result::query()
+            ->where("user_id", $currentUser->id)
+            ->where("stream_id", $currentUser->stream_id)
+            ->where("type", $type)
+            ->first();
+
+        $result->{"photo_" . $number} = $photo;
 
         $result->save();
 

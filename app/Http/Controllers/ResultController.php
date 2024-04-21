@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enums\ResultTypeEnum;
 use App\Http\Requests\ResultRequest;
+use App\Http\Requests\UpdatePhotoRequest;
 use App\Models\User;
 use App\Services\ResultService;
 use Illuminate\Http\RedirectResponse;
@@ -57,5 +58,18 @@ class ResultController extends Controller
         }
 
         return redirect()->to('/check-in?modal=thanks_weekModal');
+    }
+
+    public function updatePhoto(UpdatePhotoRequest $request, ResultService $resultService): RedirectResponse
+    {
+        /** @var User $user */
+        $user = auth()->user();
+
+        $resultService->updatePhoto(
+            $request->all(),
+            $user,
+        );
+
+        return redirect()->to('/results?modal=thanksModal');
     }
 }

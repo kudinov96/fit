@@ -9,9 +9,9 @@
             <p>{{ __("Давай заполним твои данные до начала марафона.") }}</p>
             <div class="row-gallery">
                 <div class="gallery-list">
-                    <a><img src="{{ asset("images/foto-1.png") }}" alt=""></a>
-                    <a><img src="{{ asset("images/foto-2.png") }}" alt=""></a>
-                    <a><img src="{{ asset("images/foto-3.png") }}" alt=""></a>
+                    <a><img src="{{ asset("images/foto-11.png") }}" alt=""></a>
+                    <a><img src="{{ asset("images/foto-22.png") }}" alt=""></a>
+                    <a><img src="{{ asset("images/foto-33.png") }}" alt=""></a>
                 </div>
                 <div class="gallery-noty">
                     <p>{{ __("ВНИМАНИЕ!") }}</p>

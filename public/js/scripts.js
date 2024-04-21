@@ -316,4 +316,12 @@ $('.accordion .accordion-button').on('click', function(){
         $('#delete-user-form input[name="user_id"]').val(userId);
     });
 
+    $(".stat-pics-btn").on('click', function(){
+        let type = $(this).data("type");
+        let number = $(this).data("number");
+
+        $('#editPhoto input[name="type"]').val(type);
+        $('#editPhoto input[name="number"]').val(number);
+    });
+
 })(jQuery);

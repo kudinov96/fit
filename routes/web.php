@@ -37,6 +37,7 @@ Route::group(["middleware" => ['auth', 'can.showMarathon', 'role:user']], functi
     Route::get("results/before", [ResultController::class, "before"])->name("result.before");
     Route::get("results", [ResultController::class, "index"])->name("result.index");
     Route::post("results", [ResultController::class, "store"])->name("result.store");
+    Route::put("results/update-photo", [ResultController::class, "updatePhoto"])->name("result.updatePhoto");
 
     Route::get("marathon", [MarathonController::class, "index"])->name("marathon.index");
     Route::get("marathon/{week}", [MarathonController::class, "indexWeek"])->where('id', '[0-9]+')->name("marathon.index.week");

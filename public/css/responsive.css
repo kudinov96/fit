@@ -19,7 +19,7 @@
     font-size: 16px
 }
 .params .btn-foto {
-    height: 350px;
+    height: 450px;
 }
 .droparea {
     width: 320px;
@@ -104,7 +104,7 @@
     height: 300px;
 }
 .params .btn-foto {
-    height: 300px;
+    height: 350px;
 }
 .form-fields {
     margin: 30px 0px;
@@ -487,7 +487,7 @@ body:not(.home) {
     padding: 5px;
 }
 .params .btn-foto {
-    height: 143px;
+    height: 350px;
 }
 .params .btn-foto svg,
 .droparea svg {

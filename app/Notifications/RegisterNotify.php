@@ -39,12 +39,18 @@ class RegisterNotify extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        return (new MailMessage)
+        /*return (new MailMessage)
             ->subject(__("Вы успешно зарегистрировались"))
             ->line(__("Данные для входа:"))
             ->line(__("Email: ") . $this->user->email)
             ->line(__("Пароль: ") . $this->password)
-            ->action(__('Авторизоваться'), route("login"));
+            ->action(__('Авторизоваться'), route("login"));*/
+        return (new MailMessage)
+            ->subject(__("Вы успешно зарегистрировались"))
+            ->view('emails.register', [
+                'user' => $this->user,
+                'password' => $this->password,
+            ]);
     }
 
     /**

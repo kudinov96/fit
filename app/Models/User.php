@@ -6,6 +6,7 @@ namespace App\Models;
 use App\DTO\MenuDTO;
 use App\Enums\ResultTypeEnum;
 use App\Enums\RoleEnum;
+use App\Notifications\ResetPasswordNotify;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -146,5 +147,10 @@ class User extends Authenticatable
     public function hasResultsByType(ResultTypeEnum $type): bool
     {
         return $this->results()->where("type", $type)->exists();
+    }
+
+    public function sendPasswordResetNotification($token): void
+    {
+        $this->notify(new ResetPasswordNotify($token));
     }
 }

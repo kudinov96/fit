@@ -23,9 +23,20 @@
                             </div>
                         </div>
                         <div class="col-lg-6 stat-pics">
-                            <a data-fancybox="user-gallery" href="{{ \Storage::url($resultStart->photo_1) }}"><img src="{{ \Storage::url($resultStart->photo_1) }}" alt=""></a>
-                            <a data-fancybox="user-gallery" href="{{ \Storage::url($resultStart->photo_2) }}"><img src="{{ \Storage::url($resultStart->photo_2) }}" alt=""></a>
-                            <a data-fancybox="user-gallery" href="{{ \Storage::url($resultStart->photo_3) }}"><img src="{{ \Storage::url($resultStart->photo_3) }}" alt=""></a>
+                            <div>
+                                <a data-fancybox="user-gallery" href="{{ \Storage::url($resultStart->photo_1) }}">
+                                    <img src="{{ \Storage::url($resultStart->photo_1) }}" alt="">
+                                </a>
+                                <button type="button" class="stat-pics-btn" data-type="{{ \App\Enums\ResultTypeEnum::START->value }}" data-number="1" data-bs-toggle="modal" data-bs-target="#editPhoto">send</button>
+                            </div>
+                            <div>
+                                <a data-fancybox="user-gallery" href="{{ \Storage::url($resultStart->photo_2) }}"><img src="{{ \Storage::url($resultStart->photo_2) }}" alt=""></a>
+                                <button type="button" class="stat-pics-btn" data-type="{{ \App\Enums\ResultTypeEnum::START->value }}" data-number="2" data-bs-toggle="modal" data-bs-target="#editPhoto">send</button>
+                            </div>
+                            <div>
+                                <a data-fancybox="user-gallery" href="{{ \Storage::url($resultStart->photo_3) }}"><img src="{{ \Storage::url($resultStart->photo_3) }}" alt=""></a>
+                                <button type="button" class="stat-pics-btn" data-type="{{ \App\Enums\ResultTypeEnum::START->value }}" data-number="3" data-bs-toggle="modal" data-bs-target="#editPhoto">send</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -160,4 +171,68 @@
             @endif
         </div>
     </div>
+
+    <!-- success modal -->
+    <div class="modal fade" id="thanksModal" tabindex="-1" aria-labelledby="thanksModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-title">{{ __("Фото успешно изменено!") }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- edit stream modal  -->
+    <div class="modal fade" id="editPhoto" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-title">{{ __('Редактировать фото') }} <span></span></div>
+                    <form class="needs-validation" action="{{ route("result.updatePhoto") }}" method="POST" enctype="multipart/form-data" novalidate>
+                        @csrf
+                        @method("PUT")
+
+                        <input type="hidden" name="type" value="">
+                        <input type="hidden" name="number" value="">
+
+                        <div class="qs-inputs files row">
+                            <input id="foto" name="photo" type="file" required>
+                        </div>
+                        <div class="form-action">
+                            <button type="submit" class="btn">{{ __("Сохранить") }}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section("scripts")
+    <script>
+        $(document).ready(function() {
+            $('#foto').fileinput({
+                showCaption: false,
+                hideThumbnailContent: false,
+                dropZoneEnabled: false,
+                showPreview: true,
+                showUploadedThumbs: true,
+                showUpload: false,
+                showZoom: false,
+                browseLabel: '{{ __("Загрузить фото") }}',
+                browseClass: 'btn-foto',
+                removeLabel: '{{ __("Удалить") }}',
+                removeClass: 'd-none'
+            }).on('fileuploaded', function(event, previewId, index, fileId) {
+
+            });
+        });
+    </script>
 @endsection
