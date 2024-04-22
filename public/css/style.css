@@ -618,8 +618,13 @@ body:not(.home) #footer {
 }
 .stat-pics-btn{
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 8px;
+    right: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 34px;
+    height: 34px;
 }
 .stat-pics a{
     display: block;
