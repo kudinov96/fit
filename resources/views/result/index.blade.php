@@ -266,7 +266,7 @@
                 showUpload: false,
                 showZoom: false,
                 browseLabel: '{{ __("Загрузить фото") }}',
-                browseClass: 'btn-foto',
+                browseClass: 'btn-foto btn-foto_custom',
                 removeLabel: '{{ __("Удалить") }}',
                 removeClass: 'd-none'
             }).on('fileuploaded', function(event, previewId, index, fileId) {

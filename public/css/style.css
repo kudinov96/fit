@@ -2081,6 +2081,10 @@ body:not(.home) #footer {
     border: 1px solid #D6D6D6;
     cursor: pointer;
 }
+.btn-foto_custom{
+    width: 237px;
+    height: 316px;
+}
 .btn-foto span {
     color: #AFAFAF;
     font-size: 14px;

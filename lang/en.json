@@ -336,5 +336,6 @@
     "email-comment-1": "Hello, thank you for Check in!",
     "email-comment-2": "GO TO CHECK IN",
     "Редактировать фото": "Edit photo",
-    "Фото успешно изменено!": "Photo has been successfully edited!"
+    "Фото успешно изменено!": "Photo has been changed!",
+    "Сохранить": "Save"
 }
