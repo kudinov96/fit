@@ -42,7 +42,7 @@
     "Reset Password Notification": "Уведомление о сбросе пароля",
     "Hello!": "Здравствуйте!",
     "You are receiving this email because we received a password reset request for your account.": "Вы получили это письмо, потому что мы получили запрос на сброс пароля для вашей учетной записи.",
-    "This password reset link will expire in :count minutes.": "Срок действия этой ссылки для сброса пароля истекает через 30 минут.",
+    "This password reset link will expire in 30 minutes.": "Срок действия этой ссылки для сброса пароля истекает через 30 минут.",
     "If you did not request a password reset, no further action is required.": "Если вы не запрашивали сброс пароля, никаких дальнейших действий не требуется.",
     "Regards": "С уважением",
     "Reset Password": "Сбросить пароль",

@@ -241,7 +241,7 @@
                         <input type="hidden" name="type" value="">
                         <input type="hidden" name="number" value="">
 
-                        <div class="qs-inputs files row">
+                        <div class="qs-inputs files files_custom row">
                             <input id="foto" name="photo" type="file" required>
                         </div>
                         <div class="form-action">

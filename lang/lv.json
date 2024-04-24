@@ -47,7 +47,7 @@
     "Reset Password Notification": "Paroles atiestatīšanas paziņojums",
     "Hello!": "Sveika!",
     "You are receiving this email because we received a password reset request for your account.": "Jūs saņemat šo e-pastu, jo mēs saņēmām pieprasījumu par jūsu konta paroles atiestatīšanu.",
-    "This password reset link will expire in :count minutes.": "Šīs paroles atiestatīšanas saite beigsies pēc 30 minūtēm.",
+    "This password reset link will expire in 30 minutes.": "Šīs paroles atiestatīšanas saite beigsies pēc 30 minūtēm.",
     "If you did not request a password reset, no further action is required.": "Ja jūs nepieprasījāt paroles atiestatīšanu, nekādas turpmākas darbības nav nepieciešamas.",
     "Regards": "Ar cieņu",
     "Reset Password": "Atiestatīt paroli",

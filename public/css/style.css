@@ -616,7 +616,14 @@ body:not(.home) #footer {
     position: relative;
     width: calc(33.333% - 7px);
 }
+
+.stat-pics > div:hover .stat-pics-btn{
+    opacity: 1;
+}
+
 .stat-pics-btn{
+    opacity: 0;
+    transition: 0.5s;
     position: absolute;
     top: 8px;
     right: 8px;
@@ -2106,9 +2113,12 @@ body:not(.home) #footer {
     background: #fff;
     padding: 0px;
     width: 237px;
-    height: 291px;
+    height: 316px;
     border-radius: 10px;
     border: 1px solid #D6D6D6;
+}
+.files_custom .file-preview{
+    height: 316px;
 }
 .files .file-input {
     display: flex;
