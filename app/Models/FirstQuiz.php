@@ -13,8 +13,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $user_id
  * @property int $stream_id
  * @property int $age Возраст
- * @property int $height Рост
- * @property int $weight Вес
+ * @property float $height Рост
+ * @property float $weight Вес
  * @property int $target Цель похудения
  * @property string $menu Вариант меню
  * @property string $nutritional_supplements Добавки и лекарства

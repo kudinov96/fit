@@ -38,11 +38,11 @@
                                     </svg></a></h2>
                             <div>{{ __('Меню') }}: {{ $user->menu->isCustom ? __($user->menu_name) : __($user->menu_file) }}</div>
                         </div>
-                        <div class="materials-meta">
+                        {{--<div class="materials-meta">
                             <p><strong>{{ __('Общие рекомендации:') }}</strong></p>
                             <p>{{ __('recommendation1') }}</p>
                             <p>{{ __('recommendation2') }}</p>
-                        </div>
+                        </div>--}}
                         <div class="d-flex"><a href="{{ $user->menu->isCustom ? \Storage::url($user->menu_file) : asset("menus/" . app()->currentLocale() . "/" . $user->menu_file . ".pdf") }}" download class="btn btn-green">{{ __('Скачать') }}</a></div>
                     </div>
                 </div>

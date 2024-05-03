@@ -43,11 +43,11 @@
                             </div>
                             <div class="col-lg-4">
                                 <label>{{ __('Рост') }} <span>({{ __('см') }})</span></label>
-                                <input name="height" type="number" value="" step="1" min="1" data-step="1" class="form-control quiz-required">
+                                <input name="height" type="number" step="0.1" class="form-control quiz-required">
                             </div>
                             <div class="col-lg-4">
                                 <label>{{ __('Вес') }} <span>({{ __('кг') }})</span></label>
-                                <input name="weight" type="number" value="" step="1" min="1" data-step="1" class="form-control quiz-required">
+                                <input name="weight" type="number" step="0.1" class="form-control quiz-required">
                             </div>
                         </div>
                     </div>

@@ -24,8 +24,8 @@ class FirstQuizRequest extends FormRequest
     {
         return [
             "age"                     => ["required", "numeric"],
-            "height"                  => ["required", "numeric"],
-            "weight"                  => ["required", "numeric"],
+            "height"                  => ["required"],
+            "weight"                  => ["required"],
             "target"                  => ["required", "string"],
             "menu"                    => ["required", "string"],
             "nutritional_supplements" => ["required", "string"],

@@ -3,7 +3,7 @@
 @section("title", __('Создать тренировку'))
 
 @section("styles")
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    {{--<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">--}}
 @endsection
 
 @section("content")
@@ -35,16 +35,16 @@
                     <label>{{ __('Контент') }}</label>
 
                     <p class="mb-1" style="font-weight: 600">ru</p>
-                    <div class="editor mb-2"></div>
-                    <textarea name="content_ru" placeholder="ru" class="hiddenArea" required></textarea>
+                    {{--<div class="editor mb-2">{!! $training->content_ru !!}</div>--}}
+                    <textarea style="width: 100%; height: 500px;" name="content_ru" placeholder="ru" required>{!! $training->content_ru !!}</textarea>
 
                     <p class="mb-1" style="font-weight: 600">lv</p>
-                    <div class="editor mb-2"></div>
-                    <textarea name="content_lv" placeholder="lv" class="hiddenArea"required></textarea>
+                    {{--<div class="editor mb-2">{!! $training->content_lv !!}</div>--}}
+                    <textarea style="width: 100%; height: 500px;" name="content_lv" placeholder="lv" required>{!! $training->content_lv !!}</textarea>
 
                     <p class="mb-1" style="font-weight: 600">en</p>
-                    <div class="editor"></div>
-                    <textarea name="content_en" placeholder="en" class="hiddenArea"required></textarea>
+                    {{--<div class="editor">{!! $training->content_en !!}</div>--}}
+                    <textarea style="width: 100%; height: 500px;" name="content_en" placeholder="en" required>{!! $training->content_en !!}</textarea>
                 </div>
 
                 <div class="form-item">
@@ -98,7 +98,7 @@
 @endsection
 
 @section("scripts")
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    {{--<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var toolbarOptions = [
@@ -131,6 +131,6 @@
                 });
             };
         });
-    </script>
+    </script>--}}
 
 @endsection

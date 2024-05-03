@@ -57,11 +57,11 @@
                     </div>
                     <div class="result-row">
                         <p>{{ __('Цель') }}:</p>
-                        <p>{{ $user->firstQuiz->target }}</p>
+                        <p>{{ __($user->firstQuiz->target) }}</p>
                     </div>
                     <div class="result-row">
                         <p>{{ __('Вариант меню') }}:</p>
-                        <p>{{ $user->firstQuiz->menu }}</p>
+                        <p>{{ __($user->firstQuiz->menu) }}</p>
                     </div>
                     <div class="result-row">
                         <p>{{ __('Прием лекарств или пищевых добавок') }}:</p>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="result-row">
                         <p>{{ __('Был частный тренер/личные тренировки/план питания?') }}</p>
-                        <p>{{ $user->firstQuiz->experience }}</p>
+                        <p>{{ __($user->firstQuiz->experience) }}</p>
                     </div>
                 </div>
             @endif

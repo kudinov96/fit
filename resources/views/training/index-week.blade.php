@@ -3,7 +3,7 @@
 @section("title", __('Тренировочные недели - Неделя'))
 
 @section("styles")
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    {{--<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">--}}
 @endsection
 
 @section("content")
@@ -41,7 +41,7 @@
 @endsection
 
 @section("scripts")
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    {{--<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var toolbarOptions = [
@@ -83,6 +83,6 @@
                 });
             };
         });
-    </script>
+    </script>--}}
 
 @endsection
