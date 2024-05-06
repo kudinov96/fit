@@ -32,9 +32,9 @@ class ResultRequest extends FormRequest
             "hips" => ["required", "numeric"],
             "hand" => ["required", "numeric"],
             "leg" => ["required", "numeric"],
-            "photo_1" => [Rule::requiredIf(fn () => $this->type === ResultTypeEnum::START->value || $this->type === ResultTypeEnum::WEEK_6->value), "image"],
-            "photo_2" => [Rule::requiredIf(fn () => $this->type === ResultTypeEnum::START->value || $this->type === ResultTypeEnum::WEEK_6->value), "image"],
-            "photo_3" => [Rule::requiredIf(fn () => $this->type === ResultTypeEnum::START->value || $this->type === ResultTypeEnum::WEEK_6->value), "image"],
+            "photo_1" => [Rule::requiredIf(fn () => $this->type === ResultTypeEnum::START->value || $this->type === ResultTypeEnum::WEEK_6->value)],
+            "photo_2" => [Rule::requiredIf(fn () => $this->type === ResultTypeEnum::START->value || $this->type === ResultTypeEnum::WEEK_6->value)],
+            "photo_3" => [Rule::requiredIf(fn () => $this->type === ResultTypeEnum::START->value || $this->type === ResultTypeEnum::WEEK_6->value)],
             "message_user" => ["nullable", "string"],
         ];
     }
