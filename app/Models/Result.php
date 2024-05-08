@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $user_id
  * @property int $stream_id
  * @property ResultTypeEnum $type Тип результата
- * @property int $weight Вес
+ * @property float $weight Вес
  * @property int $breast Грудь
  * @property int $waistline Талия
  * @property int $hips Бедра

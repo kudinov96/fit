@@ -12,8 +12,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $user_id
  * @property int $stream_id
  * @property boolean $training Была тренировка?
- * @property int $water Сколько литров воды выпили?
- * @property int $sleep Сколько часов спали?
+ * @property float $water Сколько литров воды выпили?
+ * @property float $sleep Сколько часов спали?
  * @property string $nutrition Питание
  * @property boolean $alcohol Употребляли алкоголь?
  * @property int $week Неделя

@@ -26,7 +26,7 @@ class ResultRequest extends FormRequest
     {
         return [
             "type" => ["required", "string", Rule::enum(ResultTypeEnum::class)],
-            "weight" => ["required", "numeric"],
+            "weight" => ["required"],
             "breast" => ["required", "numeric"],
             "waistline" => ["required", "numeric"],
             "hips" => ["required", "numeric"],

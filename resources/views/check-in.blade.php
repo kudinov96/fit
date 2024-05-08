@@ -43,11 +43,11 @@
                             </div>
                             <div class="col-lg-3">
                                 <label>{{ __('Вода') }} <span>{{ __('(л)') }}</span></label>
-                                <input name="water" type="number" step="0.5" min="0" value="" class="form-control" tabindex="0" required>
+                                <input name="water" type="number" step="0.1" min="0.1" value="" class="form-control" tabindex="0" required>
                             </div>
                             <div class="col-lg-3">
                                 <label>{{ __('Сон') }} <span>{{ __('(часов)') }}</span></label>
-                                <input name="sleep" type="number" step="0.5" min="0" value="" class="form-control" tabindex="0" required>
+                                <input name="sleep" type="number" step="0.1" min="0.1" value="" class="form-control" tabindex="0" required>
                             </div>
                             <div class="col-lg-3">
                                 <label>{{ __('Алкоголь') }} <span>{{ __('(да/нет)') }}</span></label>
@@ -101,11 +101,11 @@
                             </div>
                             <div class="col-lg-3">
                                 <label>{{ __('Вода') }} <span>{{ __('(л)') }}</span></label>
-                                <input name="water" type="number" step="0.5" min="0" value="" class="form-control" tabindex="0" required>
+                                <input name="water" type="number" step="0.1" min="0.1" value="" class="form-control" tabindex="0" required>
                             </div>
                             <div class="col-lg-3">
                                 <label>{{ __('Сон') }} <span>{{ __('(часов)') }}</span></label>
-                                <input name="sleep" type="number" step="0.5" min="0" value="" class="form-control" tabindex="0" required>
+                                <input name="sleep" type="number" step="0.1" min="0.1" value="" class="form-control" tabindex="0" required>
                             </div>
                             <div class="col-lg-3">
                                 <label>{{ __('Алкоголь') }} <span>{{ __('(да/нет)') }}</span></label>
@@ -153,7 +153,7 @@
                                 <div class="qs-inputs row mb-4">
                                     <div class="col-xl-2">
                                         <label>{{ __('Вес') }} <span>({{ __('кг') }})</span></label>
-                                        <input name="weight" type="number" step="0.01" value="" class="form-control" required>
+                                        <input name="weight" type="number" step="0.1" value="" class="form-control" required>
                                     </div>
                                     <div class="col-xl-2">
                                         <label>{{ __('Грудь') }} <span>({{ __('см') }})</span></label>
@@ -225,7 +225,7 @@
                                 <div class="qs-inputs row mb-4">
                                     <div class="col-xl-2">
                                         <label>{{ __('Вес') }} <span>({{ __('кг') }})</span></label>
-                                        <input name="weight" type="number" step="0.01" value="" class="form-control" required>
+                                        <input name="weight" type="number" step="0.1" value="" class="form-control" required>
                                     </div>
                                     <div class="col-xl-2">
                                         <label>{{ __('Грудь') }} <span>({{ __('см') }})</span></label>

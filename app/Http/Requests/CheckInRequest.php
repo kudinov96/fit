@@ -27,8 +27,8 @@ class CheckInRequest extends FormRequest
             "week"        => ["required", "numeric"],
             "day"         => ["required", "numeric"],
             "training"    => ["required", "boolean"],
-            "water"       => ["required", "numeric"],
-            "sleep"       => ["required", "numeric"],
+            "water"       => ["required"],
+            "sleep"       => ["required"],
             "nutrition"   => ["required", "string"],
             "alcohol"     => ["required", "boolean"],
         ];
