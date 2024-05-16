@@ -36,15 +36,15 @@
 
                     <p class="mb-1" style="font-weight: 600">ru</p>
                     {{--<div class="editor mb-2">{!! $training->content_ru !!}</div>--}}
-                    <textarea style="width: 100%; height: 500px;" name="content_ru" placeholder="ru" required>{!! $training->content_ru !!}</textarea>
+                    <textarea style="width: 100%; height: 500px;" name="content_ru" placeholder="ru" required></textarea>
 
                     <p class="mb-1" style="font-weight: 600">lv</p>
                     {{--<div class="editor mb-2">{!! $training->content_lv !!}</div>--}}
-                    <textarea style="width: 100%; height: 500px;" name="content_lv" placeholder="lv" required>{!! $training->content_lv !!}</textarea>
+                    <textarea style="width: 100%; height: 500px;" name="content_lv" placeholder="lv" required></textarea>
 
                     <p class="mb-1" style="font-weight: 600">en</p>
                     {{--<div class="editor">{!! $training->content_en !!}</div>--}}
-                    <textarea style="width: 100%; height: 500px;" name="content_en" placeholder="en" required>{!! $training->content_en !!}</textarea>
+                    <textarea style="width: 100%; height: 500px;" name="content_en" placeholder="en" required></textarea>
                 </div>
 
                 <div class="form-item">
