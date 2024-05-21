@@ -210,9 +210,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="check-in_link">
+                    {{--<div class="check-in_link">
                         <a href="{{ route("check-in.index") }}" class="btn">{{ __('Отправить Check In') }}</a>
-                    </div>
+                    </div>--}}
                 @endif
             </div>
         </div>

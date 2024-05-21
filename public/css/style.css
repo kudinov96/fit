@@ -2196,8 +2196,11 @@ body:not(.home) #footer {
     height: 10px;
     margin: 0 auto;
 }
+.s-plus_ping{
+    background: url('data:image/svg+xml,<svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 6.53361H7.22921V10H3.7931V6.53361H0V3.46639H3.7931V0H7.22921V3.46639H11V6.53361Z" fill="%23EC2383"/></svg>') center center no-repeat;
+}
 .s-minus {
-    background: url('data:image/svg+xml,<svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H8V4H0V0Z" fill="white"/></svg>') center center no-repeat;
+    background: url('data:image/svg+xml,<svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H8V4H0V0Z" fill="%23C2C2C2"/></svg>') center center no-repeat;
 }
 .stream-table table td {
     vertical-align: middle;

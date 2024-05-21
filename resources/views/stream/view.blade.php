@@ -22,7 +22,8 @@
                         <thead>
                         <tr>
                             <th scope="col">{{ __('Имя, фамилия') }}</th>
-                            <th scope="col">{{ __('Возраст') }}</th>
+                            <th scope="col">{{ __('Email') }}</th>
+                            <th scope="col">{{ __('Анкета') }}</th>
                             <th scope="col">{{ __('1-ая неделя') }}<br> {{ __('чекин') }}</th>
                             <th scope="col">{{ __('2-ая неделя') }}<br> {{ __('чекин') }}</th>
                             <th scope="col">{{ __('3-яя неделя') }}<br> {{ __('чекин') }}</th>
@@ -38,19 +39,25 @@
                                         <a href="{{ route("user.view", ["user" => $user]) }}">{{ $user->name }}</a>
                                         <a data-bs-toggle="modal" data-bs-target="#deleteModal" data-user-id="{{ $user->id }}" class="remove remove-user"></a>
                                     </td>
-                                    <td>{{ $user->firstQuiz ? $user->firstQuiz->age : "" }}</td>
-                                    <td><span @class(["s-plus" => $user->has_result_week_1, "s-minus" => !$user->has_result_week_1])></span></td>
-                                    <td><span @class(["s-plus" => $user->has_result_week_2, "s-minus" => !$user->has_result_week_2])></span></td>
-                                    <td><span @class(["s-plus" => $user->has_result_week_3, "s-minus" => !$user->has_result_week_3])></span></td>
-                                    <td><span @class(["s-plus" => $user->has_result_week_4, "s-minus" => !$user->has_result_week_4])></span></td>
-                                    <td><span @class(["s-plus" => $user->has_result_week_5, "s-minus" => !$user->has_result_week_5])></span></td>
-                                    <td><span @class(["s-plus" => $user->has_result_week_6, "s-minus" => !$user->has_result_week_6])></span></td>
+                                    <td><span style="font-size: 12px;">{{ $user->email }}</span></td>
+                                    <td>
+                                        @if($user->hasResultsByType(\App\Enums\ResultTypeEnum::START))
+                                            <span class="s-plus s-plus_ping"></span>
+                                        @endif
+                                    </td>
+                                    <td><span @class(["s-plus" => $user->has_result_week_1["has"], "s-plus_ping" => $user->has_result_week_1["is_answered"], "s-minus" => !$user->has_result_week_1["has"]])></span></td>
+                                    <td><span @class(["s-plus" => $user->has_result_week_2["has"], "s-plus_ping" => $user->has_result_week_2["is_answered"], "s-minus" => !$user->has_result_week_2["has"]])></span></td>
+                                    <td><span @class(["s-plus" => $user->has_result_week_3["has"], "s-plus_ping" => $user->has_result_week_3["is_answered"], "s-minus" => !$user->has_result_week_3["has"]])></span></td>
+                                    <td><span @class(["s-plus" => $user->has_result_week_4["has"], "s-plus_ping" => $user->has_result_week_4["is_answered"], "s-minus" => !$user->has_result_week_4["has"]])></span></td>
+                                    <td><span @class(["s-plus" => $user->has_result_week_5["has"], "s-plus_ping" => $user->has_result_week_5["is_answered"], "s-minus" => !$user->has_result_week_5["has"]])></span></td>
+                                    <td><span @class(["s-plus" => $user->has_result_week_6["has"], "s-plus_ping" => $user->has_result_week_6["is_answered"], "s-minus" => !$user->has_result_week_6["has"]])></span></td>
                                 </tr>
                             @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th scope="col">{{ __('Итого') }}: {{ $users->count() }}</th>
+                                <th scope="col"></th>
                                 <th scope="col"></th>
                                 <th scope="col">{{ __('Итого') }}: {{ $countWeek1 }}</th>
                                 <th scope="col">{{ __('Итого') }}: {{ $countWeek2 }}</th>
