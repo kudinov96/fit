@@ -40,12 +40,12 @@ class StreamController extends Controller
             ->map(function ($user) {
                 $results = $user->results;
 
-                $user->has_result_week_1 = ["has" => $this->countResults($user, 1), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_1)->isNotEmpty()];
-                $user->has_result_week_2 = ["has" => $this->countResults($user, 2), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_2)->isNotEmpty()];
-                $user->has_result_week_3 = ["has" => $this->countResults($user, 3), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_3)->isNotEmpty()];
-                $user->has_result_week_4 = ["has" => $this->countResults($user, 4), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_4)->isNotEmpty()];
-                $user->has_result_week_5 = ["has" => $this->countResults($user, 5), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_5)->isNotEmpty()];
-                $user->has_result_week_6 = ["has" => $this->countResults($user, 6), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_6)->isNotEmpty()];
+                $user->has_result_week_1 = ["has" => $this->countResults($user, 1), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_1)->first()->message_admin ?? false];
+                $user->has_result_week_2 = ["has" => $this->countResults($user, 2), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_2)->first()->message_admin ?? false];
+                $user->has_result_week_3 = ["has" => $this->countResults($user, 3), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_3)->first()->message_admin ?? false];
+                $user->has_result_week_4 = ["has" => $this->countResults($user, 4), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_4)->first()->message_admin ?? false];
+                $user->has_result_week_5 = ["has" => $this->countResults($user, 5), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_5)->first()->message_admin ?? false];
+                $user->has_result_week_6 = ["has" => $this->countResults($user, 6), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_6)->first()->message_admin ?? false];
 
                 return $user;
             });
