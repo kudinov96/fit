@@ -325,3 +325,11 @@ $('.accordion .accordion-button').on('click', function(){
     });
 
 })(jQuery);
+
+document.querySelectorAll('.numeric-input').forEach(function(element) {
+    element.addEventListener('keypress', function(e) {
+        if (!/^\d$/.test(e.key)) {
+            e.preventDefault();
+        }
+    });
+});

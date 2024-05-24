@@ -39,7 +39,7 @@
                         <div class="qs-inputs row">
                             <div class="col-lg-4">
                                 <label>{{ __('Возраст') }}</label>
-                                <input name="age" type="number" value="" data-step="1" class="form-control quiz-required">
+                                <input name="age" type="number" value="" data-step="1" class="form-control numeric-input quiz-required">
                             </div>
                             <div class="col-lg-4">
                                 <label>{{ __('Рост') }} <span>({{ __('см') }})</span></label>

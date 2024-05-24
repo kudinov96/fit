@@ -157,23 +157,23 @@
                                     </div>
                                     <div class="col-xl-2">
                                         <label>{{ __('Грудь') }} <span>({{ __('см') }})</span></label>
-                                        <input name="breast" type="number" step="1" min="1" value="" class="form-control" required>
+                                        <input name="breast" type="number" step="1" min="1" value="" class="form-control numeric-input" required>
                                     </div>
                                     <div class="col-xl-2">
                                         <label>{{ __('Талия') }} <span>({{ __('см') }})</span></label>
-                                        <input name="waistline" type="number" step="1" min="1" class="form-control" required>
+                                        <input name="waistline" type="number" step="1" min="1" class="form-control numeric-input" required>
                                     </div>
                                     <div class="col-xl-2">
                                         <label>{{ __('Бедра') }} <span>({{ __('см') }})</span></label>
-                                        <input name="hips" type="number" step="1" min="1" class="form-control" required>
+                                        <input name="hips" type="number" step="1" min="1" class="form-control numeric-input" required>
                                     </div>
                                     <div class="col-xl-2">
                                         <label>{{ __('Правая рука') }} <span>({{ __('см') }})</span></label>
-                                        <input name="hand" type="number" step="1" min="1" class="form-control" required>
+                                        <input name="hand" type="number" step="1" min="1" class="form-control numeric-input" required>
                                     </div>
                                     <div class="col-xl-2">
                                         <label>{{ __('Правая нога') }} <span>({{ __('см') }})</span></label>
-                                        <input name="leg" type="number" step="1" min="1" class="form-control" required>
+                                        <input name="leg" type="number" step="1" min="1" class="form-control numeric-input" required>
                                     </div>
                                 </div>
                                 <div class="week-nav">
@@ -229,23 +229,23 @@
                                     </div>
                                     <div class="col-xl-2">
                                         <label>{{ __('Грудь') }} <span>({{ __('см') }})</span></label>
-                                        <input name="breast" type="number" step="1" min="1" value="" class="form-control" required>
+                                        <input name="breast" type="number" step="1" min="1" value="" class="form-control numeric-input" required>
                                     </div>
                                     <div class="col-xl-2">
                                         <label>{{ __('Талия') }} <span>({{ __('см') }})</span></label>
-                                        <input name="waistline" type="number" step="1" min="1" class="form-control" required>
+                                        <input name="waistline" type="number" step="1" min="1" class="form-control numeric-input" required>
                                     </div>
                                     <div class="col-xl-2">
                                         <label>{{ __('Бедра') }} <span>({{ __('см') }})</span></label>
-                                        <input name="hips" type="number" step="1" min="1" class="form-control" required>
+                                        <input name="hips" type="number" step="1" min="1" class="form-control numeric-input" required>
                                     </div>
                                     <div class="col-xl-2">
                                         <label>{{ __('Правая рука') }} <span>({{ __('см') }})</span></label>
-                                        <input name="hand" type="number" step="1" min="1" class="form-control" required>
+                                        <input name="hand" type="number" step="1" min="1" class="form-control numeric-input" required>
                                     </div>
                                     <div class="col-xl-2">
                                         <label>{{ __('Правая нога') }} <span>({{ __('см') }})</span></label>
-                                        <input name="leg" type="number" step="1" min="1" class="form-control" required>
+                                        <input name="leg" type="number" step="1" min="1" class="form-control numeric-input" required>
                                     </div>
                                 </div>
                                 <div class="week-nav">
