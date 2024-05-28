@@ -46,6 +46,7 @@ class StreamService
     {
         $stream = $stream ?? new Stream();
         $stream->start_date = $data["start_date"];
+        $stream->group_chat = $data["group_chat"] ?? null;
 
         if (isset($data["template_for_start"])) {
             $stream->template_for_start = $data["template_for_start"]->store("public/streams");
