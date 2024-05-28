@@ -337,5 +337,10 @@
     "email-comment-2": "GO TO CHECK IN",
     "Редактировать фото": "Edit photo",
     "Фото успешно изменено!": "Photo has been changed!",
-    "Сохранить": "Save"
+    "Сохранить": "Save",
+    "Стартовая страница": "Starting page",
+    "С этой странице тебе нужно сфотографировать свою фигуру перед началом марафона. Страницу можно распечатать или открыть на Компьютере рядом.": "With this page, you need to take pictures of your figure before starting the project. You can print the page or open it on a PC next to you.",
+    "Финишная страница": "Finishing page",
+    "С этой странице фотографируйся при завершении марафона": "With this page, take photos of yourself at the end of the project",
+    "Групповой чат": "Group chat"
 }

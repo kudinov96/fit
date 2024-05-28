@@ -105,7 +105,7 @@ class ResultService
                 ->where("stream_id", $user->stream_id)
                 ->where("type", constant(ResultTypeEnum::class . "::" . "WEEK_" . $week))
                 ->first());
-            $weekItem->put("nowMoreFriday", now() >= $user->stream->start_date->addWeeks($week - 1)->addDays(5));
+            $weekItem->put("nowMoreFriday", now() >= $user->stream->start_date->addWeeks($week - 1)->addDays(4));
 
             $weekItem->put("days", $this->streamService->daysWithDateByWeek($user->stream, $week, $user));
 

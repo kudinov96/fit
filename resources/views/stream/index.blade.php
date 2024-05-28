@@ -72,6 +72,10 @@
                             <label>{{ __('Дата старта') }}</label>
                             <input name="start_date" type="date" value="" class="form-control" required>
                         </div>
+                        <div class="form-item">
+                            <label>{{ __('Групповой чат') }}</label>
+                            <input name="group_chat" type="text" value="" class="form-control">
+                        </div>
                         <div class="form-file form-item">
                             <label class="control-label">{{ __('Загрузить шаблон листа для старта') }}</label>
                             <input class="file-upload" name="template_for_start" type="file" required>
@@ -107,6 +111,10 @@
                         <div class="form-item">
                             <label>{{ __('Дата старта') }}</label>
                             <input name="start_date" type="date" value="" class="form-control" required>
+                        </div>
+                        <div class="form-item">
+                            <label>{{ __('Групповой чат') }}</label>
+                            <input name="group_chat" type="text" value="" class="form-control">
                         </div>
                         <div class="form-file form-item">
                             <label class="control-label">{{ __('Загрузить шаблон листа для старта') }}</label>

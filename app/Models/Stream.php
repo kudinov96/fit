@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property Carbon $start_date Дата начала
  * @property string $template_for_start Файл шаблона для старта
  * @property string $template_for_finish Файл шаблона для финиша
+ * @property string $group_chat Ссылка на групповой чат
  */
 class Stream extends Model
 {

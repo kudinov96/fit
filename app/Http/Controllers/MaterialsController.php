@@ -14,6 +14,7 @@ class MaterialsController extends Controller
 
         return response()->view("materials", [
             "user" => $user,
+            "stream" => $user->stream,
         ]);
     }
 }

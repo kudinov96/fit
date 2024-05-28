@@ -27,6 +27,7 @@ class StreamUpdateRequest extends FormRequest
             "start_date" => ["required", "date"],
             "template_for_start" => ["nullable", "file"],
             "template_for_finish" => ["nullable", "file"],
+            "group_chat" => ["nullable", "url"],
         ];
     }
 }
