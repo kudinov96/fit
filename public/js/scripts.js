@@ -333,3 +333,68 @@ document.querySelectorAll('.numeric-input').forEach(function(element) {
         }
     });
 });
+
+// Float input validation
+const floatInputs = document.querySelectorAll(".float-input");
+
+floatInputs.forEach((input) => {
+  input.addEventListener("beforeinput", (e) => {
+    const regex = /[^0-9]/;
+    const value = e.target.value;
+
+    // Handle delete key properly
+    if (
+      e.inputType === "deleteContentBackward" ||
+      e.inputType === "deleteContentForward"
+    ) {
+      return;
+    }
+
+    if (regex.test(e.data)) {
+      e.preventDefault();
+
+      // Prevent user from entering a dot or a special character as a first character
+      if (value.length === 0) {
+        e.target.value = "";
+        return;
+      }
+
+      // Transform all special characters into a dot if there is no dot in the input field
+      if (!value.includes(".")) {
+        e.target.value = value + ".";
+        return;
+      }
+    }
+  });
+
+  input.addEventListener("input", (e) => {
+    const value = e.target.value;
+    const length = value.length;
+    const dotIndex = value.indexOf(".");
+
+    // Max 4 characters before the dot
+    if (dotIndex === -1 && length > 3) {
+      e.target.value = value.substring(0, 4);
+    }
+
+    // Max 1 character after the dot
+    if (dotIndex !== -1 && value.length > dotIndex + 2) {
+      e.target.value = value.substring(0, dotIndex + 2);
+    }
+  });
+
+  // Remove the dot on focus change if user entered a dot but doesn't enter any number after the dot
+  input.addEventListener("blur", (e) => {
+    const value = e.target.value;
+    const dotIndex = value.indexOf(".");
+
+    if (dotIndex !== -1) {
+      let beforeDot = value.substring(0, dotIndex);
+      let afterDot = value.substring(dotIndex + 1).replace(/\./g, "");
+      if (afterDot.length === 0) {
+        e.target.value = beforeDot;
+        return;
+      }
+    }
+  });
+});
