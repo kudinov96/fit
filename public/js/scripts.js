@@ -335,6 +335,15 @@ document.querySelectorAll('.numeric-input').forEach(function(element) {
 });
 
 // Float input validation
+// Requirements:
+// - User can enter only numbers and a dot
+// - User can enter only 1 dot
+// - User can enter max 4 digit before the dot
+// - User can enter max 1 digit after the dot
+// - All special characters should be transformed into a dot (if there is no dot in the input field)
+// - User can't enter a dot or a special character as a first character in the input field
+// - If user enters a dot but doesn't enter any number after the dot, the dot should be removed on focus change
+
 const floatInputs = document.querySelectorAll(".float-input");
 
 floatInputs.forEach((input) => {
@@ -353,7 +362,7 @@ floatInputs.forEach((input) => {
     if (regex.test(e.data)) {
       e.preventDefault();
 
-      // Prevent user from entering a dot or a special character as a first character
+      // Prevent user from entering a dot or a special character as a first character in the input field
       if (value.length === 0) {
         e.target.value = "";
         return;
