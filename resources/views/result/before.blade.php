@@ -48,7 +48,7 @@
                         <div class="d-flex">
                             <div>
                                 <label>{{ __("Вес (кг):") }}</label>
-                                <input name="weight" type="number" step="0.1" min="0.1" class="form-control" required>
+                                <input name="weight" type="text" class="form-control float-input" required>
                             </div>
                             <div>
                                 <label>{{ __("Грудь (см):") }}</label>
