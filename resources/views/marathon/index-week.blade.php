@@ -32,15 +32,15 @@
                 <div class="days-nav d-block d-md-none">
                     <div class="dropdown">
                         @php
-                            $weekTitle = __('Первая');
-                            if ($week === 2) { $weekTitle = __('Вторая'); }
-                            elseif ($week === 3) { $weekTitle = __('Третья'); }
-                            elseif ($week === 4) { $weekTitle = __('Четвертая'); }
-                            elseif ($week === 5) { $weekTitle = __('Пятая'); }
-                            elseif ($week === 6) { $weekTitle = __('Шестая'); }
+                            $weekTitle = __('Первая неделя');
+                            if ($week === 2) { $weekTitle = __('Вторая неделя'); }
+                            elseif ($week === 3) { $weekTitle = __('Третья неделя'); }
+                            elseif ($week === 4) { $weekTitle = __('Четвертая неделя'); }
+                            elseif ($week === 5) { $weekTitle = __('Пятая неделя'); }
+                            elseif ($week === 6) { $weekTitle = __('Шестая неделя'); }
                         @endphp
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ $weekTitle }} {{ __('неделя') }}
+                            {{ $weekTitle }}
                         </button>
                         <ul class="dropdown-menu">
                             <li>
