@@ -42,37 +42,55 @@ class StreamController extends Controller
 
                 $user->has_result_week_1 = [
                     "has" => $this->countResults($user, 1),
-                    "user_wrote_admin_not_answered" => ($result = $results->where("type", ResultTypeEnum::WEEK_1)->first())
+                    "is_answered" => ($result = $results->where("type", ResultTypeEnum::WEEK_1)->first())
+                        ? (bool) $result->message_admin
+                        : false,
+                    "user_wrote_admin_not_answered" => ($result)
                         ? ($result->message_user && !$result->message_admin)
                         : false
                 ];
                 $user->has_result_week_2 = [
                     "has" => $this->countResults($user, 2),
-                    "user_wrote_admin_not_answered" => ($result = $results->where("type", ResultTypeEnum::WEEK_2)->first())
+                    "is_answered" => ($result = $results->where("type", ResultTypeEnum::WEEK_2)->first())
+                        ? (bool) $result->message_admin
+                        : false,
+                    "user_wrote_admin_not_answered" => ($result)
                         ? ($result->message_user && !$result->message_admin)
                         : false
                 ];
                 $user->has_result_week_3 = [
                     "has" => $this->countResults($user, 3),
-                    "user_wrote_admin_not_answered" => ($result = $results->where("type", ResultTypeEnum::WEEK_3)->first())
+                    "is_answered" => ($result = $results->where("type", ResultTypeEnum::WEEK_3)->first())
+                        ? (bool) $result->message_admin
+                        : false,
+                    "user_wrote_admin_not_answered" => ($result)
                         ? ($result->message_user && !$result->message_admin)
                         : false
                 ];
                 $user->has_result_week_4 = [
                     "has" => $this->countResults($user, 4),
-                    "user_wrote_admin_not_answered" => ($result = $results->where("type", ResultTypeEnum::WEEK_4)->first())
+                    "is_answered" => ($result = $results->where("type", ResultTypeEnum::WEEK_4)->first())
+                        ? (bool) $result->message_admin
+                        : false,
+                    "user_wrote_admin_not_answered" => ($result)
                         ? ($result->message_user && !$result->message_admin)
                         : false
                 ];
                 $user->has_result_week_5 = [
                     "has" => $this->countResults($user, 5),
-                    "user_wrote_admin_not_answered" => ($result = $results->where("type", ResultTypeEnum::WEEK_5)->first())
+                    "is_answered" => ($result = $results->where("type", ResultTypeEnum::WEEK_5)->first())
+                        ? (bool) $result->message_admin
+                        : false,
+                    "user_wrote_admin_not_answered" => ($result)
                         ? ($result->message_user && !$result->message_admin)
                         : false
                 ];
                 $user->has_result_week_6 = [
                     "has" => $this->countResults($user, 6),
-                    "user_wrote_admin_not_answered" => ($result = $results->where("type", ResultTypeEnum::WEEK_6)->first())
+                    "is_answered" => ($result = $results->where("type", ResultTypeEnum::WEEK_6)->first())
+                        ? (bool) $result->message_admin
+                        : false,
+                    "user_wrote_admin_not_answered" => ($result)
                         ? ($result->message_user && !$result->message_admin)
                         : false
                 ];
@@ -91,6 +109,7 @@ class StreamController extends Controller
             ->sortByDesc(function ($user) {
                 return $user->user_wrote_admin_not_answered_any;
             });
+
 
         return response()->view("stream.view", [
             "stream"     => $item,
