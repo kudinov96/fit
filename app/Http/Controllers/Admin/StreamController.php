@@ -47,7 +47,19 @@ class StreamController extends Controller
                 $user->has_result_week_5 = ["has" => $this->countResults($user, 5), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_5)->first()->message_admin ?? false];
                 $user->has_result_week_6 = ["has" => $this->countResults($user, 6), "is_answered" => $results->where("type", ResultTypeEnum::WEEK_6)->first()->message_admin ?? false];
 
+                $user->has_any_answers = collect([
+                    $user->has_result_week_1['is_answered'],
+                    $user->has_result_week_2['is_answered'],
+                    $user->has_result_week_3['is_answered'],
+                    $user->has_result_week_4['is_answered'],
+                    $user->has_result_week_5['is_answered'],
+                    $user->has_result_week_6['is_answered'],
+                ])->contains(true);
+
                 return $user;
+            })
+            ->sortBy(function ($user) {
+                return $user->has_any_answers;
             });
 
         return response()->view("stream.view", [
