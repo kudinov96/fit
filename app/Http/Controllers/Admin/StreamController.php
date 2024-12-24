@@ -58,7 +58,7 @@ class StreamController extends Controller
 
                 return $user;
             })
-            ->sortBy(function ($user) {
+            ->sortByDesc(function ($user) {
                 return $user->has_any_answers;
             });
 
