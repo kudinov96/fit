@@ -48,7 +48,7 @@ class FirstQuiz extends Model
                     return 2;
                 }
 
-                return 3;
+                return 3; // Набор
             },
         );
     }

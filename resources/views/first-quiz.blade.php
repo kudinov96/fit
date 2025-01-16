@@ -90,6 +90,10 @@
                                     <input id="menu-4" type="radio" name="menu" value="Lactose FREE">
                                     <label for="menu-4">{{ __('Lactose FREE') }}</label>
                                 </div>
+                                <div>
+                                    <input id="menu-5" type="radio" name="menu" value="Vegan">
+                                    <label for="menu-5">{{ __('Vegan') }}</label>
+                                </div>
                             </div>
                         </div>
                     </div>
