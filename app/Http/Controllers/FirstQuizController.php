@@ -40,6 +40,11 @@ class FirstQuizController extends Controller
             $user,
         );
 
+        // @todo del
+        dump($personalMenuService->personalMenuSrc($user, $firstQuiz));
+        $firstQuiz->delete();
+        dd();
+
         $user->update([
             "menu_file" => $personalMenuService->personalMenuSrc($user, $firstQuiz),
         ]);
