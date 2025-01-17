@@ -52,7 +52,10 @@ class PersonalMenuService
     {
         return match ($firstQuiz->menu) {
             "Классическое меню" => $this->classicWeightGain($firstQuiz),
-            "Gluten FREE", "Lactose FREE", "Вегетарианское меню", "Vegan" => "{$firstQuiz->menu}_1700",
+            "Gluten FREE"         => $this->simpleMenuWeightGain("GF"),
+            "Lactose FREE"        => $this->simpleMenuWeightGain("LF"),
+            "Вегетарианское меню" => $this->simpleMenuWeightGain("Vegetarian"),
+            "Vegan"               => $this->simpleMenuWeightGain("Vegan"),
             default => "",
         };
     }
@@ -168,6 +171,11 @@ class PersonalMenuService
     }
 
     private function simpleMenuWeightSupport(string $menuPrefix): string
+    {
+        return "{$menuPrefix}_1700";
+    }
+
+    private function simpleMenuWeightGain(string $menuPrefix): string
     {
         return "{$menuPrefix}_1700";
     }
