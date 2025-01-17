@@ -39,8 +39,11 @@ class PersonalMenuService
     private function targetWeightSupport(FirstQuiz $firstQuiz): string
     {
         return match ($firstQuiz->menu) {
-            "Классическое меню" => $this->classicWeightSupport($firstQuiz),
-            "Gluten FREE", "Lactose FREE", "Вегетарианское меню", "Vegan" => "{$firstQuiz->menu}_1700",
+            "Классическое меню"   => $this->classicWeightSupport($firstQuiz),
+            "Gluten FREE"         => $this->simpleMenuWeightSupport("GF"),
+            "Lactose FREE"        => $this->simpleMenuWeightSupport("LF"),
+            "Вегетарианское меню" => $this->simpleMenuWeightSupport("Vegetarian"),
+            "Vegan"               => $this->simpleMenuWeightSupport("Vegan"),
             default => "",
         };
     }
@@ -162,5 +165,10 @@ class PersonalMenuService
         }
 
         return "";
+    }
+
+    private function simpleMenuWeightSupport(string $menuPrefix): string
+    {
+        return "{$menuPrefix}_1700";
     }
 }
