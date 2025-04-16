@@ -1,6 +1,6 @@
 @extends("layouts.layout-2")
 
-@section("title", __('Тренировочные недели - Неделя'))
+@section("title", $program->name . " - " . __('Неделя') . " - " . $week)
 
 @section("styles")
     {{--<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">--}}
@@ -9,11 +9,14 @@
 @section("content")
     <div id="main-content">
         <div class="container">
-            <h1 class="stream-title">{{ __('Неделя') }} - {{ $week }}</h1>
+            <h1 class="stream-title">{{ $program->name }} - {{ __('Неделя') }} - {{ $week }}</h1>
             <p style="color: red;">{{ session("error") }}</p>
-            <div class="stream-add"><a href="{{ route("stream.index") }}" class="btn">{{ __('Потоки') }}</a></div>
-            <div class="stream-add" style="margin-top: 0;"><a href="{{ route("training.index") }}" class="btn">{{ __('К неделям') }}</a></div>
-            <div class="stream-add" style="margin-top: 0;"><a href="{{ route("training.index.create", ["week" => $week]) }}" class="btn">{{ __('+ Создать тренировку') }}</a></div>
+            <div class="stream-add-wrap">
+                <div class="stream-add"><a href="{{ route("stream.index") }}" class="btn">{{ __('Потоки') }}</a></div>
+                <div class="stream-add"><a href="{{ route("program.index") }}" class="btn">{{ __('Программы') }}</a></div>
+                <div class="stream-add"><a href="{{ route("program.view", ["item" => $program->id]) }}" class="btn">{{ __('К неделям') }}</a></div>
+                <div class="stream-add"><a href="{{ route("training.index.create", ["week" => $week]) }}" class="btn">{{ __('+ Создать тренировку') }}</a></div>
+            </div>
             <div class="stream-rows stream-rows_training">
                 @foreach($trainingsPerDays as $key => $day)
                     <div style="margin-bottom: 15px; font-size: 22px; font-weight: 700;">Day {{ $key }}</div>

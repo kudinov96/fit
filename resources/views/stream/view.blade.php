@@ -15,7 +15,9 @@
                 </div>
             @endif
             <h1 class="stream-title">{{ __('Поток от') }} {{ $stream->start_date->format("d.m.y") }} <span>({{ $stream->status }})</span></h1>
-            <div class="stream-add"><a data-bs-toggle="modal" data-bs-target="#memberModal" class="btn">{{ __('+ Добавить участника') }}</a></div>
+                <div class="stream-add-wrap">
+                    <div class="stream-add"><a data-bs-toggle="modal" data-bs-target="#memberModal" class="btn">{{ __('+ Добавить участника') }}</a></div>
+                </div>
             <div class="stream-table">
                 <div class="table-responsive">
                     <table class="table table-dark">

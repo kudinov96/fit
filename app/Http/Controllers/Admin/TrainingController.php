@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Enums\TrainingWhereEnum;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TrainingRequest;
+use App\Models\Program;
 use App\Models\Training;
 use App\Services\TrainingService;
 use Illuminate\Http\RedirectResponse;
@@ -13,11 +14,6 @@ use Illuminate\Http\Response;
 
 class TrainingController extends Controller
 {
-    public function index(): Response
-    {
-        return response()->view("training.index");
-    }
-
     public function create(int $week): Response
     {
         if ($week > 6 || $week < 1) {
@@ -38,13 +34,13 @@ class TrainingController extends Controller
         ]);
     }
 
-    public function indexWeek(int $week): Response
+    public function indexWeek(Program $item, int $week): Response
     {
         if ($week > 6 || $week < 1) {
             abort(404);
         }
 
-        $trainings = Training::query()
+        $trainings = $item->trainings()
             ->whereJsonContains("weeks", (string) $week)
             ->orderBy("day")
             ->orderBy("position")
@@ -56,6 +52,7 @@ class TrainingController extends Controller
         }
 
         return response()->view("training.index-week", [
+            "program" => $item,
             "week" => $week,
             "trainingsPerDays" => $trainingsPerDays,
         ]);
@@ -66,6 +63,7 @@ class TrainingController extends Controller
         $trainingService->store($request->all());
 
         return response()->redirectToRoute("training.index.week", [
+            "item" => $request->input("program_id"),
             "week" => $request->input("weeks")[0],
         ]);
     }
@@ -75,6 +73,7 @@ class TrainingController extends Controller
         $trainingService->store($request->all(), $training);
 
         return response()->redirectToRoute("training.index.week", [
+            "item" => $training->program_id,
             "week" => $request->input("weeks")[0],
         ]);
     }
@@ -83,7 +82,7 @@ class TrainingController extends Controller
     {
         $training->delete();
 
-        return response()->redirectToRoute("training.index");
+        return response()->redirectToRoute("program.view", ["item" => $training->program_id]);
     }
 
     public function duplicate(Training $training, Request $request, TrainingService $trainingService): RedirectResponse
@@ -103,9 +102,11 @@ class TrainingController extends Controller
             "day"            => $training->day,
             "where"          => $training->where,
             "position"       => $training->position,
+            "program_id"     => $training->program_id,
         ]);
 
         return response()->redirectToRoute("training.index.week", [
+            "item" => $training->program_id,
             "week" => $request->input("week"),
         ]);
     }

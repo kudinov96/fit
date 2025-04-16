@@ -10,8 +10,10 @@
     <div id="main-content">
         <div class="container">
             <h1 class="stream-title">{{ __('Изменить тренировку') . ' - ' . $training->title }}</h1>
-            <div class="stream-add"><a href="{{ route("stream.index") }}" class="btn">{{ __('Потоки') }}</a></div>
-            <div class="stream-add" style="margin-top: 0;"><a href="{{ route("training.index") }}" class="btn">{{ __('К неделям') }}</a></div>
+            <div class="stream-add-wrap">
+                <div class="stream-add"><a href="{{ route("stream.index") }}" class="btn">{{ __('Потоки') }}</a></div>
+                <div class="stream-add"><a href="{{ route("program.view", ["item" => $training->program_id]) }}" class="btn">{{ __('К неделям') }}</a></div>
+            </div>
 
             <form id="editForm" class="needs-validation" action="{{ route("training.update", ["training" => $training]) }}" method="POST" novalidate>
                 @csrf

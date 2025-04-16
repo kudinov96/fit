@@ -11,11 +11,15 @@
         <div class="container">
             <h1 class="stream-title">{{ __('Создать тренировку') }}</h1>
             <p style="color: red;">{{ session("errors") }}</p>
-            <div class="stream-add"><a href="{{ route("stream.index") }}" class="btn">{{ __('Потоки') }}</a></div>
-            <div class="stream-add" style="margin-top: 0;"><a href="{{ route("training.index") }}" class="btn">{{ __('К неделям') }}</a></div>
+            <div class="stream-add-wrap">
+                <div class="stream-add"><a href="{{ route("stream.index") }}" class="btn">{{ __('Потоки') }}</a></div>
+                {{--<div class="stream-add" style="margin-top: 0;"><a href="{{ route("program.view") }}" class="btn">{{ __('К неделям') }}</a></div>--}}
+            </div>
             <form id="createForm" class="needs-validation" action="{{ route("training.store") }}" method="POST" novalidate>
                 @csrf
                 @method("POST")
+
+                <input type="hidden" name="program_id" value="">
 
                 <div class="form-item">
                     <label>{{ __('Заголовок') }}</label>

@@ -7,6 +7,7 @@ use App\Models\Traits\Position;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Модель тренировок марафона
@@ -26,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int    $day День тренировки (1-5)
  * @property TrainingWhereEnum $where Где проходит тренировка
  * @property int    $position Позиция при выдаче
+ * @property int    $program_id
  *
  * @property Carbon $created_at
  * @property Carbon $updated_at
@@ -68,5 +70,10 @@ class Training extends Model
         return Attribute::make(
             get: fn () => $this->{"content_" . app()->currentLocale()},
         );
+    }
+
+    public function program(): BelongsTo
+    {
+        return $this->belongsTo(Program::class, "program_id");
     }
 }

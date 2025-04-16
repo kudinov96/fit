@@ -1733,10 +1733,17 @@ body:not(.home) #footer {
 .stream-title span {
     font-weight: normal;
 }
-.stream-add {
-    display: flex;
+.stream-add-wrap{
     margin-top: 50px;
     margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.stream-add {
+    display: flex;
+    margin-bottom: 15px;
+    margin-right: 15px;
 }
 .stream-add .btn {
     width: auto;
@@ -1765,6 +1772,9 @@ body:not(.home) #footer {
     height: 21px;
     min-width: 20px;
     margin-right: 24px;
+}
+.stream-row_program:before{
+    display: none;
 }
 .stream-row_wait:before {
     background: url('data:image/svg+xml,<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10.5" cy="10.5" r="10.5" fill="%238C7781"/><path d="M14.5428 6.37891L8.93819 12.0527L6.56794 9.29249L5 10.8958L8.82925 15.355L16 8.10251L14.5428 6.37891Z" fill="white"/></svg>') center center no-repeat;

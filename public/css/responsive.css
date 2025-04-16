@@ -753,9 +753,6 @@ body:not(.home) #footer {
 .stream-item .form-item.dropdown {
     right: 20px;
 }
-.stream-add {
-    margin-top: 20px;
-}
 .check-head .col-2 {
     padding: 0px 3px;
     font-size: 10px;

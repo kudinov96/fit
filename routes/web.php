@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\StreamController;
 use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\Admin\UserController;
@@ -56,10 +57,16 @@ Route::group(["middleware" => ['auth', 'role:admin']], function() {
     Route::post("streams", [StreamController::class, "store"])->name("stream.store");
     Route::put("streams", [StreamController::class, "update"])->name("stream.update");
 
-    Route::get("trainings", [TrainingController::class, "index"])->name("training.index");
-    Route::get("trainings/{week}", [TrainingController::class, "indexWeek"])->where('id', '[0-9]+')->name("training.index.week");
+    Route::get("programs", [ProgramController::class, "index"])->name("program.index");
+    Route::get("programs/{item}", [ProgramController::class, "view"])->name("program.view");
+    Route::post("programs", [ProgramController::class, "store"])->name("program.store");
+    Route::put("programs", [ProgramController::class, "update"])->name("program.update");
+
+    //Route::get("trainings", [TrainingController::class, "index"])->name("training.index");
+    Route::get("programs/{item}/trainings/{week}", [TrainingController::class, "indexWeek"])->where('id', '[0-9]+')->name("training.index.week");
     Route::get("trainings/{week}/create", [TrainingController::class, "create"])->where('id', '[0-9]+')->name("training.index.create");
     Route::get("trainings/{training}/edit", [TrainingController::class, "edit"])->name("training.index.edit");
+
     Route::post("trainings", [TrainingController::class, "store"])->name("training.store");
     Route::put("trainings/{training}", [TrainingController::class, "update"])->name("training.update");
     Route::delete("trainings/{training}", [TrainingController::class, "delete"])->name("training.delete");

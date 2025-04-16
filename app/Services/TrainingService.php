@@ -28,6 +28,7 @@ class TrainingService
         $training->day = $data["day"];
         $training->where = $data["where"];
         $training->position = $data["position"] ?? $positionMax;
+        $training->program_id = $training->program_id ?? $data["program_id"];
 
         $training->save();
 

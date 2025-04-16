@@ -277,6 +277,12 @@ $('.accordion .accordion-button').on('click', function(){
         $('#editModal .modal-title span').text(id);
     });
 
+    $(".update-program-modal").on('click', function(){
+        let id = $(this).data("id");
+        $('#editModal input[name="program_id"]').val(id);
+        $('#editModal .modal-title span').text(id);
+    });
+
     $(".store-check-in-modal-btn").on('click', function(){
         let week = $(this).data("week");
         let day = $(this).data("day");
