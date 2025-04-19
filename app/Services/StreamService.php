@@ -45,8 +45,15 @@ class StreamService
     public function store(array $data, ?Stream $stream = null): Stream
     {
         $stream = $stream ?? new Stream();
+        $stream->title = $data["title"] ?? null;
         $stream->start_date = $data["start_date"];
+        $stream->program_id = $data["program_id"];
         $stream->group_chat = $data["group_chat"] ?? null;
+        $stream->access_to_gym = $data["access_to_gym"];
+        $stream->access_to_home = $data["access_to_home"];
+        $stream->access_to_meal_plan = $data["access_to_meal_plan"];
+        $stream->access_to_results = $data["access_to_results"];
+        $stream->access_to_check_in = $data["access_to_check_in"];
 
         if (isset($data["template_for_start"])) {
             $stream->template_for_start = $data["template_for_start"]->store("public/streams");
@@ -54,6 +61,30 @@ class StreamService
 
         if (isset($data["template_for_finish"])) {
             $stream->template_for_finish = $data["template_for_finish"]->store("public/streams");
+        }
+
+        if (isset($data["template_info_book_lv"])) {
+            $stream->template_info_book_lv = $data["template_info_book_lv"]->store("public/streams");
+        }
+
+        if (isset($data["template_info_book_en"])) {
+            $stream->template_info_book_en = $data["template_info_book_en"]->store("public/streams");
+        }
+
+        if (isset($data["template_info_book_ru"])) {
+            $stream->template_info_book_ru = $data["template_info_book_ru"]->store("public/streams");
+        }
+
+        if (isset($data["template_recipe_book_lv"])) {
+            $stream->template_recipe_book_lv = $data["template_recipe_book_lv"]->store("public/streams");
+        }
+
+        if (isset($data["template_recipe_book_en"])) {
+            $stream->template_recipe_book_en = $data["template_recipe_book_en"]->store("public/streams");
+        }
+
+        if (isset($data["template_recipe_book_ru"])) {
+            $stream->template_recipe_book_ru = $data["template_recipe_book_ru"]->store("public/streams");
         }
 
         $stream->save();

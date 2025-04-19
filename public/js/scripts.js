@@ -273,8 +273,68 @@ $('.accordion .accordion-button').on('click', function(){
 
     $(".update-stream-modal").on('click', function(){
         let id = $(this).data("id");
+        let title = $(this).data("title");
+        let date = $(this).data("date");
+        let chat = $(this).data("chat");
+        let program = $(this).data("program");
+        let templateForStart = $(this).data("template-for-start");
+        let templateForFinish = $(this).data("template-for-finish");
+        let templateInfoBookLv = $(this).data("template-info-book-lv");
+        let templateInfoBookEn = $(this).data("template-info-book-en");
+        let templateInfoBookRu = $(this).data("template-info-book-ru");
+        let templateRecipeBookLv = $(this).data("template-recipe-book-lv");
+        let templateRecipeBookEn = $(this).data("template-recipe-book-en");
+        let templateRecipeBookRu = $(this).data("template-recipe-book-ru");
+        let templateAccessToGym = $(this).data("template-access-to-gym");
+        let templateAccessToHome = $(this).data("template-access-to-home");
+        let templateAccessToMealPlan = $(this).data("template-access-to-meal-plan");
+        let templateAccessToResults = $(this).data("template-access-to-results");
+        let templateAccessToCheckIn = $(this).data("template-access-to-check-in");
+
         $('#editModal input[name="stream_id"]').val(id);
+        $('#editModal input[name="title"]').val(title);
+        $('#editModal input[name="start_date"]').val(date);
+        $('#editModal input[name="group_chat"]').val(chat);
         $('#editModal .modal-title span').text(id);
+        $('select[name="program_id"]').val(program).trigger('change');
+
+        $('#editModal input[name="access_to_gym"]').prop('checked', templateAccessToGym);
+        $('#editModal input[name="access_to_home"]').prop('checked', templateAccessToHome);
+        $('#editModal input[name="access_to_meal_plan"]').prop('checked', templateAccessToMealPlan);
+        $('#editModal input[name="access_to_results"]').prop('checked', templateAccessToResults);
+        $('#editModal input[name="access_to_check_in"]').prop('checked', templateAccessToCheckIn);
+
+        if (templateForStart !== "/storage/") {
+            $('#template-for-start').attr('href', templateForStart);
+        }
+
+        if (templateForFinish !== "/storage/") {
+            $('#template-for-finish').attr('href', templateForFinish);
+        }
+
+        if (templateInfoBookLv !== "/storage/") {
+            $('#template-info-book-lv').attr('href', templateInfoBookLv);
+        }
+
+        if (templateInfoBookEn !== "/storage/") {
+            $('#template-info-book-en').attr('href', templateInfoBookEn);
+        }
+
+        if (templateInfoBookRu !== "/storage/") {
+            $('#template-info-book-ru').attr('href', templateInfoBookRu);
+        }
+
+        if (templateRecipeBookLv !== "/storage/") {
+            $('#template-recipe-book-lv').attr('href', templateRecipeBookLv);
+        }
+
+        if (templateRecipeBookEn !== "/storage/") {
+            $('#template-recipe-book-en').attr('href', templateRecipeBookEn);
+        }
+
+        if (templateRecipeBookRu !== "/storage/") {
+            $('#template-recipe-book-ru').attr('href', templateRecipeBookRu);
+        }
     });
 
     $(".update-program-modal").on('click', function(){

@@ -30,6 +30,7 @@ class TrainingRequest extends FormRequest
             "day" => ["required", "numeric", "min:1", "max:5"],
             "where" => ["required", Rule::enum(TrainingWhereEnum::class)],
             "position" => ["nullable", "numeric"],
+            "program_id" => ["nullable", "exists:programs,id"],
         ];
     }
 }

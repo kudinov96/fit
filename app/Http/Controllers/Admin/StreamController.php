@@ -6,11 +6,13 @@ use App\Enums\ResultTypeEnum;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StreamRequest;
 use App\Http\Requests\StreamUpdateRequest;
+use App\Models\Program;
 use App\Models\Stream;
 use App\Models\User;
 use App\Services\StreamService;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class StreamController extends Controller
@@ -28,8 +30,11 @@ class StreamController extends Controller
             ->orderByDesc("start_date")
             ->get();
 
+        $programs = Program::query()->latest()->get();
+
         return response()->view("stream.index", [
             "streams" => $streams,
+            "programs" => $programs,
         ]);
     }
 
@@ -110,10 +115,12 @@ class StreamController extends Controller
                 return $user->user_wrote_admin_not_answered_any;
             });
 
+        $programs = Program::query()->latest()->get();
 
         return response()->view("stream.view", [
             "stream"     => $item,
             "users"      => $users,
+            "programs"      => $programs,
             "countWeek1" => self::$countWeek1,
             "countWeek2" => self::$countWeek2,
             "countWeek3" => self::$countWeek3,
@@ -144,6 +151,10 @@ class StreamController extends Controller
 
         if ($stream) {
             $streamService->store($request->all(), $stream);
+        }
+
+        if ($request->input("from_view")) {
+            return response()->redirectToRoute("stream.view", ["item" => $stream->id]);
         }
 
         return response()->redirectToRoute("stream.index");

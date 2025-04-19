@@ -14,9 +14,33 @@
                     @endforeach
                 </div>
             @endif
-            <h1 class="stream-title">{{ __('Поток от') }} {{ $stream->start_date->format("d.m.y") }} <span>({{ $stream->status }})</span></h1>
+            <h1 class="stream-title">{{ $stream->title ? $stream->title . " -" : __('Поток от') }} {{ $stream->start_date->format("d.m.y") }} <span>({{ $stream->status }})</span></h1>
                 <div class="stream-add-wrap">
+                    <div class="stream-add"><a href="{{ route("stream.index") }}" class="btn">{{ __('Потоки') }}</a></div>
+                    <div class="stream-add"><a href="{{ route("program.index") }}" class="btn">{{ __('Программы') }}</a></div>
                     <div class="stream-add"><a data-bs-toggle="modal" data-bs-target="#memberModal" class="btn">{{ __('+ Добавить участника') }}</a></div>
+                    <div class="stream-add">
+                        <a class="btn update-stream-modal"
+                           data-id="{{ $stream->id }}"
+                           data-title="{{ $stream->title }}"
+                           data-date="{{ $stream->start_date->format("Y-m-d") }}"
+                           data-chat="{{ $stream->group_chat }}"
+                           data-program="{{ $stream->program_id }}"
+                           data-template-for-start="{{ \Storage::url($stream->template_for_start) }}"
+                           data-template-for-finish="{{ \Storage::url($stream->template_for_finish) }}"
+                           data-template-info-book-lv="{{ \Storage::url($stream->template_info_book_lv) }}"
+                           data-template-info-book-en="{{ \Storage::url($stream->template_info_book_en) }}"
+                           data-template-info-book-ru="{{ \Storage::url($stream->template_info_book_ru) }}"
+                           data-template-recipe-book-lv="{{ \Storage::url($stream->template_recipe_book_lv) }}"
+                           data-template-recipe-book-en="{{ \Storage::url($stream->template_recipe_book_en) }}"
+                           data-template-recipe-book-ru="{{ \Storage::url($stream->template_recipe_book_ru) }}"
+                           data-template-access-to-gym="{{ $stream->access_to_gym }}"
+                           data-template-access-to-home="{{ $stream->access_to_home }}"
+                           data-template-access-to-meal-plan="{{ $stream->access_to_meal_plan }}"
+                           data-template-access-to-results="{{ $stream->access_to_results }}"
+                           data-template-access-to-check-in="{{ $stream->access_to_check_in }}"
+                           data-bs-toggle="modal" data-bs-target="#editModal">{{ __('Редактировать') }}</a>
+                    </div>
                 </div>
             <div class="stream-table">
                 <div class="table-responsive">
@@ -162,4 +186,26 @@
             </div>
         </div>
     </div>
+
+    <x-stream-modal-edit :programs="$programs" :fromView="true"></x-stream-modal-edit>
+@endsection
+
+@section("scripts")
+    <script>
+        $(document).ready(function() {
+            $('.file-upload').fileinput({
+                showCaption: false,
+                hideThumbnailContent: false,
+                dropZoneEnabled: false,
+                showPreview: true,
+                showUploadedThumbs: true,
+                showUpload: false,
+                showZoom: false,
+                browseLabel: '{{ __("Загрузить") }}',
+                browseClass: 'btn btn-green',
+                removeLabel: '{{ __("Удалить") }}',
+                removeClass: 'd-none'
+            });
+        });
+    </script>
 @endsection

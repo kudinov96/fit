@@ -41,6 +41,7 @@ class MarathonController extends Controller
         $trainingsHome = collect();
         for ($day = 1; $day <= 5; $day++) {
             $trainingsDay = Training::query()
+                ->where("program_id", $user->stream->program_id)
                 ->whereJsonContains("weeks", (string) $week)
                 ->where("day", $day)
                 ->where("where", TrainingWhereEnum::HOME)
@@ -52,6 +53,7 @@ class MarathonController extends Controller
         $trainingsGym = collect();
         for ($day = 1; $day <= 5; $day++) {
             $trainingsDay = Training::query()
+                ->where("program_id", $user->stream->program_id)
                 ->whereJsonContains("weeks", (string) $week)
                 ->where("day", $day)
                 ->where("where", TrainingWhereEnum::GYM)
@@ -61,6 +63,7 @@ class MarathonController extends Controller
         }
 
         return response()->view("marathon.index-week", [
+            "stream" => $user->stream,
             "week" => $week,
             "currentWeek" => $currentWeek,
             "trainingsHome" => $trainingsHome,

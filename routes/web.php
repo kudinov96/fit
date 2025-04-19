@@ -61,11 +61,13 @@ Route::group(["middleware" => ['auth', 'role:admin']], function() {
     Route::get("programs/{item}", [ProgramController::class, "view"])->name("program.view");
     Route::post("programs", [ProgramController::class, "store"])->name("program.store");
     Route::put("programs", [ProgramController::class, "update"])->name("program.update");
+    Route::post("programs/{item}", [ProgramController::class, "duplicate"])->name("program.duplicate");
+    Route::delete("programs/{item}", [ProgramController::class, "delete"])->name("program.delete");
 
     //Route::get("trainings", [TrainingController::class, "index"])->name("training.index");
     Route::get("programs/{item}/trainings/{week}", [TrainingController::class, "indexWeek"])->where('id', '[0-9]+')->name("training.index.week");
-    Route::get("trainings/{week}/create", [TrainingController::class, "create"])->where('id', '[0-9]+')->name("training.index.create");
-    Route::get("trainings/{training}/edit", [TrainingController::class, "edit"])->name("training.index.edit");
+    Route::get("programs/{item}/trainings/{week}/create", [TrainingController::class, "create"])->where('id', '[0-9]+')->name("training.index.create");
+    Route::get("programs/{item}/trainings/{training}/edit", [TrainingController::class, "edit"])->name("training.index.edit");
 
     Route::post("trainings", [TrainingController::class, "store"])->name("training.store");
     Route::put("trainings/{training}", [TrainingController::class, "update"])->name("training.update");

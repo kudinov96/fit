@@ -16,6 +16,9 @@ class CheckInController extends Controller
     {
         /** @var User $user */
         $user = auth()->user();
+        if (!$user->stream->access_to_check_in) {
+            abort(403);
+        }
 
         return response()->view("check-in", [
             "stream" => $user->stream,
@@ -27,6 +30,9 @@ class CheckInController extends Controller
     {
         /** @var User $user */
         $user = auth()->user();
+        if (!$user->stream->access_to_check_in) {
+            abort(403);
+        }
 
         $checkInService->store($request->all(), $user);
 
@@ -37,6 +43,10 @@ class CheckInController extends Controller
     {
         /** @var User $user */
         $user = auth()->user();
+        if (!$user->stream->access_to_check_in) {
+            abort(403);
+        }
+
         $checkIn = CheckIn::query()->find($request->input("check_in_id"));
 
         $checkInService->store($request->all(), $user, $checkIn);

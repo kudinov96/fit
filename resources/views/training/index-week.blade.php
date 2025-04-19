@@ -15,7 +15,7 @@
                 <div class="stream-add"><a href="{{ route("stream.index") }}" class="btn">{{ __('Потоки') }}</a></div>
                 <div class="stream-add"><a href="{{ route("program.index") }}" class="btn">{{ __('Программы') }}</a></div>
                 <div class="stream-add"><a href="{{ route("program.view", ["item" => $program->id]) }}" class="btn">{{ __('К неделям') }}</a></div>
-                <div class="stream-add"><a href="{{ route("training.index.create", ["week" => $week]) }}" class="btn">{{ __('+ Создать тренировку') }}</a></div>
+                <div class="stream-add"><a href="{{ route("training.index.create", ["item" => $program->id, "week" => $week]) }}" class="btn">{{ __('+ Создать тренировку') }}</a></div>
             </div>
             <div class="stream-rows stream-rows_training">
                 @foreach($trainingsPerDays as $key => $day)
@@ -24,7 +24,7 @@
                     @foreach($day as $training)
                         <div class="stream-item">
                             <div @class(["stream-row"])>
-                                <a href="{{ route("training.index.edit", ["training" => $training]) }}" class="sr-meta">
+                                <a href="{{ route("training.index.edit", ["item" => $training->program, "training" => $training]) }}" class="sr-meta">
                                     <div>{{ $training->title }} <span>({{ __('День') }} {{ $training->day }}, {{ $training->where }})</span></div>
                                 </a>
 

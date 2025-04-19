@@ -14,7 +14,7 @@ use Illuminate\Http\Response;
 
 class TrainingController extends Controller
 {
-    public function create(int $week): Response
+    public function create(Program $item, int $week): Response
     {
         if ($week > 6 || $week < 1) {
             abort(404);
@@ -26,7 +26,7 @@ class TrainingController extends Controller
         ]);
     }
 
-    public function edit(Training $training): Response
+    public function edit(Program $item, Training $training): Response
     {
         return response()->view("training.edit", [
             "trainingWhere" => TrainingWhereEnum::cases(),

@@ -83,15 +83,21 @@
 
                 @if($currentWeek !== 0)
                     <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="pills-tab1-tab" data-bs-toggle="pill" data-bs-target="#pills-tab1" type="button" role="tab" aria-controls="pills-tab1" aria-selected="true">{{ __('Тренировка дома') }}</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-tab2-tab" data-bs-toggle="pill" data-bs-target="#pills-tab2" type="button" role="tab" aria-controls="pills-tab2" aria-selected="false">{{ __('Тренировка в зале') }}</button>
-                        </li>
+                        @if($stream->access_to_home)
+                            <li class="nav-item" role="presentation">
+                                <button @class(["nav-link", "active" => $stream->access_to_home]) id="pills-tab1-tab" data-bs-toggle="pill" data-bs-target="#pills-tab1" type="button" role="tab" aria-controls="pills-tab1" aria-selected="true">{{ __('Тренировка дома') }}</button>
+                            </li>
+                        @endif
+                        @if($stream->access_to_gym)
+                            <li class="nav-item" role="presentation">
+                                <button @class(["nav-link", "active" => $stream->access_to_gym && !$stream->access_to_home]) id="pills-tab2-tab" data-bs-toggle="pill" data-bs-target="#pills-tab2" type="button" role="tab" aria-controls="pills-tab2" aria-selected="false">{{ __('Тренировка в зале') }}</button>
+                            </li>
+                        @endif
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-tab1" role="tabpanel" aria-labelledby="pills-tab1-tab" tabindex="0">
+                            <div @class(["tab-pane", "fade",
+"show" => $stream->access_to_home,
+ "active" => $stream->access_to_home]) id="pills-tab1" role="tabpanel" aria-labelledby="pills-tab1-tab" tabindex="0">
                             <ul class="nav nav-pills pills_inner" id="pills-tab_type1" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="pills-type1_day1-tab" data-bs-toggle="pill" data-bs-target="#pills-type1_day1" type="button" role="tab" aria-controls="pills-type1_day1" aria-selected="true">{{ __('1-ый день') }}</button>
@@ -150,7 +156,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="pills-tab2" role="tabpanel" aria-labelledby="pills-tab2-tab" tabindex="0">
+                        <div @class(["tab-pane", "fade",
+"show" => $stream->access_to_gym && !$stream->access_to_home,
+ "active" => $stream->access_to_gym && !$stream->access_to_home]) id="pills-tab2" role="tabpanel" aria-labelledby="pills-tab2-tab" tabindex="0">
                             <ul class="nav nav-pills pills_inner" id="pills-tab_type2" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="pills-type2_day1-tab" data-bs-toggle="pill" data-bs-target="#pills-type2_day1" type="button" role="tab" aria-controls="pills-type2_day1" aria-selected="true">{{ __('1-ый день') }}</button>

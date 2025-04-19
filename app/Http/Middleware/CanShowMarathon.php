@@ -49,13 +49,13 @@ class CanShowMarathon
             ->where("type", ResultTypeEnum::START)
             ->exists();
 
-        if (!$firstQuizExists) {
+        if (!$firstQuizExists && $stream->access_to_meal_plan) {
             if (strpos($request->getRequestUri(), "/first-quiz") === false) {
                 return redirect(route("first_quiz.index"));
             }
         }
 
-        if (!$startResultExists) {
+        if (!$startResultExists && $stream->access_to_results) {
             if (strpos($request->getRequestUri(), "/results/before") === false && strpos($request->getRequestUri(), "/first-quiz") === false) {
                 return redirect(route("result.before"));
             }

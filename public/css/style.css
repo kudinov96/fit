@@ -1180,12 +1180,14 @@ body:not(.home) #footer {
     margin-bottom: 30px;
 }
 .modal .form-item label {
-    display: block;
+    /*display: block;*/
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
+    display: flex;
+    align-items: center;
 }
 .modal .form-item .form-control {
     background: #fff;
@@ -1712,6 +1714,25 @@ body:not(.home) #footer {
 }
 .form-file {
     display: flex;
+    justify-content: space-between;
+}
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-checkbox label{
+    padding-bottom: 0;
+    cursor: pointer;
+}
+.form-checkbox input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+.form-file a {
+    color: #000;
+    text-decoration: underline;
 }
 .form-file .control-label {
     padding: 0px 15px 0px 0px;

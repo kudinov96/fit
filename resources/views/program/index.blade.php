@@ -26,6 +26,12 @@
                                     <div>ID {{ $program->id }}</div>
                                     <div>{{ $program->name }}</div>
                                 </div>
+
+                                <form method="POST" action="{{ route("program.duplicate", ["item" => $program]) }}">
+                                    @csrf
+                                    @method("POST")
+                                    <button class="btn" type="submit" style="padding: 14px 16px; font-size: 12px;">copy</button>
+                                </form>
                             </a>
 
                             <div class="form-item dropdown">
@@ -39,6 +45,13 @@
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a class="dropdown-item update-program-modal" data-id="{{ $program->id }}" data-bs-toggle="modal" data-bs-target="#editModal">{{ __('Редактировать') }}</a>
+                                    </li>
+                                    <li>
+                                        <form method="POST" action="{{ route("program.delete", ["item" => $program]) }}" onSubmit="if(!confirm('{{ __("Вы действительно хотите удалить эту тренировку?") }}')){return false;}">
+                                            @csrf
+                                            @method("DELETE")
+                                            <button class="btn btn_red" type="submit">{{ __("Удалить") }}</button>
+                                        </form>
                                     </li>
                                 </ul>
                             </div>

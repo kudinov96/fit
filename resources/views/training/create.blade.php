@@ -9,7 +9,8 @@
 @section("content")
     <div id="main-content">
         <div class="container">
-            <h1 class="stream-title">{{ __('Создать тренировку') }}</h1>
+            <h1 class="stream-title">{{ __('Создать тренировку') }}
+            </h1>
             <p style="color: red;">{{ session("errors") }}</p>
             <div class="stream-add-wrap">
                 <div class="stream-add"><a href="{{ route("stream.index") }}" class="btn">{{ __('Потоки') }}</a></div>
@@ -19,7 +20,7 @@
                 @csrf
                 @method("POST")
 
-                <input type="hidden" name="program_id" value="">
+                <input type="hidden" name="program_id" value="{{ request()->route('item')->id }}">
 
                 <div class="form-item">
                     <label>{{ __('Заголовок') }}</label>

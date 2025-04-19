@@ -16,6 +16,9 @@ class ResultController extends Controller
     {
         /** @var User $user */
         $user = auth()->user();
+        if (!$user->stream->access_to_results) {
+            abort(403);
+        }
 
         return response()->view("result.index", [
             "user" => $user,
@@ -33,6 +36,9 @@ class ResultController extends Controller
     {
         /** @var User $user */
         $user = auth()->user();
+        if (!$user->stream->access_to_results) {
+            abort(403);
+        }
 
         return response()->view("result.before", [
             "user" => $user,
@@ -43,6 +49,9 @@ class ResultController extends Controller
     {
         /** @var User $user */
         $user = auth()->user();
+        if (!$user->stream->access_to_results) {
+            abort(403);
+        }
 
         $resultService->store(
             $request->all(),
@@ -64,6 +73,9 @@ class ResultController extends Controller
     {
         /** @var User $user */
         $user = auth()->user();
+        if (!$user->stream->access_to_results) {
+            abort(403);
+        }
 
         $resultService->updatePhoto(
             $request->all(),

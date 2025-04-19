@@ -13,16 +13,31 @@ class FirstQuizController extends Controller
 {
     public function index(): Response
     {
+        $user = auth()->user();
+        if (!$user->stream->access_to_meal_plan) {
+            abort(403);
+        }
+
         return response()->view("first-quiz");
     }
 
     public function success(): Response
     {
+        $user = auth()->user();
+        if (!$user->stream->access_to_meal_plan) {
+            abort(403);
+        }
+
         return response()->view("first-quiz-success");
     }
 
     public function store(FirstQuizRequest $request, FirstQuizService $firstQuizService, PersonalMenuService $personalMenuService): RedirectResponse
     {
+        $user = auth()->user();
+        if (!$user->stream->access_to_meal_plan) {
+            abort(403);
+        }
+
         /** @var User $user */
         $user = auth()->user();
         $language = $request->input("language");
