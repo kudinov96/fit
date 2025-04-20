@@ -29,10 +29,13 @@ use Laravel\Sanctum\HasApiTokens;
  * @property int $stream_id
  * @property string $menu_file
  * @property string $menu_name
+ * @property int $menu_id
  * @property bool $is_custom_menu
  *
  * @property Carbon $created_at
  * @property Carbon $updated_at
+ *
+ * @property MealPlan $mealPlan
  */
 class User extends Authenticatable
 {
@@ -76,17 +79,18 @@ class User extends Authenticatable
     {
         return Attribute::make(
             get: function () {
-                $name = null;
-
                 if ($this->is_custom_menu) {
-                    $name = $this->menu_name;
+                    return new MenuDTO(true, $this->menu_file, $this->menu_name);
                 }
 
-                $fileSrc = $this->menu_file;
-
-                return new MenuDTO($this->is_custom_menu, $fileSrc, $name);
+                return new MenuDTO(false, $this->mealPlan->file, $this->mealPlan->title);
             },
         );
+    }
+
+    public function mealPlan(): HasOne
+    {
+        return $this->hasOne(MealPlan::class, "menu_id");
     }
 
     /**

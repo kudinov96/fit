@@ -10,6 +10,7 @@
                 <p>{{ __('У вас пока нет ни одного потока. Вы можете его создать.') }}</p>
                 <p><a data-bs-toggle="modal" data-bs-target="#newModal" class="btn">{{ __('+ Создать поток') }}</a></p>
                 <p><a href="{{ route("program.index") }}" class="btn">{{ __('Программы') }}</a></p>
+                <p><a href="{{ route("mealPlan.index") }}" class="btn">{{ __('Планы питания') }}</a></p>
             </div>
         @else
             <div class="container">
@@ -17,6 +18,7 @@
                 <p style="color: red;">{{ session("error") }}</p>
                 <div class="stream-add-wrap">
                     <div class="stream-add"><a href="{{ route("program.index") }}" class="btn">{{ __('Программы') }}</a></div>
+                    <div class="stream-add"><a href="{{ route("mealPlan.index") }}" class="btn">{{ __('Планы питания') }}</a></div>
                     <div class="stream-add"><a data-bs-toggle="modal" data-bs-target="#newModal" class="btn">{{ __('+ Создать поток') }}</a></div>
                 </div>
                 <div class="stream-rows">

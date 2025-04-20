@@ -33,7 +33,7 @@
                             <path d="M4.46875 19.5L5.11875 20.7188C5.2 20.9625 5.525 21.125 5.85 21.125H20.2312C20.5562 21.125 20.8 20.9625 20.9625 20.7188L21.6125 19.5H4.46875Z" fill="#EC2383"/>
                         </svg>
                         <span>{{ __('Меню') }}</span>
-                        {{ $user->menu->isCustom ? __($user->menu_name) : __($user->menu_file) }}
+                        {{ $user->menu->name }}
                     </a>
                     <ul class="dropdown-menu">
                         <li>

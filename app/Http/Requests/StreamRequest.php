@@ -49,7 +49,8 @@ class StreamRequest extends FormRequest
             'access_to_home' => (bool) $this->boolean('access_to_home'),
             'access_to_meal_plan' => (bool) $this->boolean('access_to_meal_plan'),
             'access_to_results' => (bool) $this->boolean('access_to_results'),
-            'access_to_check_in' => (bool) $this->boolean('access_to_results'),
+            'access_to_check_in' => (bool) $this->boolean('access_to_check_in'),
+            'from_view' => (bool) $this->boolean('from_view'),
         ]);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\FirstQuizRequest;
 use App\Models\User;
 use App\Services\FirstQuizService;
+use App\Services\MealPlanService;
 use App\Services\PersonalMenuService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
@@ -31,7 +32,7 @@ class FirstQuizController extends Controller
         return response()->view("first-quiz-success");
     }
 
-    public function store(FirstQuizRequest $request, FirstQuizService $firstQuizService, PersonalMenuService $personalMenuService): RedirectResponse
+    public function store(FirstQuizRequest $request, FirstQuizService $firstQuizService, MealPlanService $mealPlanService): RedirectResponse
     {
         $user = auth()->user();
         if (!$user->stream->access_to_meal_plan) {
@@ -55,13 +56,8 @@ class FirstQuizController extends Controller
             $user,
         );
 
-        // @todo тестирование нового меню
-        /*dump($personalMenuService->personalMenuSrc($user, $firstQuiz));
-        $firstQuiz->delete();
-        dd();*/
-
         $user->update([
-            "menu_file" => $personalMenuService->personalMenuSrc($user, $firstQuiz),
+            "menu_id" => $mealPlanService->determinePlan($firstQuiz)->id,
         ]);
 
         return response()->redirectToRoute("first_quiz.success");

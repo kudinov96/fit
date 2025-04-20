@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\MealPlanController;
 use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\StreamController;
 use App\Http\Controllers\Admin\TrainingController;
@@ -52,6 +53,15 @@ Route::group(["middleware" => ['auth', 'can.showMarathon', 'role:user']], functi
 
 // Админ
 Route::group(["middleware" => ['auth', 'role:admin']], function() {
+    Route::get("meal-plan", [MealPlanController::class, "index"])->name("mealPlan.index");
+    Route::get("meal-plan/create", [MealPlanController::class, "create"])->name("mealPlan.create");
+    Route::get("meal-plan/configurator", [MealPlanController::class, "configurator"])->name("mealPlan.configurator");
+    Route::post("meal-plan/configurator", [MealPlanController::class, "configuratorSend"])->name("mealPlan.configurator.send");
+    Route::get("meal-plan/{item}", [MealPlanController::class, "edit"])->name("mealPlan.edit");
+    Route::post("meal-plan", [MealPlanController::class, "store"])->name("mealPlan.store");
+    Route::put("meal-plan/{item}", [MealPlanController::class, "update"])->name("mealPlan.update");
+    Route::delete("meal-plan/{item}", [MealPlanController::class, "delete"])->name("mealPlan.delete");
+
     Route::get("streams", [StreamController::class, "index"])->name("stream.index");
     Route::get("streams/{item}", [StreamController::class, "view"])->name("stream.view");
     Route::post("streams", [StreamController::class, "store"])->name("stream.store");
@@ -67,7 +77,7 @@ Route::group(["middleware" => ['auth', 'role:admin']], function() {
     //Route::get("trainings", [TrainingController::class, "index"])->name("training.index");
     Route::get("programs/{item}/trainings/{week}", [TrainingController::class, "indexWeek"])->where('id', '[0-9]+')->name("training.index.week");
     Route::get("programs/{item}/trainings/{week}/create", [TrainingController::class, "create"])->where('id', '[0-9]+')->name("training.index.create");
-    Route::get("programs/{item}/trainings/{training}/edit", [TrainingController::class, "edit"])->name("training.index.edit");
+    Route::get("programs/{item}/trainings/{training}/edit", [TrainingController::class, "edit"])->name("training.edit");
 
     Route::post("trainings", [TrainingController::class, "store"])->name("training.store");
     Route::put("trainings/{training}", [TrainingController::class, "update"])->name("training.update");
