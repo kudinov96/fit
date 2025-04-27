@@ -83,7 +83,11 @@ class User extends Authenticatable
                     return new MenuDTO(true, $this->menu_file, $this->menu_name);
                 }
 
-                return new MenuDTO(false, $this->mealPlan->file, $this->mealPlan->title);
+                if ($this->mealPlan) {
+                    return new MenuDTO(false, $this->mealPlan->file, $this->mealPlan->title);
+                }
+
+                return new MenuDTO(false);
             },
         );
     }
