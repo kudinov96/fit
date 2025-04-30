@@ -61,23 +61,47 @@
                 </div>
 
                 <div class="form-file form-item">
-                    <label class="control-label"><a style="color: #fff;" @if($item->file_ru) href="{{ \Storage::url($item->file_ru) }}" @endif target="_blank">{{ __('Файл') . " RU" }}</a></label>
+                    <label class="control-label">
+                        {{ __('Файл') . " RU" }}
+                        @if($item->file_ru)
+                            <a style="color: #fff;" href="{{ \Storage::url($item->file_ru) }}" target="_blank">{{ __('Превью') }}</a>
+                        @endif
+                    </label>
                     <input class="file-upload" name="file_ru" type="file" required>
                 </div>
 
                 <div class="form-file form-item">
-                    <label class="control-label"><a style="color: #fff;" @if($item->file_lv) href="{{ \Storage::url($item->file_lv) }}" @endif target="_blank">{{ __('Файл') . " LV" }}</a></label>
+                    <label class="control-label">
+                        {{ __('Файл') . " LV" }}
+                        @if($item->file_lv)
+                            <a style="color: #fff;" href="{{ \Storage::url($item->file_lv) }}" target="_blank">{{ __('Превью') }}</a>
+                        @endif
+                    </label>
                     <input class="file-upload" name="file_lv" type="file" required>
                 </div>
 
                 <div class="form-file form-item">
-                    <label class="control-label"><a style="color: #fff;" @if($item->file_en) href="{{ \Storage::url($item->file_en) }}" @endif target="_blank">{{ __('Файл') . " EN" }}</a></label>
+                    <label class="control-label">
+                        {{ __('Файл') . " EN" }}
+                        @if($item->file_en)
+                            <a style="color: #fff;" href="{{ \Storage::url($item->file_en) }}" target="_blank">{{ __('Превью') }}</a>
+                        @endif
+                    </label>
                     <input class="file-upload" name="file_en" type="file" required>
                 </div>
 
-                <div class="form-action">
-                    <button type="submit" class="btn">{{ __('Редактировать') }}</button>
+                <div class="form-action mb-4">
+                    <button type="submit" class="btn">{{ __('Сохранить') }}</button>
                 </div>
+
+                <form class="needs-validation mt-4" onSubmit="if(!confirm('{{ __("Вы действительно хотите удалить этот план?") }}')){return false;}" action="{{ route("mealPlan.delete", ["item" => $item]) }}" method="POST" novalidate>
+                    @csrf
+                    @method("DELETE")
+
+                    <div>
+                        <button type="submit" class="btn btn_red">{{ __('Удалить') }}</button>
+                    </div>
+                </form>
             </form>
         </div>
     </div>

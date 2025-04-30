@@ -20,11 +20,9 @@
             <div class="stream-rows stream-rows_training">
                 @foreach($items as $item)
                     <div class="stream-item">
-                        <div @class(["stream-row"])>
-                            <a href="{{ route("mealPlan.edit", ["item" => $item]) }}" class="sr-meta">
-                                <div>{{ $item->title }}</div>
-                            </a>
-                        </div>
+                        <a href="{{ route("mealPlan.edit", ["item" => $item]) }}" @class(["stream-row sr-meta"])>
+                            <div>{{ $item->title }}</div>
+                        </a>
                     </div>
                 @endforeach
             </div>

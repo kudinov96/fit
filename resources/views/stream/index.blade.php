@@ -68,6 +68,13 @@
                                                data-template-access-to-check-in="{{ $stream->access_to_check_in }}"
                                                data-bs-toggle="modal" data-bs-target="#editModal">{{ __('Редактировать') }}</a>
                                         </li>
+                                        <li>
+                                            <form method="POST" action="{{ route("stream.delete", ["item" => $stream]) }}" onSubmit="if(!confirm('{{ __("Вы действительно хотите удалить этот поток вместе со всеми участниками?") }}')){return false;}">
+                                                @csrf
+                                                @method("DELETE")
+                                                <button class="btn btn_red" type="submit">{{ __("Удалить") }}</button>
+                                            </form>
+                                        </li>
                                     </ul>
                                 </div>
                             {{--@endif--}}
@@ -146,23 +153,28 @@
                         </div>
                         <div class="form-item form-checkbox">
                             <label for="access_to_gym" class="control-label">{{ __('Доступ к Тренировкам в зале') }}</label>
-                            <input id="access_to_gym" name="access_to_gym" type="checkbox" value="0">
+                            <input type="hidden" name="access_to_gym" value="0">
+                            <input id="access_to_gym" name="access_to_gym" type="checkbox" value="1">
                         </div>
                         <div class="form-item form-checkbox">
                             <label for="access_to_home" class="control-label">{{ __('Доступ к Тренировкам дома') }}</label>
-                            <input id="access_to_home" name="access_to_home" type="checkbox" value="0">
+                            <input type="hidden" name="access_to_home" value="0">
+                            <input id="access_to_home" name="access_to_home" type="checkbox" value="1">
                         </div>
                         <div class="form-item form-checkbox">
                             <label for="access_to_meal_plan" class="control-label">{{ __('Генерация Плана питания') }}</label>
-                            <input id="access_to_meal_plan" name="access_to_meal_plan" type="checkbox" value="0">
+                            <input type="hidden" name="access_to_meal_plan" value="0">
+                            <input id="access_to_meal_plan" name="access_to_meal_plan" type="checkbox" value="1">
                         </div>
                         <div class="form-item form-checkbox">
                             <label for="access_to_results" class="control-label">{{ __('Раздел “Мои результаты”') }}</label>
-                            <input id="access_to_results" name="access_to_results" type="checkbox" value="0">
+                            <input type="hidden" name="access_to_results" value="0">
+                            <input id="access_to_results" name="access_to_results" type="checkbox" value="1">
                         </div>
                         <div class="form-item form-checkbox">
                             <label for="access_to_check_in" class="control-label">{{ __('Раздел “Check In”') }}</label>
-                            <input id="access_to_check_in" name="access_to_check_in" type="checkbox" value="0">
+                            <input type="hidden" name="access_to_check_in" value="0">
+                            <input id="access_to_check_in" name="access_to_check_in" type="checkbox" value="1">
                         </div>
                         <div class="form-action">
                             <button type="submit" class="btn">{{ __('Создать') }}</button>

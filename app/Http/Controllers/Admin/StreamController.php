@@ -130,14 +130,14 @@ class StreamController extends Controller
         ]);
     }
 
-    public function store(StreamRequest $request, StreamService $streamService): RedirectResponse
+    public function store(Request $request, StreamService $streamService): RedirectResponse
     {
-        $currentStream = $streamService->currentStream();
+        /*$currentStream = $streamService->currentStream();*/
 
         // Нельзя чтобы было одновременно 2 активных потока
-        if ($currentStream && $currentStream->start_date->addWeeks(6) > Carbon::make($request->input("start_date"))) {
+        /*if ($currentStream && $currentStream->start_date->addWeeks(6) > Carbon::make($request->input("start_date"))) {
             return response()->redirectToRoute("stream.index")->with("error", "Нельзя активировать сразу 2 потока. Измените дату");
-        }
+        }*/
 
         $streamService->store($request->all());
 
@@ -156,6 +156,14 @@ class StreamController extends Controller
         if ($request->input("from_view")) {
             return response()->redirectToRoute("stream.view", ["item" => $stream->id]);
         }
+
+        return response()->redirectToRoute("stream.index");
+    }
+
+    public function delete(Stream $item): RedirectResponse
+    {
+        $item->users()->delete();
+        $item->delete();
 
         return response()->redirectToRoute("stream.index");
     }

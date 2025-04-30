@@ -92,9 +92,9 @@ class User extends Authenticatable
         );
     }
 
-    public function mealPlan(): HasOne
+    public function mealPlan(): belongsTo
     {
-        return $this->hasOne(MealPlan::class, "menu_id");
+        return $this->belongsTo(MealPlan::class, "menu_id");
     }
 
     /**

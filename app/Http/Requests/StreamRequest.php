@@ -39,6 +39,7 @@ class StreamRequest extends FormRequest
             "access_to_meal_plan" => ["required", "boolean"],
             "access_to_results" => ["required", "boolean"],
             "access_to_check_in" => ["required", "boolean"],
+            "from_view" => ["nullable", "boolean"],
         ];
     }
 

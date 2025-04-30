@@ -66,6 +66,7 @@ Route::group(["middleware" => ['auth', 'role:admin']], function() {
     Route::get("streams/{item}", [StreamController::class, "view"])->name("stream.view");
     Route::post("streams", [StreamController::class, "store"])->name("stream.store");
     Route::put("streams", [StreamController::class, "update"])->name("stream.update");
+    Route::delete("streams/{item}", [StreamController::class, "delete"])->name("stream.delete");
 
     Route::get("programs", [ProgramController::class, "index"])->name("program.index");
     Route::get("programs/{item}", [ProgramController::class, "view"])->name("program.view");
