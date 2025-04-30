@@ -72,7 +72,7 @@
                                 <p>{{ __('recommendation1') }}</p>
                                 <p>{{ __('recommendation2') }}</p>
                             </div>--}}
-                            <div class="d-flex"><a href="{{ $user->menu->fileSrc }}" download class="btn btn-green">{{ __('Скачать') }}</a></div>
+                            <div class="d-flex"><a href="{{ \Storage::url($user->menu->fileSrc) }}" download class="btn btn-green">{{ __('Скачать') }}</a></div>
                         </div>
                     </div>
                 @endif
