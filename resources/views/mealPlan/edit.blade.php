@@ -17,6 +17,18 @@
                 <div class="stream-add"><a href="{{ route("program.index") }}" class="btn">{{ __('Программы') }}</a></div>
                 <div class="stream-add"><a href="{{ route("mealPlan.index") }}" class="btn">{{ __('Планы питания') }}</a></div>
             </div>
+
+            <div class="form-action">
+                <form class="needs-validation" onSubmit="if(!confirm('{{ __("Вы действительно хотите удалить этот план?") }}')){return false;}" action="{{ route("mealPlan.delete", ["item" => $item]) }}" method="POST" novalidate>
+                    @csrf
+                    @method("DELETE")
+
+                    <div>
+                        <button type="submit" class="btn btn_red">{{ __('Удалить') }}</button>
+                    </div>
+                </form>
+            </div>
+
             <form id="createForm" action="{{ route("mealPlan.update", ["item" => $item]) }}" method="POST" enctype="multipart/form-data" novalidate>
                 @csrf
                 @method("PUT")
@@ -91,17 +103,8 @@
                 </div>
 
                 <div class="form-action mb-4">
-                    <button type="submit" class="btn">{{ __('Сохранить') }}</button>
+                    <button type="submit" class="btn" style="margin-left: 15px;">{{ __('Сохранить') }}</button>
                 </div>
-
-                <form class="needs-validation mt-4" onSubmit="if(!confirm('{{ __("Вы действительно хотите удалить этот план?") }}')){return false;}" action="{{ route("mealPlan.delete", ["item" => $item]) }}" method="POST" novalidate>
-                    @csrf
-                    @method("DELETE")
-
-                    <div>
-                        <button type="submit" class="btn btn_red">{{ __('Удалить') }}</button>
-                    </div>
-                </form>
             </form>
         </div>
     </div>

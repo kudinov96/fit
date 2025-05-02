@@ -15,6 +15,17 @@
                 <div class="stream-add"><a href="{{ route("program.view", ["item" => $training->program_id]) }}" class="btn">{{ __('К неделям') }}</a></div>
             </div>
 
+            <div class="form-action">
+                <form class="needs-validation" onSubmit="if(!confirm('{{ __("Вы действительно хотите удалить эту тренировку?") }}')){return false;}" action="{{ route("training.delete", ["training" => $training]) }}" method="POST" novalidate>
+                    @csrf
+                    @method("DELETE")
+
+                    <div>
+                        <button type="submit" class="btn btn_red">{{ __('Удалить') }}</button>
+                    </div>
+                </form>
+            </div>
+
             <form id="editForm" class="needs-validation" action="{{ route("training.update", ["training" => $training]) }}" method="POST" novalidate>
                 @csrf
                 @method("PUT")
@@ -93,15 +104,6 @@
 
                 <div class="form-action">
                     <button type="submit" class="btn">{{ __('Обновить') }}</button>
-                </div>
-            </form>
-
-            <form class="needs-validation mt-4" onSubmit="if(!confirm('{{ __("Вы действительно хотите удалить эту тренировку?") }}')){return false;}" action="{{ route("training.delete", ["training" => $training]) }}" method="POST" novalidate>
-                @csrf
-                @method("DELETE")
-
-                <div>
-                    <button type="submit" class="btn btn_red">{{ __('Удалить') }}</button>
                 </div>
             </form>
         </div>
