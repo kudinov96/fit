@@ -74,10 +74,14 @@
                 @endif
                 @if($currentWeek !== 0)
                     <div class="plan-noty">
-                        <h3>{{ __('Выполнение тренировок в зале') }}</h3>
-                        <p>{{ __("plan_gym_week_$week") }}</p>
-                        <h3>{{ __('Выполнение тренировок дома') }}</h3>
-                        <p>{{ __("plan_home_week_$week") }}</p>
+                        @if($stream->access_to_gym)
+                            <h3>{{ __('Выполнение тренировок в зале') }}</h3>
+                            <p>{{ __("plan_gym_week_$week") }}</p>
+                        @endif
+                        @if($stream->access_to_home)
+                            <h3>{{ __('Выполнение тренировок дома') }}</h3>
+                            <p>{{ __("plan_home_week_$week") }}</p>
+                        @endif
                     </div>
                 @endif
 
