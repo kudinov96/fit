@@ -43,7 +43,7 @@
                         <option value="classic">Classic</option>
                         <option value="GF">GF</option>
                         <option value="LF">LF</option>
-                        <option value="vegetarian">LF</option>
+                        <option value="vegetarian">Vegetarian</option>
                         <option value="vegan">Vegan</option>
                     </select>
                 </div>

@@ -55,7 +55,7 @@
                         <option value="classic" @if($item->menu_type === "classic") selected @endif>Classic</option>
                         <option value="GF" @if($item->menu_type === "GF") selected @endif>GF</option>
                         <option value="LF" @if($item->menu_type === "LF") selected @endif>LF</option>
-                        <option value="vegetarian" @if($item->menu_type === "vegetarian") selected @endif>LF</option>
+                        <option value="vegetarian" @if($item->menu_type === "vegetarian") selected @endif>Vegetarian</option>
                         <option value="vegan" @if($item->menu_type === "vegan") selected @endif>Vegan</option>
                     </select>
                 </div>

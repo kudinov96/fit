@@ -56,9 +56,13 @@ class FirstQuizController extends Controller
             $user,
         );
 
-        $user->update([
-            "menu_id" => $mealPlanService->determinePlan($firstQuiz)->id,
-        ]);
+        $menuPlan = $mealPlanService->determinePlan($firstQuiz);
+
+        if (!$menuPlan) {
+            $user->update([
+                "menu_id" => $menuPlan->id,
+            ]);
+        }
 
         return response()->redirectToRoute("first_quiz.success");
     }
