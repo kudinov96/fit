@@ -58,7 +58,7 @@ class FirstQuizController extends Controller
 
         $menuPlan = $mealPlanService->determinePlan($firstQuiz);
 
-        if (!$menuPlan) {
+        if ($menuPlan) {
             $user->update([
                 "menu_id" => $menuPlan->id,
             ]);
