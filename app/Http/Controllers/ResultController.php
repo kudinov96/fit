@@ -48,7 +48,8 @@ class ResultController extends Controller
     public function store(ResultRequest $request, ResultService $resultService): RedirectResponse
     {
         /** @var User $user */
-        /*$user = auth()->user();
+        $user = auth()->user();
+        /*
         if (!$user->stream->access_to_results) {
             abort(403);
         }*/
@@ -72,7 +73,8 @@ class ResultController extends Controller
     public function updatePhoto(UpdatePhotoRequest $request, ResultService $resultService): RedirectResponse
     {
         /** @var User $user */
-        /*$user = auth()->user();
+        $user = auth()->user();
+        /*
         if (!$user->stream->access_to_results) {
             abort(403);
         }*/
