@@ -271,9 +271,14 @@
                             </div>
                             <div>
                                 <div class="report-form_title report-form_title_2 text-center">{{ __('Загрузи свои финальные фото с нашим шаблоном для участия в розыгрыше') }}</div>
-                                <div class="report-form_subtitle"><a href="{{ \Storage::url($stream->template_for_finish) }}" download>{{ __('Скачать шаблон') }} <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M10.0007 13.334L5.83399 9.16732L7.00065 7.95898L9.16732 10.1257V3.33398H10.834V10.1257L13.0007 7.95898L14.1673 9.16732L10.0007 13.334ZM5.00065 16.6673C4.54232 16.6673 4.14982 16.504 3.82315 16.1773C3.49649 15.8507 3.33343 15.4584 3.33399 15.0007V12.5007H5.00065V15.0007H15.0007V12.5007H16.6673V15.0007C16.6673 15.459 16.504 15.8515 16.1773 16.1782C15.8507 16.5048 15.4584 16.6679 15.0007 16.6673H5.00065Z" fill="#41BC22"/>
-                                        </svg></a></div>
+                                @if($stream->template_for_finish)
+                                    <div class="report-form_subtitle">
+                                        <a href="{{ \Storage::url($stream->template_for_finish) }}" download>{{ __('Скачать шаблон') }} <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10.0007 13.334L5.83399 9.16732L7.00065 7.95898L9.16732 10.1257V3.33398H10.834V10.1257L13.0007 7.95898L14.1673 9.16732L10.0007 13.334ZM5.00065 16.6673C4.54232 16.6673 4.14982 16.504 3.82315 16.1773C3.49649 15.8507 3.33343 15.4584 3.33399 15.0007V12.5007H5.00065V15.0007H15.0007V12.5007H16.6673V15.0007C16.6673 15.459 16.504 15.8515 16.1773 16.1782C15.8507 16.5048 15.4584 16.6679 15.0007 16.6673H5.00065Z" fill="#41BC22"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                @endif
                                 <div class="qs-inputs files row">
                                     <div class="col-lg-4 col-6">
                                         <input id="foto-1" name="photo_1" type="file">

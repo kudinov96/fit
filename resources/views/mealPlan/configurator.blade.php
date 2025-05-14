@@ -14,6 +14,7 @@
             <div class="stream-add-wrap">
                 <div class="stream-add"><a href="{{ route("stream.index") }}" class="btn">{{ __('Потоки') }}</a></div>
                 <div class="stream-add"><a href="{{ route("program.index") }}" class="btn">{{ __('Программы') }}</a></div>
+                <div class="stream-add"><a href="{{ route("mealPlan.index") }}" class="btn">Планы питания</a></div>
             </div>
             <div class="configurator-block">
                 <form action="{{ route("mealPlan.configurator.send") }}" method="POST">
@@ -42,12 +43,12 @@
 
                     <div class="form-item">
                         <label>{{ __("Рост") }}</label>
-                        <input name="height" type="number" value="{{ session('height') }}" class="form-control" required>
+                        <input name="height" type="number" step="0.1" value="{{ session('height') }}" class="form-control" required>
                     </div>
 
                     <div class="form-item">
                         <label>{{ __("Вес") }}</label>
-                        <input name="weight" type="number" value="{{ session('weight') }}" class="form-control" required>
+                        <input name="weight" type="number" step="0.1" value="{{ session('weight') }}" class="form-control" required>
                     </div>
 
                     <div class="form-action">
