@@ -36,7 +36,7 @@
                             <option value="Классическое меню" @if(session('menu') === 'Классическое меню') selected @endif>Classic</option>
                             <option value="Gluten FREE" @if(session('menu') === 'Gluten FREE') selected @endif>GF</option>
                             <option value="Lactose FREE" @if(session('menu') === 'Lactose FREE') selected @endif>LF</option>
-                            <option value="Вегетарианское меню" @if(session('menu') === 'Вегетарианское меню') selected @endif>LF</option>
+                            <option value="Вегетарианское меню" @if(session('menu') === 'Вегетарианское меню') selected @endif>Vegeterian</option>
                             <option value="Vegan" @if(session('menu') === 'Vegan') selected @endif>Vegan</option>
                         </select>
                     </div>
